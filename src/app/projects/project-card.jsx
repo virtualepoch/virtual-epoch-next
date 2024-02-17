@@ -32,12 +32,18 @@ export const ProjectCard = ({ styles, ...props }) => {
     >
       <h2 className={`${styles.title} text-shadow`}>{props.info.title}</h2>
 
-      <div className={styles.project}>
+      <div
+        className={
+          projectAnim ? `${styles.project} ${styles.anim}` : `${styles.project}`
+        }
+      >
         <div
           className={pcAnim ? `${styles.pc} ${styles.anim}` : `${styles.pc}`}
         >
           <Image
-            className={pcAnim ? `${styles.imgPc} ${styles.anim}` : `${styles.imgPc}`}
+            className={
+              pcAnim ? `${styles.imgPc} ${styles.anim}` : `${styles.imgPc}`
+            }
             src={props.info.pcImgSrc}
             alt={props.info.pcImgAlt}
             width={500}
@@ -61,7 +67,11 @@ export const ProjectCard = ({ styles, ...props }) => {
           }
         >
           <Image
-            className={phoneAnim ? `${styles.imgPhone} ${styles.anim}` : `${styles.imgPhone}`}
+            className={
+              phoneAnim
+                ? `${styles.imgPhone} ${styles.anim}`
+                : `${styles.imgPhone}`
+            }
             src={props.info.phoneImgSrc}
             alt={props.info.phoneImgAlt}
             width={500}

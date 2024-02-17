@@ -1,8 +1,5 @@
-// import { BtnToTop } from "../_components/ui/btn-to-top";
-import { ProjectCard } from "../_components/project-card";
-import { BtnAction } from "../_components/ui/btn-action";
+import { ProjectCard } from "./project-card";
 import styles from "./page.module.css";
-// import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
   const projectsInfo = [

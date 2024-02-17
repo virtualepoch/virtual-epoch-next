@@ -234,9 +234,17 @@
     transition: opacity 1s ease, transform 500ms ease;
   }
   .pc {
+    opacity: 1;
     transform: none;
   }
+  .imgPc {
+    opacity: 1;
+  }
   .phone {
+    opacity: 1;
     transform: none;
+  }
+  .imgPhone {
+    opacity: 1;
   }
 }

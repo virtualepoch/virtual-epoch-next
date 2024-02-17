@@ -14,7 +14,7 @@ export const CustomLink = ({ to, setNav, children, ...props }) => {
           color: pathname === to && "#0ff",
         }}
         onClick={() => {
-          setNavMenuOpen(false);
+          setNav(false);
         }}
       >
         {children}
