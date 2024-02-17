@@ -1,134 +1,30 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import { Typewriter } from "./typewriter";
 import { ThreePyramid } from "./three-pyramid";
 import styles from "./page.module.css";
 
 export default function About() {
-  const textBox1 = useRef(null),
-    textBox2 = useRef(null),
-    textBox3 = useRef(null),
-    textBox4 = useRef(null),
-    textBox5 = useRef(null),
-    textBox6 = useRef(null),
-    [cursor1, setCursor1] = useState(true),
-    [cursor2, setCursor2] = useState(false),
-    [cursor3, setCursor3] = useState(false),
-    [cursor4, setCursor4] = useState(false),
-    [cursor5, setCursor5] = useState(false),
-    [cursor6, setCursor6] = useState(false);
-
-  useEffect(() => {
-    const typeSpeed = 50,
-      phrase1 = "Pixel-perfection",
-      phrase1Timeout = phrase1.length * typeSpeed,
-      phrase2 = "Responsive layouts",
-      phrase2Timeout = phrase2.length * typeSpeed + phrase1Timeout,
-      phrase3 = "Daily real-time updates",
-      phrase3Timeout = phrase3.length * typeSpeed + phrase2Timeout,
-      phrase4 = "Single-Page applications coded with ReactJS",
-      phrase4Timeout = phrase4.length * typeSpeed + phrase3Timeout,
-      phrase5 = "Webpages coded with HTML, CSS, and JavaScript",
-      phrase5Timeout = phrase5.length * typeSpeed + phrase4Timeout,
-      phrase6 = "Code that passes all W3C Validations";
-    let i = 0,
-      j = 0,
-      k = 0,
-      l = 0,
-      m = 0,
-      n = 0,
-      text1 = [],
-      text2 = [],
-      text3 = [],
-      text4 = [],
-      text5 = [],
-      text6 = [];
-
-    // ///////////////////////////////////////////////////////////////////
-    function typePhrase1() {
-      if (i < phrase1.length) {
-        text1.push(phrase1[i]);
-        i++;
-      }
-      textBox1.current.innerHTML = text1.join("");
-      setTimeout(typePhrase1, typeSpeed);
-    }
-    typePhrase1();
-
-    // ///////////////////////////////////////////////////////////////
-    function typePhrase2() {
-      if (j < phrase2.length) {
-        text2.push(phrase2[j]);
-        j++;
-      }
-      textBox2.current.innerHTML = text2.join("");
-      setTimeout(typePhrase2, typeSpeed);
-    }
-    setTimeout(function () {
-      setCursor1(false);
-      setCursor2(true);
-      typePhrase2();
-    }, phrase1Timeout);
-
-    // ///////////////////////////////////////////////
-    function typePhrase3() {
-      if (k < phrase3.length) {
-        text3.push(phrase3[k]);
-        k++;
-      }
-      textBox3.current.innerHTML = text3.join("");
-      setTimeout(typePhrase3, typeSpeed);
-    }
-    setTimeout(function () {
-      setCursor2(false);
-      setCursor3(true);
-      typePhrase3();
-    }, phrase2Timeout);
-
-    // //////////////////////////////////////////////
-    function typePhrase4() {
-      if (l < phrase4.length) {
-        text4.push(phrase4[l]);
-        l++;
-      }
-      textBox4.current.innerHTML = text4.join("");
-      setTimeout(typePhrase4, typeSpeed);
-    }
-    setTimeout(function () {
-      setCursor3(false);
-      setCursor4(true);
-      typePhrase4();
-    }, phrase3Timeout);
-
-    // ///////////////////////////////////////////////
-    function typePhrase5() {
-      if (m < phrase5.length) {
-        text5.push(phrase5[m]);
-        m++;
-      }
-      textBox5.current.innerHTML = text5.join("");
-      setTimeout(typePhrase5, typeSpeed);
-    }
-    setTimeout(function () {
-      setCursor4(false);
-      setCursor5(true);
-      typePhrase5();
-    }, phrase4Timeout);
-
-    // ///////////////////////////////////
-    function typePhrase6() {
-      if (n < phrase6.length) {
-        text6.push(phrase6[n]);
-        n++;
-      }
-      textBox6.current.innerHTML = text6.join("");
-      setTimeout(typePhrase6, typeSpeed);
-    }
-    setTimeout(function () {
-      setCursor5(false);
-      setCursor6(true);
-      typePhrase6();
-    }, phrase5Timeout);
-  }, []);
+  const text1 = "Daily updates ",
+    text2 = "Pixel perfection ",
+    text3 = "Responsive layouts ",
+    text4 = "Single-page web-apps coded with React ",
+    text5 = "Use of the latest frameworks and libraries ",
+    text6 = "Webpages coded with HTML, CSS, and JavaScript ",
+    text7 = "Guaranteed Google performance tests scores above 95% ",
+    pause1 = 0,
+    pause2 = text1.length,
+    pause3 = text1.length + text2.length,
+    pause4 = text1.length + text2.length + text3.length,
+    pause5 = text1.length + text2.length + text3.length + text4.length,
+    pause6 =
+      text1.length + text2.length + text3.length + text4.length + text5.length,
+    pause7 =
+      text1.length +
+      text2.length +
+      text3.length +
+      text4.length +
+      text5.length +
+      text6.length;
 
   return (
     <main>
@@ -138,56 +34,17 @@ export default function About() {
           We strive to exceed client expectations and visions by providing:
         </p>
 
-        <p
-          className={
-            !cursor1
-              ? `${styles.text} ${styles.removeCursor}`
-              : `${styles.text}`
-          }
-          ref={textBox1}
-        ></p>
-        <p
-          className={
-            !cursor2
-              ? `${styles.text} ${styles.removeCursor}`
-              : `${styles.text}`
-          }
-          ref={textBox2}
-        ></p>
-        <p
-          className={
-            !cursor3
-              ? `${styles.text} ${styles.removeCursor}`
-              : `${styles.text}`
-          }
-          ref={textBox3}
-        ></p>
-        <p
-          className={
-            !cursor4
-              ? `${styles.text} ${styles.removeCursor}`
-              : `${styles.text}`
-          }
-          ref={textBox4}
-        ></p>
-        <p
-          className={
-            !cursor5
-              ? `${styles.text} ${styles.removeCursor}`
-              : `${styles.text}`
-          }
-          ref={textBox5}
-        ></p>
-        <p
-          className={
-            !cursor6
-              ? `${styles.text} ${styles.removeCursor}`
-              : `${styles.text}`
-          }
-          ref={textBox6}
-        ></p>
+        <ul>
+          <Typewriter styles={styles} text={text1} pause={pause1} />
+          <Typewriter styles={styles} text={text2} pause={pause2} />
+          <Typewriter styles={styles} text={text3} pause={pause3} />
+          <Typewriter styles={styles} text={text4} pause={pause4} />
+          <Typewriter styles={styles} text={text5} pause={pause5} />
+          <Typewriter styles={styles} text={text6} pause={pause6} />
+          <Typewriter styles={styles} text={text7} pause={pause7} />
+        </ul>
 
-        <p className={styles.statement}>
+        <p className={styles.statementGuarantee}>
           We guarantee everything we do. We never conclude any project until all
           the requirements of that project are fully completed. We are not happy
           until our clients&apos; needs are fulfilled.

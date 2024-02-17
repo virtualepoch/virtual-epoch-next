@@ -2,17 +2,28 @@
   padding: 20px;
 }
 
-.content p {
+.content p,
+.content ul {
   max-width: 800px;
   margin: 20px auto;
   padding: 10px;
 }
 
+.content ul {
+  height: fit-content;
+  min-height: 230px;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.content li {
+  display: flex;
+  align-items: center;
+}
+
 .text {
   width: 100%;
   height: fit-content;
-  display: flex;
-  align-items: center;
   background: linear-gradient(to right, black, transparent);
   border-radius: 12px;
 }
@@ -22,16 +33,16 @@
   margin-right: 7px;
 }
 
-.text::after {
-  content: "";
+.cursor {
   width: 10px;
   height: 18px;
   margin-bottom: 4px;
   background-color: #fffc;
   animation: blink 1000ms linear infinite;
+  display: inline;
 }
 
-.text.removeCursor::after {
+.remove {
   display: none;
 }
 
@@ -48,6 +59,19 @@
 
 .statement {
   text-align: center;
-  padding: 20px 0;
   background: linear-gradient(to right, transparent, black, transparent);
+}
+
+.content .statementGuarantee {
+  text-align: center;
+  padding: 50px 0;
+  border-bottom: 1px solid;
+  padding-top: 50px;
+  background: radial-gradient(
+    ellipse at 50% 110%,
+    rgb(255, 255, 255, 0.5),
+    rgb(255, 255, 255, 0.3),
+    rgb(255, 255, 255, 0.1),
+    transparent 70%
+  );
 }

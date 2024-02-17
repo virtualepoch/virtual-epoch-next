@@ -10,7 +10,7 @@ export const Header = ({ setNav, nav }) => {
           setNav(false);
         }}
       >
-        <div className="site-logo"></div>
+        <div className="site-logo" />
       </Link>
     );
   };
