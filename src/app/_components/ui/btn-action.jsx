@@ -20,7 +20,7 @@ export const BtnAction = () => {
         {path === "/"
           ? "Learn More"
           : path === "/about"
-          ? "Projects"
+          ? "Projects "
           : path === "/projects"
           ? "Contact"
           : "Home"}

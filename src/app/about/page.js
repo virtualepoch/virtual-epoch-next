@@ -45,9 +45,11 @@ export default function About() {
         </ul>
 
         <p className={styles.statementGuarantee}>
-          We guarantee everything we do. We never conclude any project until all
-          the requirements of that project are fully completed. We are not happy
-          until our clients&apos; needs are fulfilled.
+          We never conclude any project until all
+          the requirements of that project are fully completed.
+          <br />
+          <br />
+          Client satisfaction is our goal and guarantee.
         </p>
 
         <p className={styles.statement}>

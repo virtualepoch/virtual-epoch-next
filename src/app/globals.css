@@ -339,30 +339,46 @@ button {
 /* BUTTONS ////////////////////////////////////// */
 /* BtnAction */
 .btn-action {
-  width: 140px;
-  height: 40px;
+  max-width: 50px;
+  height: 50px;
   border: 1px solid #000;
-  border-radius: 8px;
+  border-radius: 100%;
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 30px;
+  bottom: 20px;
   z-index: 888;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 2px 10px 1px rgb(0, 0, 0, 0.7);
 }
 
-.btn-action::before {
+.btn-action::before,
+.btn-action::after {
   content: "";
-  width: 140px;
-  height: 140px;
+  width: 51px;
+  height: 51px;
+  border-radius: 100%;
   position: absolute;
-  background: conic-gradient(#000 25%, #0ff 50%, #000 50% 75%, #0ff);
-  animation: rotate 4s infinite linear;
+  z-index: -1;
+  background: conic-gradient(#000, #0ffa 25% 75%, #000);
+  animation: rotate 4s linear infinite;
+}
+
+.btn-action::after {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: linear-gradient(135deg, #ddd, #333, #ccc);
+  animation: none;
+}
+
+.link-text::after {
+  content: "▷";
+  padding-left: 5px;
 }
 
 @keyframes rotate {
@@ -372,17 +388,15 @@ button {
 }
 
 .btn-action .link-text {
-  width: 136px;
-  height: 36px;
+  width: fit-content;
+  min-width: 150px;
+  height: 44px;
   position: absolute;
   z-index: 11;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
   text-shadow: 1px 0 2px #000, -1px 0 2px #000, 0 1px 2px #000, 0 -1px 2px #000;
-  background: linear-gradient(135deg, #ddd, #333, #ccc);
-  box-shadow: inset 0 0 3px 1px #c8c8c8;
 }
 
 .btn-action .link-text:hover {
@@ -413,7 +427,7 @@ button {
     linear-gradient(135deg, #888, #333, #888);
   cursor: pointer;
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   right: 15px;
   transform: translateY(100px);
   transition: transform 400ms ease;
@@ -421,13 +435,6 @@ button {
 .btn-to-top.anim {
   transform: translateY(0px);
   transition: transform 400ms ease;
-}
-
-@media (max-width: 777px) {
-  .btn-action,
-  .btn-to-top {
-    bottom: 10px;
-  }
 }
 
 .btn-open-contact-modal {
@@ -439,7 +446,17 @@ button {
   z-index: 101;
   border: none;
   filter: drop-shadow(0 0 3px #0ff);
-  background: url(/icons/message-regular.svg) center / 60% no-repeat;
+  background: url(/icons/message-regular.svg) 50% 80% / 60% no-repeat;
+}
+
+@media (max-width: 777px) {
+  .btn-action,
+  .btn-to-top {
+    bottom: 10px;
+  }
+  .btn-open-contact-modal {
+    bottom: 10px;
+  }
 }
 /* CONTACT MODAL  */
 .contact-modal {
