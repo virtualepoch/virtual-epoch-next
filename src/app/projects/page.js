@@ -45,9 +45,9 @@ export default function Projects() {
     {
       id: "03",
       title: "GoGetterz Apparel - E-commerce",
-      pcImgSrc: "/images/gogetterz.png",
+      pcImgSrc: "/images/gogetterz.jpg",
       pcImgAlt: "gogetterz-website-pc",
-      phoneImgSrc: "/images/gogetterz-phone.png",
+      phoneImgSrc: "/images/gogetterz-phone.jpg",
       phoneImgAlt: "gogetterz-website-phone",
       href: "https://gogetterz.vercel.app/",
       desc: "This is an e-commerce site template made for the apparel company GoGetterz. It was created using React.js.",
