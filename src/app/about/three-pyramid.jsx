@@ -1,9 +1,15 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Cone, GradientTexture } from "@react-three/drei";
 
 export const ThreePyramid = () => {
+  const [scale, setScale] = useState();
+  useEffect(() => {
+    if (window.innerWidth < 700) setScale(true);
+    else setScale(false);
+  }, [setScale]);
+  
   const Pyramid = () => {
     const pyramid = useRef();
 
@@ -46,7 +52,7 @@ export const ThreePyramid = () => {
       camera={{ fov: 20, position: [0, 0, 20] }}
       style={{
         width: "100%",
-        height: `${window.innerWidth < 700 ? "300px" : "500px"}`,
+        height: scale ? "300px" : "500px",
       }}
     >
       <directionalLight position={[4, 0, 0]} intensity={3} />
