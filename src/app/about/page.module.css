@@ -1,0 +1,29 @@
+.content {
+  padding: 20px;
+}
+
+.content p {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.text {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, black, transparent);
+  border-radius: 12px;
+}
+
+.text::before {
+  content: ">";
+  margin-right: 7px;
+}
+
+.statement {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(to right, transparent, black, transparent);
+}

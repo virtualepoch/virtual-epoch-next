@@ -1,95 +1,82 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useState } from "react";
+import { BtnAction } from "./_components/ui/btn-action";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [heading, setHeading] = useState();
+  const [anim1, setAnim1] = useState();
+  const [anim2, setAnim2] = useState();
+
+  useEffect(() => {
+    setHeading(true);
+    const timeoutId1 = setTimeout(() => {
+      setAnim1(true);
+    }, 1500);
+    const timeoutId2 = setTimeout(() => {
+      setAnim2(true);
+    }, 3000);
+
+    return () => clearTimeout(timeoutId1, timeoutId2);
+  }, []);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main>
+      <section className={styles.page}>
+        <h1
+          className="section-heading"
+          style={{
+            transform: heading ? "none" : "translateY(-50vh)",
+            transition: "transform 1s ease",
+          }}
+        >
+          Front-End Web Apps
+        </h1>
+        <div className={styles.flexRow}>
+          <h2
+            className={
+              anim1
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            Design
+          </h2>
+
+          <h2
+            className={
+              anim1
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            Development
+          </h2>
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
+        <div className={styles.flexRow}>
+          <h2
+            className={
+              anim2
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            Customization
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
+          <h2
+            className={
+              anim2
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            Optimization
           </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </div>
+      </section>
+      <BtnAction link="/about" linkName="LEARN MORE" />
     </main>
   );
 }
