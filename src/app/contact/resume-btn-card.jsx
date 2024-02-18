@@ -44,7 +44,7 @@ export const ResumeBtnCard = ({ styles }) => {
               <p>Press the button below to download PDF.</p>
               <Link
                 className={styles.btnDownloadPdf}
-                href="/craig-kaufman-resume-2023.pdf"
+                href="/craig-kaufman-resume-2024.pdf"
                 target="_blank"
                 rel="noreferrer"
                 download
@@ -57,7 +57,7 @@ export const ResumeBtnCard = ({ styles }) => {
 
           <Image
             className={styles.resumePng}
-            src="/images/craig-kaufman-resume-2023.png"
+            src="/images/craig-kaufman-resume-2024.png"
             alt="Craig Kaufman's resume"
             width={1545}
             height={2000}

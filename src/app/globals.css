@@ -60,9 +60,13 @@ button {
   all: unset;
   width: 50px;
   height: 50px;
-  border: solid #0ff;
-  border-radius: 3px;
   cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  border: solid #0ff;
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -111,7 +115,7 @@ button {
   filter: drop-shadow(1px 1px 2px #000);
 }
 
-/* BUTTON - OPEN/CLOSE NAVIGATION MENU */
+/* BUTTON= OPEN/CLOSE NAVIGATION MENU */
 .btn-nav-menu {
   width: 50px;
   height: 50px;
@@ -169,7 +173,7 @@ button {
   transform: rotate(-45deg) scaleX(0);
 }
 
-/* NAV */
+/* NAVIGATION MENU */
 .nav {
   width: calc(100% - 20px);
   max-width: 800px;
@@ -245,7 +249,7 @@ button {
   transform: none;
 }
 
-/* NavMenu left and right back panels */
+/* BACKGROUND PANELS FOR NAVIGATION MENU */
 .bg-nav {
   width: calc(50% + 10px);
   height: 100%;
@@ -337,7 +341,7 @@ button {
 }
 
 /* BUTTONS ////////////////////////////////////// */
-/* BtnAction */
+/* BUTTON= ACTION LINK TO NEXT PAGE */
 .btn-action {
   max-width: 50px;
   height: 50px;
@@ -403,7 +407,7 @@ button {
   color: cyan;
 }
 
-/* BtnToTop */
+/* BUTTON= T0 TOP OF PAGE */
 .btn-to-top-wrap {
   width: 100%;
   max-width: 1400px;
@@ -437,6 +441,7 @@ button {
   transition: transform 400ms ease;
 }
 
+/* BUTTON= OPEN CONTACT MODAL */
 .btn-open-contact-modal {
   width: 50px;
   height: 50px;
@@ -446,7 +451,7 @@ button {
   z-index: 101;
   border: none;
   filter: drop-shadow(0 0 3px #0ff);
-  background: url(/icons/message-regular.svg) 50% 80% / 60% no-repeat;
+  background: url(/icons/message-regular.svg) 50% 70% / 50% no-repeat;
 }
 
 @media (max-width: 777px) {
@@ -509,7 +514,7 @@ button {
     1px 1px 1px rgba(0, 0, 0, 0.9), 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
-/* BUTTON CLOSE CONTACT MODAL */
+/* BUTTON= CLOSE CONTACT MODAL */
 .btn-close-contact {
   width: 50px;
   min-width: 50px;
@@ -567,6 +572,7 @@ textarea {
   padding: 10px;
   padding-left: 0;
   border: 1px solid cyan;
+  border-radius: 3px;
   color: #fff;
   font: 300 20px sans-serif;
   background-color: transparent;
@@ -582,11 +588,11 @@ textarea {
 
 .input-form-contact:focus,
 textarea:focus {
-  color: black;
-  padding-left: 10px;
-  background-color: #fff;
+  color: white;
+  background-color: transparent;
   border: 1px solid cyan;
   outline: transparent;
+  transition: border 500ms ease;
   box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.5);
 }
 

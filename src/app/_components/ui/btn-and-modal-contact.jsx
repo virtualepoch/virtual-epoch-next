@@ -100,7 +100,7 @@ export const BtnAndModalContact = () => {
 
             <p>
               Use the Quick Links above or you can fill out the form below.
-              Replies to the form are usually sent within 1 business day.
+              Replies to the form are usually made within 1 business day.
             </p>
 
             <form className="form-contact" ref={form} onSubmit={sendEmail}>
@@ -114,7 +114,7 @@ export const BtnAndModalContact = () => {
 
               <p>
                 Note: If you prefer to not leave your phone number,
-                <br /> simply fill in a random number or 0.
+                <br /> simply fill in a random number, or 0.
               </p>
 
               <input

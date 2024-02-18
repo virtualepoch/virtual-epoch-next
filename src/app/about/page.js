@@ -10,7 +10,7 @@ export default function About() {
     text4 = "Single-page web-apps coded with React ",
     text5 = "Use of the latest frameworks and libraries ",
     text6 = "Webpages coded with HTML, CSS, and JavaScript ",
-    text7 = "Guaranteed Google performance tests scores above 95% ",
+    text7 = "Guaranteed Google performance scores above 95% ",
     pause1 = 0,
     pause2 = text1.length,
     pause3 = text1.length + text2.length,
