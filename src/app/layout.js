@@ -20,6 +20,7 @@ export const metadata = {
     "javascript",
     "react.js",
     "next.js",
+    "user interface design",
   ],
   authors: { name: "Craig Kaufman", url: "https://www.virtualepoch.com" },
 
@@ -47,6 +48,10 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+};
+
+export const viewport = {
+  themeColor: "#000",
 };
 
 export default function RootLayout({ children }) {
