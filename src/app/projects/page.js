@@ -63,7 +63,7 @@ export default function Projects() {
       phoneImgSrc: "/images/helpcenter-phone.jpg",
       phoneImgAlt: "helpcenter-phone",
       href: "https://jacob-help-center.vercel.app/",
-      desc: "Designed, developed, and coded templates using HTML, CSS, and JavaScript. Project is still being expanded upon to include further requests from the Technical Writer involved.",
+      desc: "These templates were designed and developed using HTML, CSS, and JavaScript. The project is still being expanded upon to include further requests from the technical writer involved.",
       li1: "Responsive layouts - Everything looks great on all devices.",
       li2: "Search menu with links to find specific info on all pages.",
       li3: "Designed with scalability in mind.",

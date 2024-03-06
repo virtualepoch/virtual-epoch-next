@@ -135,7 +135,7 @@ export const BtnAndModalContact = () => {
 
               <textarea
                 className="input-form-contact-textarea"
-                placeholder="Hi, Can you help me with..."
+                placeholder="What are you project ideas?"
                 name="message"
                 // FIGURE OUT WHY MESSAGE BOX WON'T EXPAND ?????????????
                 rows="10"
