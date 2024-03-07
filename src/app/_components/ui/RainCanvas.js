@@ -5,6 +5,7 @@ export function RainCanvas() {
   const canvasStyle = {
     position: "fixed",
     height: "100vh",
+    width: "100vw",
   };
 
   const canvasRef = useRef(null);
@@ -107,22 +108,22 @@ export function RainCanvas() {
     }
     animate(0);
 
-    window.addEventListener("resize", function () {
-      canvas.width = window.innerWidth;
-      // canvas.height = window.innerHeight;
-      if (this.window.innerWidth > 500) {
-        effect.resize(canvas.width); // removed... , canvas.height
-        gradient = ctx.createLinearGradient(
-          canvas.width / 10,
-          0,
-          canvas.width,
-          0
-        );
-        gradient.addColorStop(0, "cyan");
-        gradient.addColorStop(0.5, "blue");
-        gradient.addColorStop(1, "cyan");
-      }
-    });
+    // window.addEventListener("resize", function () {
+    //   canvas.width = window.innerWidth;
+    //   // canvas.height = window.innerHeight;
+    //   if (this.window.innerWidth > 500) {
+    //     effect.resize(canvas.width); // removed... , canvas.height
+    //     gradient = ctx.createLinearGradient(
+    //       canvas.width / 10,
+    //       0,
+    //       canvas.width,
+    //       0
+    //     );
+    //     gradient.addColorStop(0, "cyan");
+    //     gradient.addColorStop(0.5, "blue");
+    //     gradient.addColorStop(1, "cyan");
+    //   }
+    // });
   }, []);
 
   return <canvas style={canvasStyle} ref={canvasRef}></canvas>;
