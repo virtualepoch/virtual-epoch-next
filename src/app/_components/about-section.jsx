@@ -1,9 +1,8 @@
 "use client";
 import { Typewriter } from "./typewriter";
-import { ThreePyramid } from "./three-pyramid";
-import styles from "./page.module.css";
+import styles from "./about-section.module.css";
 
-export default function About() {
+export const AboutSection = () => {
   const text1 = "Daily updates ",
     text2 = "Pixel perfection ",
     text3 = "Responsive layouts ",
@@ -27,8 +26,7 @@ export default function About() {
       text6.length;
 
   return (
-    <main>
-      <h1 className="section-heading">What We Do</h1>
+    <section>
       <div className={styles.content}>
         <p className={styles.statement}>
           We strive to exceed client expectations and visions by providing:
@@ -45,8 +43,8 @@ export default function About() {
         </ul>
 
         <p className={styles.statementGuarantee}>
-          We never conclude any project until all
-          the requirements of that project are fully completed.
+          We never conclude any project until all the requirements of that
+          project are fully completed.
           <br />
           <br />
           Client satisfaction is our goal and guarantee.
@@ -57,8 +55,6 @@ export default function About() {
           &apos;Contact&apos; link on the next page. Thanks for the visit!
         </p>
       </div>
-
-      <ThreePyramid />
-    </main>
+    </section>
   );
-}
+};

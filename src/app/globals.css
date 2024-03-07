@@ -49,10 +49,11 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px 80px;
+  padding: 24px;
 }
 
-footer h3 {
+footer p {
+  color: #aaa;
   font-size: 15px;
 }
 
@@ -342,6 +343,25 @@ button:focus-visible {
 
 /* BUTTONS ////////////////////////////////////// */
 /* BUTTON= ACTION LINK TO NEXT PAGE */
+.btn-action-enter {
+  opacity: 0;
+  transform: translateY(80px);
+}
+.btn-action-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1500ms ease, transform 500ms ease;
+}
+.btn-action-exit {
+  opacity: 1;
+  transform: none;
+}
+.btn-action-exit-active {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 300ms ease, transform 500ms ease;
+}
+
 .btn-action {
   max-width: 50px;
   height: 50px;
@@ -350,7 +370,7 @@ button:focus-visible {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 220px;
   z-index: 888;
   margin: auto;
   display: flex;
@@ -687,6 +707,7 @@ input.btn-submit-form {
 .canvas {
   width: 100%;
   aspect-ratio: 2/1;
+  margin-bottom: 100px;
 }
 
 /* CSSTransitions */

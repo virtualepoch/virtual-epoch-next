@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { BtnAction } from "./_components/ui/btn-action";
 import styles from "./page.module.css";
+import { AboutSection } from "./_components/about-section";
+import { ThreePyramid } from "./_components/three-pyramid";
 
 export default function Home() {
   const [heading, setHeading] = useState();
@@ -28,8 +30,11 @@ export default function Home() {
           style={{
             transform: heading ? "none" : "translateY(-50vh)",
             transition: "transform 1s ease",
+            lineHeight: "50px",
           }}
         >
+          We Build
+          <br />
           Front-End Web Apps
         </h1>
         <div className={styles.flexRow}>
@@ -40,7 +45,7 @@ export default function Home() {
                 : `${styles.subHeading}`
             }
           >
-            Design
+            From Design
           </h2>
 
           <h2
@@ -50,7 +55,7 @@ export default function Home() {
                 : `${styles.subHeading}`
             }
           >
-            Development
+            and Development
           </h2>
         </div>
 
@@ -62,7 +67,7 @@ export default function Home() {
                 : `${styles.subHeading}`
             }
           >
-            Customization
+            to Customization
           </h2>
 
           <h2
@@ -72,10 +77,15 @@ export default function Home() {
                 : `${styles.subHeading}`
             }
           >
-            Optimization
+            and Optimization
           </h2>
         </div>
       </section>
+
+      <AboutSection />
+
+      <ThreePyramid />
+
       <BtnAction link="/about" linkName="LEARN MORE" />
     </main>
   );

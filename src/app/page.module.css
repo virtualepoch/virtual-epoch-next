@@ -1,15 +1,15 @@
 .page {
   width: calc(100% - 30px);
-  height: calc(100% - 100px);
+  min-height: 90vh;
   margin: 0 auto;
-  padding: 50px 0 20vh 0;
+  padding: 50px 0 24px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   text-align: center;
   overflow: hidden;
-  position: absolute;
+  position: relative;
 }
 
 .flexRow {

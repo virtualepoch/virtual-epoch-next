@@ -24,13 +24,13 @@ export const Nav = ({ setNav, nav }) => {
             HOME
           </CustomLink>
 
-          <CustomLink
+          {/* <CustomLink
             className={open ? "link two open" : "link two"}
             setNav={setNav}
             to={"/about"}
           >
             ABOUT
-          </CustomLink>
+          </CustomLink> */}
 
           <CustomLink
             className={open ? "link three open" : "link three"}

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import TypewriterComponent from "typewriter-effect";
 
 export const Typewriter = ({ styles, text, pause }) => {
