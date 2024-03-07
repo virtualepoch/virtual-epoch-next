@@ -475,7 +475,6 @@ button:focus-visible {
 }
 
 @media (max-width: 777px) {
-  .btn-action,
   .btn-to-top {
     bottom: 10px;
   }

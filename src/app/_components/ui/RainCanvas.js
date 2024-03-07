@@ -13,7 +13,7 @@ export function RainCanvas() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight + 70;
 
     let gradient = ctx.createLinearGradient(
       canvas.width / 10,
@@ -109,9 +109,9 @@ export function RainCanvas() {
 
     window.addEventListener("resize", function () {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // canvas.height = window.innerHeight;
       if (this.window.innerWidth > 500) {
-        effect.resize(canvas.width, canvas.height);
+        effect.resize(canvas.width); // removed... , canvas.height
         gradient = ctx.createLinearGradient(
           canvas.width / 10,
           0,
