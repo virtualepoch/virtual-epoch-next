@@ -4,6 +4,7 @@ export function RainCanvas() {
   // CANVAS STYLING ///////
   const canvasStyle = {
     position: "fixed",
+    height: "100vh",
   };
 
   const canvasRef = useRef(null);
@@ -14,7 +15,12 @@ export function RainCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let gradient = ctx.createLinearGradient(canvas.width / 10, 0, canvas.width, 0);
+    let gradient = ctx.createLinearGradient(
+      canvas.width / 10,
+      0,
+      canvas.width,
+      0
+    );
     gradient.addColorStop(0, "cyan");
     gradient.addColorStop(0.5, "blue");
     gradient.addColorStop(1, "cyan");
@@ -35,9 +41,18 @@ export function RainCanvas() {
       // Note: the 'draw' method below is custom and can be named anything you want.
       // Extra Note: the 'charAt()' method is a built-in JavaScript string method. It can be called on string data type. It takes a single 'index' argument and returns a new string containing only that one character located at that specific offset of the string.
       draw(context) {
-        this.text = this.characters.charAt(Math.floor(Math.random() * this.characters.length));
-        context.fillText(this.text, this.x * this.fontSize, this.y * this.fontSize);
-        if (this.y * this.fontSize > this.canvasHeight && Math.random() > 0.97) {
+        this.text = this.characters.charAt(
+          Math.floor(Math.random() * this.characters.length)
+        );
+        context.fillText(
+          this.text,
+          this.x * this.fontSize,
+          this.y * this.fontSize
+        );
+        if (
+          this.y * this.fontSize > this.canvasHeight &&
+          Math.random() > 0.97
+        ) {
           this.y = 0;
         } else {
           this.y += 1;
@@ -97,7 +112,12 @@ export function RainCanvas() {
       canvas.height = window.innerHeight;
       if (this.window.innerWidth > 500) {
         effect.resize(canvas.width, canvas.height);
-        gradient = ctx.createLinearGradient(canvas.width / 10, 0, canvas.width, 0);
+        gradient = ctx.createLinearGradient(
+          canvas.width / 10,
+          0,
+          canvas.width,
+          0
+        );
         gradient.addColorStop(0, "cyan");
         gradient.addColorStop(0.5, "blue");
         gradient.addColorStop(1, "cyan");
