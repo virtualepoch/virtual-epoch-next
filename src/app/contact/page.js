@@ -1,4 +1,5 @@
 // import { ResumeBtnCard } from "./resume-btn-card";
+import { BtnAction } from "../_components/ui/btn-action";
 import styles from "./page.module.css";
 import { ResumeBtnCard } from "./resume-btn-card";
 
@@ -30,13 +31,12 @@ export default function Contact() {
           a part of it.
           <br />
           <br /> */}
-          If you are currently seeking web design or development services
-          please contact us using the links below. Our rates are very
-          competitive.
+          If you are currently seeking web design or development services please
+          contact us using the links below. Our rates are very competitive.
           <br />
           <br />
-          The code for some of our projects can be viewed at the GitHub and CodePen links
-          below.
+          The code for some of our projects can be viewed at the GitHub and
+          CodePen links below.
           <br />
           <br />
           Thanks for visiting!
@@ -81,6 +81,8 @@ export default function Contact() {
       </div>
 
       <ResumeBtnCard styles={styles} />
+
+      <BtnAction />
     </main>
   );
 }

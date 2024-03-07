@@ -86,7 +86,7 @@ export default function Home() {
 
       <ThreePyramid />
 
-      <BtnAction link="/about" linkName="LEARN MORE" />
+      <BtnAction />
     </main>
   );
 }

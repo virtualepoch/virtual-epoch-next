@@ -5,7 +5,6 @@ import { Header } from "./ui/header";
 import { Nav } from "./ui/nav";
 import { RainCanvas } from "./ui/RainCanvas";
 import { BtnToTop } from "./ui/btn-to-top";
-import { BtnAction } from "./ui/btn-action";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
 
 export const UI = () => {
@@ -20,8 +19,6 @@ export const UI = () => {
       <Nav nav={nav} setNav={setNav} />
 
       <BtnAndModalContact />
-
-      <BtnAction />
 
       <BtnToTop />
     </>
