@@ -23,7 +23,7 @@ export const Header = ({ setNav, nav }) => {
           setNav(false);
         }}
       >
-        <h1 className="site-title">Virtual Epoch</h1>
+        <h2 className="site-title">Virtual Epoch</h2>
       </Link>
     );
   };

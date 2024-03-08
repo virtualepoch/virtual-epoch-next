@@ -1,7 +1,5 @@
-// import { ResumeBtnCard } from "./resume-btn-card";
-import { BtnAction } from "../_components/ui/btn-action";
-import styles from "./page.module.css";
 import { ResumeBtnCard } from "./resume-btn-card";
+import styles from "./page.module.css";
 
 export default function Contact() {
   return (
@@ -81,8 +79,6 @@ export default function Contact() {
       </div>
 
       <ResumeBtnCard styles={styles} />
-
-      <BtnAction />
     </main>
   );
 }

@@ -1,27 +1,19 @@
-import TypewriterComponent from "typewriter-effect";
+"use client";
+import { useState, useEffect } from "react";
 
-export const Typewriter = ({ styles, text, pause }) => {
-  const delay = 70;
-  
-  return (
-    <li>
-      <TypewriterComponent
-        options={{
-          delay: delay,
-          autoStart: false,
-          skipAddStyles: true,
-          wrapperClassName: styles.text,
-          cursorClassName: styles.cursor,
-        }}
-        onInit={(typewriter) => {
-          typewriter
-            .pauseFor(pause * delay)
+export const Typewriter = ({ children, typeSpeed = 70, delay }) => {
+  const text = children.split("");
+  const [currentCharacter, setCurrentCharacter] = useState(0);
 
-            .typeString(text)
+  useEffect(() => {
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        setCurrentCharacter((prev) => prev + 1);
+      }, typeSpeed);
 
-            .start();
-        }}
-      />
-    </li>
-  );
+      return () => clearInterval(interval);
+    }, delay);
+  }, [typeSpeed, delay]);
+
+  return <span>{text.slice(0, currentCharacter + 1)}</span>;
 };

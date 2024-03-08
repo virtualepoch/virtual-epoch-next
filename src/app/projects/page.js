@@ -1,6 +1,5 @@
 import { ProjectCard } from "./project-card";
 import styles from "./page.module.css";
-import { BtnAction } from "../_components/ui/btn-action";
 
 export default function Projects() {
   const projectsInfo = [
@@ -78,7 +77,6 @@ export default function Projects() {
       {projectsInfo.map((item) => (
         <ProjectCard key={item.id} info={item} styles={styles} />
       ))}
-      <BtnAction />
     </main>
   );
 }
