@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BtnNav } from "./btn-nav";
 
 export const Header = ({ setNav, nav }) => {
   const SiteLogo = () => {
@@ -22,8 +23,9 @@ export const Header = ({ setNav, nav }) => {
         onClick={() => {
           setNav(false);
         }}
+        className="site-title"
       >
-        <h2 className="site-title">Virtual Epoch</h2>
+        Virtual Epoch
       </Link>
     );
   };
@@ -31,20 +33,10 @@ export const Header = ({ setNav, nav }) => {
   return (
     <header className="main-site-header">
       <SiteLogo />
-      <SiteTitle />
-      <button
-        className="btn-nav-menu"
-        aria-label="navigation menu"
-        onClick={() => {
-          setNav(!nav);
-        }}
-      >
-        <div className={nav ? "bar open scale-x" : "bar open"}></div>
-        <div className={nav ? "bar open scale-x" : "bar open"}></div>
 
-        <div className={nav ? "bar close" : "bar close scale-x"}></div>
-        <div className={nav ? "bar close" : "bar close scale-x"}></div>
-      </button>
+      <SiteTitle />
+
+      <BtnNav nav={nav} setNav={setNav} />
     </header>
   );
 };

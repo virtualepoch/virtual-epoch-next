@@ -16,8 +16,8 @@ export default function Home() {
       </div>
 
       <h3 className={styles.header3d}>
-        <div>We do</div>
-        <div>3D Design</div>
+        <div>We do 3D</div>
+        <div>Design</div>
         <div>&</div>
         <div>Development</div>
       </h3>

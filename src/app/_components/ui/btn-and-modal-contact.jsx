@@ -2,8 +2,11 @@
 import { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import emailjs from "@emailjs/browser";
+import { usePathname } from "next/navigation";
 
 export const BtnAndModalContact = () => {
+  const path = usePathname();
+
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -35,7 +38,11 @@ export const BtnAndModalContact = () => {
   return (
     <>
       <button
-        className="btn-open-contact-modal"
+        className={
+          path === "/projects"
+            ? "btn-open-contact-modal projects"
+            : "btn-open-contact-modal"
+        }
         onClick={() => {
           setModal(true);
         }}

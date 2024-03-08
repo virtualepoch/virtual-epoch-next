@@ -6,13 +6,16 @@ import { Nav } from "./ui/nav";
 import { RainCanvas } from "./ui/RainCanvas";
 import { BtnToTop } from "./ui/btn-to-top";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
+import { usePathname } from "next/navigation";
+import { RainCanvasWhite } from "./ui/RainCanvasWhite";
 
 export const UI = () => {
   const [nav, setNav] = useState();
+  const path = usePathname();
 
   return (
     <>
-      <RainCanvas />
+      {path === "/projects" ? <RainCanvasWhite /> : <RainCanvas />}
 
       <Header nav={nav} setNav={setNav} />
 

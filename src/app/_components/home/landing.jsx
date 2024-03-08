@@ -21,49 +21,51 @@ export const Landing = ({ styles }) => {
     <section className={styles.landing}>
       <Header styles={styles} />
 
-      <div className={styles.flexRow}>
-        <h2
-          className={
-            anim1
-              ? `${styles.subHeading} ${styles.open}`
-              : `${styles.subHeading}`
-          }
-        >
-          From Design
-        </h2>
+      <h2>
+        <div className={styles.flexRow}>
+          <div
+            className={
+              anim1
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            From Design
+          </div>
 
-        <h2
-          className={
-            anim1
-              ? `${styles.subHeading} ${styles.open}`
-              : `${styles.subHeading}`
-          }
-        >
-          and Development
-        </h2>
-      </div>
+          <div
+            className={
+              anim1
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            and Development
+          </div>
+        </div>
 
-      <div className={styles.flexRow}>
-        <h2
-          className={
-            anim2
-              ? `${styles.subHeading} ${styles.open}`
-              : `${styles.subHeading}`
-          }
-        >
-          to Customization
-        </h2>
+        <div className={styles.flexRow}>
+          <div
+            className={
+              anim2
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            to Customization
+          </div>
 
-        <h2
-          className={
-            anim2
-              ? `${styles.subHeading} ${styles.open}`
-              : `${styles.subHeading}`
-          }
-        >
-          and Optimization
-        </h2>
-      </div>
+          <div
+            className={
+              anim2
+                ? `${styles.subHeading} ${styles.open}`
+                : `${styles.subHeading}`
+            }
+          >
+            and Optimization
+          </div>
+        </div>
+      </h2>
     </section>
   );
 };

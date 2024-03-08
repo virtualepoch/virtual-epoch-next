@@ -1,13 +1,16 @@
-import { ResumeBtnCard } from "./resume-btn-card";
+// import { ResumeBtnCard } from "./resume-btn-card";
 import styles from "./page.module.css";
 
 export default function Contact() {
   return (
     <main className={styles.contact}>
-      <h1 className="section-heading">Contact</h1>
-      <div className={`${styles.card} metal-card`}>
+      <div className="section-heading">Contact</div>
+      <div
+        className={`${styles.card} metal-card`}
+        style={{ marginTop: "20vh" }}
+      >
         <div className={styles.logo}></div>
-        <p className="text-shadow">
+        <div className="text-shadow">
           {/* Hi, my name is Craig.
           <br />
           <br />I created this website and the projects. I&apos;m currently
@@ -29,16 +32,21 @@ export default function Contact() {
           a part of it.
           <br />
           <br /> */}
-          If you are currently seeking web design or development services please
-          contact us using the links below. Our rates are very competitive.
+          <h1>
+            If you are currently seeking web design or development services,
+            please contact us using the links below. Our rates are very
+            competitive.
+          </h1>
           <br />
           <br />
-          The code for some of our projects can be viewed at the GitHub and
-          CodePen links below.
+          <p>
+            The code for some of our projects can be viewed at the GitHub and
+            CodePen links below.
+          </p>
           <br />
           <br />
           Thanks for visiting!
-        </p>
+        </div>
       </div>
       <div className={styles.row}>
         <a
@@ -78,7 +86,7 @@ export default function Contact() {
         </a>
       </div>
 
-      <ResumeBtnCard styles={styles} />
+      {/* <ResumeBtnCard styles={styles} /> */}
     </main>
   );
 }

@@ -5,6 +5,51 @@
   text-align: center;
 }
 
+.projectsHeader {
+  /* border: solid rebeccapurple; */
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.headerDivWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headerDivWrap:last-of-type {
+  margin: 0 auto;
+}
+
+.headerDivWrap:first-of-type div {
+  text-shadow: 4px 2px 3px #777;
+}
+
+.headerDivWrap:nth-child(2) div {
+  text-shadow: 4px 1px 3px #777;
+}
+
+.headerDivWrap:last-of-type div {
+  text-align: center;
+  text-shadow: 4px 0 3px #777;
+}
+
+.headerDiv {
+  color: #111;
+  text-shadow: 0 0 3px #fff;
+  text-align: left;
+  font-size: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
+  line-height: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
+}
+
 .card {
   max-width: 900px;
   margin: 33px auto;

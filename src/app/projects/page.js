@@ -1,5 +1,6 @@
 import { ProjectCard } from "./project-card";
 import styles from "./page.module.css";
+import { ProjectsHeader } from "./projects-header";
 
 export default function Projects() {
   const projectsInfo = [
@@ -72,8 +73,10 @@ export default function Projects() {
 
   return (
     <main className={styles.projects}>
-      <h1 className="section-heading">Projects</h1>
+      <div className="section-heading">Projects</div>
 
+      <ProjectsHeader styles={styles} />
+      
       {projectsInfo.map((item) => (
         <ProjectCard key={item.id} info={item} styles={styles} />
       ))}

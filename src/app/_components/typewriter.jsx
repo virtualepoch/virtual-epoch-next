@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export const Typewriter = ({ children, typeSpeed = 70, delay }) => {
+export const Typewriter = ({ children, typeSpeed = 50, delay }) => {
   const text = children.split("");
   const [currentCharacter, setCurrentCharacter] = useState(0);
 
