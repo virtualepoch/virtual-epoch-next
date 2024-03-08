@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Cone, GradientTexture } from "@react-three/drei";
 import { useOnScreen } from "../_functions/use-on-screen";
-import { DoubleSide } from "three";
+// import { DoubleSide } from "three";
 
 export const ThreePyramid = ({ styles }) => {
   const ref = useRef();
@@ -42,7 +42,10 @@ export const ThreePyramid = ({ styles }) => {
         position-z={20}
         scale={1.3}
       >
-        <meshStandardMaterial transparent side={DoubleSide}>
+        <meshStandardMaterial
+          transparent
+          // side={DoubleSide}
+        >
           <GradientTexture
             stops={[0, 0.2, 0.2001, 0.4, 0.4001, 0.6, 0.6001, 0.8, 0.8001, 1]}
             colors={[

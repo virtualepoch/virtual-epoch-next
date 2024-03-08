@@ -7,7 +7,7 @@ export const LinkNextPage = () => {
 
   return (
     <Link
-      className="btn-action"
+      className="link-next-page"
       href={
         path === "/" ? "/projects" : path === "/projects" ? "/contact" : "/"
       }

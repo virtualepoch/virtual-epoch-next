@@ -4,8 +4,9 @@ export function RainCanvas() {
   // CANVAS STYLING ///////
   const canvasStyle = {
     position: "fixed",
-    height: "100vh",
+    zIndex: -3,
     width: "100vw",
+    height: "100vh",
   };
 
   const canvasRef = useRef(null);
