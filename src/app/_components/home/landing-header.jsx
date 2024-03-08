@@ -10,26 +10,21 @@ export const Header = ({ styles }) => {
   return (
     <h1>
       <div
-        className={styles.landingHeader}
-        style={{
-          border: "none",
-          background: "none",
-          opacity: header ? 1 : 0,
-          transform: header ? "none" : "translateY(-50px) translateZ(100vh)",
-        }}
+        className={
+          header
+            ? `${styles.landingHeader} ${styles.open}`
+            : `${styles.landingHeader}`
+        }
       >
         We Build Custom
       </div>
 
       <div
-        className={styles.landingHeader}
-        style={{
-          border: "none",
-          background: "none",
-
-          opacity: header ? 1 : 0,
-          transform: header ? "none" : "translateY(50px) translateZ(100vh)",
-        }}
+        className={
+          header
+            ? `${styles.landingHeader} ${styles.open}`
+            : `${styles.landingHeader}`
+        }
       >
         Front-End Web Apps
       </div>

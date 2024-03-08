@@ -62,10 +62,13 @@ export const TypedList = ({ styles }) => {
               <Typewriter delay={delay3}>{text3}</Typewriter>
             </li>
 
-            <li>
+            <li
+              className={styles.typedListLongLine}
+              style={{ marginTop: "7px" }}
+            >
               <Typewriter delay={delay4}>{text4}</Typewriter>
             </li>
-            <li>
+            <li className={styles.typedListLongLine}>
               <Typewriter delay={delay5}>{text5}</Typewriter>
             </li>
 
