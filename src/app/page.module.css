@@ -22,20 +22,14 @@
   width: fit-content;
   margin: 10px auto;
   padding: 8px 0px;
-  font-size: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
   text-align: center;
+  font-size: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
   line-height: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
   text-shadow: 0 0 1px #000, 0 0 2px #000;
   opacity: 0;
   transform-style: preserve-3d;
-  transform: translateY(-50px) translateZ(200vh);
+  transform: translateY(-50px) translateZ(190vh);
   transition: opacity 1s linear, transform 2s linear;
-}
-
-@media (min-width: 1400px) {
-  .landingHeader {
-    transition: opacity 1s linear, transform 2s linear;
-  }
 }
 
 .landingHeader:nth-child(2) {

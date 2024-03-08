@@ -7,7 +7,7 @@ export const Footer = () => {
 
       <p>virtualepoch@gmail.com</p>
 
-      <p>&copy; 2022 Virtual Epoch, all rights reserved.</p>
+      <p>&copy; 2024 Virtual Epoch, all rights reserved.</p>
     </footer>
   );
 };

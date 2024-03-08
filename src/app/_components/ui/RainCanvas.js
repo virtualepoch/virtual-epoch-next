@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
 export function RainCanvas() {
-  // CANVAS STYLING ///////
-
   const canvasStyle = {
     position: "fixed",
     zIndex: -3,
