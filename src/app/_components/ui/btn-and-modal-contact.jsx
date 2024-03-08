@@ -44,7 +44,6 @@ export const BtnAndModalContact = () => {
         onTouchStart={() => setPressed(true)}
         onTouchEnd={() => setPressed(false)}
         style={{
-          boxShadow: pressed ? "none" : "1px 2px 5px 1px #0003",
           border: pressed ? "2px solid #0ff" : "",
         }}
       />

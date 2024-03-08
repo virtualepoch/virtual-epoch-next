@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 export function RainCanvas() {
   // CANVAS STYLING ///////
+
   const canvasStyle = {
     position: "fixed",
     zIndex: -3,
@@ -10,6 +11,9 @@ export function RainCanvas() {
   };
 
   const canvasRef = useRef(null);
+  const bgColor = "rgba(0, 0, 0, 0.04)";
+  const color1 = "#0ff";
+  const color2 = "#00f";
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,9 +27,9 @@ export function RainCanvas() {
       canvas.width,
       0
     );
-    gradient.addColorStop(0, "cyan");
-    gradient.addColorStop(0.5, "blue");
-    gradient.addColorStop(1, "cyan");
+    gradient.addColorStop(0, color1);
+    gradient.addColorStop(0.5, color2);
+    gradient.addColorStop(1, color1);
 
     class Symbol {
       constructor(x, y, fontSize, canvasHeight) {
@@ -95,7 +99,7 @@ export function RainCanvas() {
       const deltaTime = timeStamp - lastTime;
       lastTime = timeStamp;
       if (timer > nextFrame) {
-        ctx.fillStyle = "rgba(0,0,0,0.04)";
+        ctx.fillStyle = bgColor;
         ctx.textAlign = "center";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = gradient; // "green";

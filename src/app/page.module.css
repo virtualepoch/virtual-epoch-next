@@ -28,13 +28,13 @@
   text-shadow: 0 0 1px #000, 0 0 2px #000;
   opacity: 0;
   transform-style: preserve-3d;
-  transform: translateY(-50px) translateZ(180vh);
-  transition: opacity 2.5s linear 100ms, transform 1.5s linear;
+  transform: translateY(-50px) translateZ(200vh);
+  transition: opacity 1s linear, transform 2s linear;
 }
 
 @media (min-width: 1400px) {
   .landingHeader {
-    transition: opacity 3s linear, transform 2s linear;
+    transition: opacity 1s linear, transform 2s linear;
   }
 }
 

@@ -691,7 +691,7 @@ input.btn-submit-form {
   border-radius: 10px;
   box-shadow: 0 2px 10px 1px #000, inset 1px 2px 1px 0.5px #eee,
     inset -1px -2px 2px 1px #000;
-  background: linear-gradient(to bottom right, #888, #333, #888, #333);
+  background: linear-gradient(to bottom right, #888c, #333c, #888c, #333c);
 }
 
 .text-shadow {
