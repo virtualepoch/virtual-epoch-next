@@ -6,14 +6,23 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Landing styles={styles} />
 
       <TypedList styles={styles} />
 
-      <ClosingStatements styles={styles} />
+      <div className={styles.pyramidStickyWrap}>
+        <ThreePyramid styles={styles} />
+      </div>
 
-      <ThreePyramid />
-    </main>
+      <h3 className={styles.header3d}>
+        <div>We do</div>
+        <div>3D Design</div>
+        <div>&</div>
+        <div>Development</div>
+      </h3>
+
+      <ClosingStatements styles={styles} />
+    </>
   );
 }

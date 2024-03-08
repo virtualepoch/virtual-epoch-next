@@ -42,8 +42,8 @@ export const TypedList = ({ styles }) => {
   });
 
   return (
-    <section ref={ref}>
-      <div className={styles.content}>
+    <section ref={ref} className={styles.typedList}>
+  
         <p className={styles.statement}>
           We strive to exceed client expectations and visions by providing:
         </p>
@@ -81,7 +81,7 @@ export const TypedList = ({ styles }) => {
             </li>
           </ul>
         )}
-      </div>
+ 
     </section>
   );
 };
