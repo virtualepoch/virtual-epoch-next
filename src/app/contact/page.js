@@ -1,13 +1,20 @@
+"use client";
 // import { ResumeBtnCard } from "./resume-btn-card";
+import { useEffect } from "react";
+import { initializeGoogleTagManager } from "../_functions/googleTagManager";
 import styles from "./page.module.css";
 
 export default function Contact() {
+  useEffect(() => {
+    initializeGoogleTagManager("G-DGPM2TZ40W");
+  }, []);
+
   return (
     <main className={styles.contact}>
       <div className="section-heading">Contact</div>
       <div
         className={`${styles.card} metal-card`}
-        style={{ marginTop: "20vh" }}
+
       >
         <div className={styles.logo}></div>
         <div className="text-shadow">

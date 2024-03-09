@@ -43,9 +43,10 @@
 }
 
 .headerDiv {
-  color: #111;
+  color: #222;
   text-shadow: 0 0 3px #fff;
   text-align: left;
+  font-weight: 600;
   font-size: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
   line-height: clamp(2rem, 1.5rem + 2.2222vw, 3.5rem);
 }
