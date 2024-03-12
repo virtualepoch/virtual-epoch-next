@@ -1,15 +1,8 @@
-"use client";
-import { useEffect } from "react";
-import { initializeGoogleTagManager } from "../_functions/googleTagManager";
 import { ProjectsHeader } from "./projects-header";
 import { ProjectCard } from "./project-card";
 import styles from "./page.module.css";
 
 export default function Projects() {
-  useEffect(() => {
-    initializeGoogleTagManager("G-DGPM2TZ40W");
-  }, []);
-
   const projectsInfo = [
     {
       id: "vrPunk",

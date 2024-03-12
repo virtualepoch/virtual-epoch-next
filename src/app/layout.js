@@ -3,13 +3,14 @@ import { Inter } from "next/font/google";
 import { UI } from "./_components/_ui";
 import { LinkNextPage } from "./_components/link-next-page";
 import { Footer } from "./_components/footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Virtual Epoch - Custom Web App Development - UI & UX",
+  title: "Custom Web App Development - UI & UX - Virtual Epoch",
   description:
     "We specialize in custom front end web development. Utilizing HTML, CSS, JavaScript, React.js, Next.js, and Three.js we create intriguing user interfaces and experiences.",
   generator: "Next.js",
@@ -87,6 +88,8 @@ export default function RootLayout({ children }) {
 
         <Footer />
       </body>
+
+      <GoogleTagManager gtmId="G-DGPM2TZ40W" />
     </html>
   );
 }

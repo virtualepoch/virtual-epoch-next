@@ -1,69 +1,60 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Header } from "./landing-header";
+import { OnLoadWrap } from "../on-load-wrap";
+import { OnLoadDelayWrap } from "../on-load-delay-wrap";
 
 export const Landing = ({ styles }) => {
-  const [anim1, setAnim1] = useState();
-  const [anim2, setAnim2] = useState();
-
-  useEffect(() => {
-    const timeoutId1 = setTimeout(() => {
-      setAnim1(true);
-    }, 1700);
-    const timeoutId2 = setTimeout(() => {
-      setAnim2(true);
-    }, 3400);
-
-    return () => clearTimeout(timeoutId1, timeoutId2);
-  }, []);
-
   return (
     <section className={styles.landing}>
-      <Header styles={styles} />
+      <h1>
+        <OnLoadWrap
+          classNameEnter={styles.landingHeader}
+          classNameEnterActive={styles.open}
+        >
+          We Build Custom
+        </OnLoadWrap>
+
+        <OnLoadWrap
+          classNameEnter={styles.landingHeader}
+          classNameEnterActive={styles.open}
+        >
+          Front-End Web Apps
+        </OnLoadWrap>
+      </h1>
 
       <h2>
         <div className={styles.flexRow}>
-          <div
-            className={
-              anim1
-                ? `${styles.subHeading} ${styles.open}`
-                : `${styles.subHeading}`
-            }
+          <OnLoadDelayWrap
+            classNameEnter={styles.subHeading}
+            classNameEnterActive={styles.open}
+            delay={1700}
           >
             From Design
-          </div>
+          </OnLoadDelayWrap>
 
-          <div
-            className={
-              anim1
-                ? `${styles.subHeading} ${styles.open}`
-                : `${styles.subHeading}`
-            }
+          <OnLoadDelayWrap
+            classNameEnter={styles.subHeading}
+            classNameEnterActive={styles.open}
+            delay={1700}
           >
             and Development
-          </div>
+          </OnLoadDelayWrap>
         </div>
 
         <div className={styles.flexRow}>
-          <div
-            className={
-              anim2
-                ? `${styles.subHeading} ${styles.open}`
-                : `${styles.subHeading}`
-            }
+          <OnLoadDelayWrap
+            classNameEnter={styles.subHeading}
+            classNameEnterActive={styles.open}
+            delay={3400}
           >
             to Customization
-          </div>
+          </OnLoadDelayWrap>
 
-          <div
-            className={
-              anim2
-                ? `${styles.subHeading} ${styles.open}`
-                : `${styles.subHeading}`
-            }
+          <OnLoadDelayWrap
+            classNameEnter={styles.subHeading}
+            classNameEnterActive={styles.open}
+            delay={3400}
           >
             and Optimization
-          </div>
+          </OnLoadDelayWrap>
         </div>
       </h2>
     </section>
