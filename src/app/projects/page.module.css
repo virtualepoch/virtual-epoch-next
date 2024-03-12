@@ -56,11 +56,14 @@
   margin: 33px auto;
   padding: 15px;
   overflow: hidden;
+}
+
+.cardWrap {
   opacity: 0;
   transition: opacity 400ms ease;
 }
 
-.card.anim {
+.cardWrap.anim {
   opacity: 1;
 }
 
@@ -72,12 +75,12 @@
   border-bottom: 1px solid;
   font-size: 20px;
 }
-.card h2.title {
+.cardWrap h2.title {
   opacity: 0;
   transform: translateY(300%);
 }
 
-.card.anim h2.title {
+.cardWrap.anim h2.title {
   opacity: 1;
   transform: none;
   transition: opacity 500ms ease, transform 500ms ease;
@@ -126,10 +129,10 @@
   transform: translateY(50%);
 }
 
-.pc.anim {
+.cardWrap.anim .pc {
   opacity: 1;
   transform: none;
-  transition: opacity 600ms ease, transform 500ms ease;
+  transition: opacity 600ms ease 200ms, transform 500ms ease 200ms;
 }
 
 .pc::before {
@@ -172,7 +175,7 @@
   left: 2%;
   opacity: 0;
 }
-.imgPc.anim {
+.cardWrap.anim .imgPc {
   opacity: 1;
   transition: opacity 300ms ease;
   transition-delay: 500ms;
@@ -207,10 +210,10 @@
   transform: translateY(50%);
 }
 
-.phone.anim {
+.cardWrap.anim .phone {
   opacity: 1;
   transform: none;
-  transition: opacity 600ms ease, transform 500ms ease;
+  transition: opacity 600ms ease 400ms, transform 500ms ease 400ms;
 }
 
 .imgPhone {
@@ -222,10 +225,10 @@
   left: 2%;
   opacity: 0;
 }
-.imgPhone.anim {
+.cardWrap.anim .imgPhone {
   opacity: 1;
   transition: opacity 300ms ease;
-  transition-delay: 500ms;
+  transition-delay: 800ms;
 }
 
 .phone::after {
@@ -278,7 +281,7 @@
   .project.anim {
     opacity: 1;
     transform: none;
-    transition: opacity 1s ease, transform 500ms ease;
+    transition: opacity 1s ease 500ms, transform 500ms ease 500ms;
   }
   .pc {
     opacity: 1;

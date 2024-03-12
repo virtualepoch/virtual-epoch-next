@@ -23,12 +23,7 @@ export const TypedList = ({ styles }) => {
         We strive to exceed client expectations and visions by providing:
       </p>
 
-      <OnIntersectionWrap
-        classNameEnter={styles.typedListWrap}
-        classNameEnterActive={styles.open}
-        // threshold={1}
-        // rootMargin="-100px 0px 0px 0px"
-      >
+      <OnIntersectionWrap>
         <ul>
           <li>
             <Typewriter delay={delay1}>&gt;&nbsp;Daily updates</Typewriter>

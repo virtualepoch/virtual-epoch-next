@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { useOnScreen } from "../_functions/use-on-screen";
 
-export const OnIntersectionWrap = ({
+export const OnIntersectionDisplayWrap = ({
   rootMargin = "0px 0px 0px 0px",
   threshold = 0.5,
   classNameEnter,
@@ -22,16 +22,14 @@ export const OnIntersectionWrap = ({
   });
 
   return (
-    <div ref={ref} style={{ minHeight: "50vh" }}>
-      {state && (
-        <div
-          className={
-            state ? `${classNameEnter} ${classNameEnterActive}` : classNameEnter
-          }
-        >
-          {children}
-        </div>
-      )}
+    <div ref={ref}>
+      <div
+        className={
+          state ? `${classNameEnter} ${classNameEnterActive}` : classNameEnter
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 };

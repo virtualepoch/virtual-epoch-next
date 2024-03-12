@@ -143,15 +143,6 @@
   position: relative;
 }
 
-.typedListWrap {
-  min-height: 700px;
-  opacity: 0;
-}
-
-.typedListWrap.open {
-  opacity: 1;
-}
-
 .typedList p,
 .typedList ul {
   max-width: 800px;

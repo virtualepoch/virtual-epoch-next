@@ -52,6 +52,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 24px;
 }
 
@@ -480,7 +481,8 @@ button:focus-visible {
   z-index: 101;
   border: none;
   filter: drop-shadow(0 0 3px #0ff);
-  background: url(/icons/message-regular-white.svg) 50% 70% / 50% no-repeat;
+  background: url(/icons/message-solid.svg) 50% 70% / 50%
+    no-repeat;
 }
 
 .btn-open-contact-modal.projects {
