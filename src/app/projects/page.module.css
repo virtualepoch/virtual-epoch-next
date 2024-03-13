@@ -6,12 +6,12 @@
 }
 
 .pageHeading {
-  scroll-snap-align: start;
-  scroll-margin-block: 74px;
+  color: #000;
+  text-shadow: none;
+  border-bottom-color: #000;
 }
 
 .projectsHeader {
-  /* border: solid rebeccapurple; */
   position: relative;
   width: 100%;
   max-width: 1400px;
@@ -22,7 +22,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  scroll-snap-align: start;
 }
 
 .headerDivWrap {
@@ -63,8 +62,6 @@
   margin: 74px auto 33px;
   padding: 15px;
   overflow: hidden;
-  scroll-snap-align: start;
-  scroll-margin-block: 74px;
 }
 
 .cardWrap {

@@ -32,10 +32,6 @@
   color: white;
 }
 
-html {
-  scroll-snap-type: y proximity;
-}
-
 body {
   color: var(--text-color-main);
   background: var(--bg-main);
