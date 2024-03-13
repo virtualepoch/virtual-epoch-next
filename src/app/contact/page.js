@@ -1,16 +1,10 @@
-
 import styles from "./page.module.css";
 
 export default function Contact() {
-
-
   return (
     <main className={styles.contact}>
-      <div className="section-heading">Contact</div>
-      <div
-        className={`${styles.card} metal-card`}
-
-      >
+      <p className="page-heading">Contact</p>
+      <div className={`${styles.card} metal-card`}>
         <div className={styles.logo}></div>
         <div className="text-shadow">
           {/* Hi, my name is Craig.
