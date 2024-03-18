@@ -1,19 +1,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.virtualepoch.com</loc>
-    <lastmod>2024-03-12T12:50:24.022Z</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2024-03-17T10:10:10.010Z</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://www.virtualepoch.com/projects</loc>
-    <lastmod>2024-03-13T08:50:24.011Z</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-03-17T10:10:10.010Z</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.virtualepoch.com/contact</loc>
-    <lastmod>2024-03-03T07:13:22.041Z</lastmod>
+    <lastmod>2024-03-17T10:10:10.010Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

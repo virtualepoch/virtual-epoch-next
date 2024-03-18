@@ -7,27 +7,6 @@ export default function Contact() {
       <div className={`${styles.card} metal-card`}>
         <div className={styles.logo}></div>
         <div className="text-shadow">
-          {/* Hi, my name is Craig.
-          <br />
-          <br />I created this website and the projects. I&apos;m currently
-          seeking a position in Web Development or a new project to tackle. I
-          have over five years of development experience with HTML, CSS,
-          JavaScript, and over four years with React.js.
-          <br />
-          <br />
-          My new passion is creating 3D interactive web apps utilizing Three.js
-          and the React libraries— react-three/fiber, react-three/drei, and
-          react-three/xr.
-          <br /> */}
-          {/* As VR and AR become more prominent and affordable, 3D web apps will
-          become the norm. Imagine e-commerce AR apps where you can try on
-          clothes or test drive cars. The need for physical stores will continue
-          to decrease if you can just put on glasses and see picture perfect 3D
-          models right in your living room. I&apos;m very excited to see how
-          these technologies advance and develop... and even more excited to be
-          a part of it.
-          <br />
-          <br /> */}
           <h1>
             If you are currently seeking web design or development services,
             please contact us using the links below. Our rates are very
@@ -81,8 +60,6 @@ export default function Contact() {
           email
         </a>
       </div>
-
-      {/* <ResumeBtnCard styles={styles} /> */}
     </main>
   );
 }
