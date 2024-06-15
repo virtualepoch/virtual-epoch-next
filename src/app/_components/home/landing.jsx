@@ -18,6 +18,13 @@ export const Landing = ({ styles }) => {
         >
           Front-End Web Apps
         </OnLoadWrap>
+      
+        <OnLoadWrap
+          classNameEnter={styles.landingHeader}
+          classNameEnterActive={styles.open}
+        >
+          & Animations
+        </OnLoadWrap>
       </h1>
 
       <h2>

@@ -47,7 +47,7 @@ export const ThreePyramid = ({ styles }) => {
           // side={DoubleSide}
         >
           <GradientTexture
-            stops={[0, 0.2, 0.2001, 0.4, 0.4001, 0.6, 0.6001, 0.8, 0.8001, 1]}
+            stops={[0, 0.2, 0.20001, 0.4, 0.40001, 0.6, 0.60001, 0.8, 0.80001, 1]}
             colors={[
               "#fff",
               "#fff",

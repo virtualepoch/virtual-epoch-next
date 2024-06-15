@@ -369,7 +369,7 @@ button:focus-visible {
   transition: opacity 300ms ease, transform 500ms ease;
 } */
 
-.link-next-page {
+.link__footer-nav {
   max-width: 200px;
   height: 50px;
   border: 1px solid #000;
@@ -387,8 +387,8 @@ button:focus-visible {
   box-shadow: 0 2px 10px 1px rgb(0, 0, 0, 0.7);
 }
 
-.link-next-page::before,
-.link-next-page::after {
+.link__footer-nav::before,
+.link__footer-nav::after {
   content: "";
   width: 300px;
   height: 300px;
@@ -399,7 +399,7 @@ button:focus-visible {
   animation: rotate 4s linear infinite;
 }
 
-.link-next-page::after {
+.link__footer-nav::after {
   width: 196px;
   height: 46px;
   position: absolute;
@@ -418,7 +418,7 @@ button:focus-visible {
   }
 }
 
-.link-next-page .link-text {
+.link__footer-nav .link-text {
   width: fit-content;
   min-width: 150px;
   height: 44px;
@@ -430,7 +430,7 @@ button:focus-visible {
   text-shadow: 1px 0 2px #000, -1px 0 2px #000, 0 1px 2px #000, 0 -1px 2px #000;
 }
 
-.link-next-page .link-text:hover {
+.link__footer-nav .link-text:hover {
   color: cyan;
 }
 

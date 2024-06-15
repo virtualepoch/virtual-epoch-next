@@ -6,22 +6,26 @@ import { Footer } from "./_components/footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 import "./globals.css";
+import { FooterNavLinks } from "./_components/FooterNavLinks";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Custom Web App Development - UI & UX - Virtual Epoch",
+  title: "Custom Web Apps & Web Animations - UI & UX - Virtual Epoch",
   description:
-    "We specialize in custom front end web development. Utilizing HTML, CSS, JavaScript, React.js, Next.js, and Three.js we create intriguing user interfaces and experiences.",
+    "We specialize in custom front end web development. We utilize CSS and JavaScript to create intriguing user interfaces and animations that will dazzle your audience.",
   generator: "Next.js",
   applicationName: "Virtual Epoch",
   referrer: "origin-when-cross-origin",
   keywords: [
     "web apps",
+    "web animations",
     "custom web apps",
+    "custom web animations",
     "websites",
     "custom websites",
     "website design",
+    "website animations",
     "custom website design",
     "website development",
     "custom website development",
@@ -29,6 +33,7 @@ export const metadata = {
     "custom web development",
     "html",
     "css",
+    "css animations",
     "javascript",
     "nextjs",
     "next.js",
@@ -61,7 +66,7 @@ export const metadata = {
     description:
       "Utilizing the latest web technologies, we create intriguing user interfaces and experiences.",
     url: "/",
-    siteName: "Virtual Epoch - Custom Web Apps",
+    siteName: "Virtual Epoch - Custom Web Apps & Animations",
     images: {
       url: "/og.png",
       width: 1200,
@@ -84,7 +89,7 @@ export default function RootLayout({ children }) {
 
         {children}
 
-        <LinkNextPage />
+        <FooterNavLinks />
 
         <Footer />
       </body>

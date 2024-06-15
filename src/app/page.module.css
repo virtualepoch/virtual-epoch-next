@@ -36,6 +36,10 @@
   transform: translateY(50px) translateZ(190vh);
 }
 
+.landingHeader:nth-child(3) {
+  transform: translateY(100px) translateZ(190vh);
+}
+
 @media (max-width: 700px) {
   .landingHeader {
     transform: translateY(-50px) translateZ(200vh);
