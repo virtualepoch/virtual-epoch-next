@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 
 import { UI } from "./_components/_ui";
-import { LinkNextPage } from "./_components/link-next-page";
 import { Footer } from "./_components/footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 
