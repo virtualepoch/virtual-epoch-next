@@ -21,6 +21,8 @@ export const FooterNavLinks = () => {
     <nav className="nav-links-wrap">
       <CustomLink to="/" linkName="Home" />
 
+      <CustomLink to="/services" linkName="Services" />
+
       <CustomLink to="/projects" linkName="Projects" />
 
       <CustomLink to="/contact" linkName="Contact" />

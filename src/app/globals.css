@@ -348,6 +348,49 @@ button:focus-visible {
   }
 }
 
+/* GENERAL ///////////////////////////////////////////////// */
+.row {
+  max-width: 500px;
+  height: fit-content;
+  margin: 33px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.link__social {
+  width: 55px;
+  height: 55px;
+  margin: 22px;
+  line-height: 0;
+  font-size: 0;
+  color: transparent;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  border-radius: 3px;
+  filter: drop-shadow(0 0 3px #0ff);
+}
+
+.link__social.github {
+  background-image: url(/icons/github.svg);
+}
+
+.link__social.codepen {
+  background-image: url(/icons/codepen.svg);
+}
+
+.link__social.linkedin {
+  background-image: url(/icons/linkedin.svg);
+  background-size: 65%;
+}
+
+.link__social.email {
+  background-image: url(/icons/envelope.svg);
+  background-size: 60%;
+}
+
 /* BUTTONS & LINKS ////////////////////////////////////// */
 /* LINK TO NEXT PAGE */
 /* .btn-action-enter {

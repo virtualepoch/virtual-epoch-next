@@ -73,7 +73,7 @@ export default function Projects() {
 
   return (
     <main className={styles.projects}>
-      <p className={`page-heading ${styles.pageHeading}`}>Projects</p>
+      <p className="page-heading">Projects</p>
 
       <ProjectsHeader styles={styles} />
 

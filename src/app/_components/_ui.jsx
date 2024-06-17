@@ -7,7 +7,6 @@ import { RainCanvas } from "./ui/RainCanvas";
 import { BtnToTop } from "./ui/btn-to-top";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
 import { usePathname } from "next/navigation";
-import { RainCanvasWhite } from "./ui/RainCanvasWhite";
 
 export const UI = () => {
   const [nav, setNav] = useState();
@@ -15,7 +14,7 @@ export const UI = () => {
 
   return (
     <>
-      {path === "/projects" ? <RainCanvasWhite /> : <RainCanvas />}
+      {(path === "/") | (path === "/contact") && <RainCanvas />}
 
       <Header nav={nav} setNav={setNav} />
 

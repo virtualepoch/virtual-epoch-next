@@ -2,13 +2,9 @@ export const ProjectsHeader = ({ styles }) => {
   return (
     <h1 className={styles.projectsHeader}>
       <div className={styles.headerDivWrap}>
-        <div className={styles.headerDiv}>Welcome to the showcase</div>
-        <div className={styles.headerDiv}>of our digital craftsmanship</div>
-      </div>
-
-      <div className={styles.headerDivWrap}>
-        <div className={styles.headerDiv}>— a curated collection</div>
-        <div className={styles.headerDiv}>of projects</div>
+        <div className={styles.headerDiv}>Below you will find</div>
+        <div className={styles.headerDiv}>a curated collection</div>
+        <div className={styles.headerDiv}>of our projects</div>
       </div>
 
       <div className={styles.headerDivWrap}>

@@ -5,12 +5,6 @@
   text-align: center;
 }
 
-.pageHeading {
-  color: #000;
-  text-shadow: none;
-  border-bottom-color: #000;
-}
-
 .projectsHeader {
   position: relative;
   width: 100%;
@@ -49,7 +43,7 @@
 }
 
 .headerDiv {
-  color: #222;
+  color: #ddd;
   text-shadow: 0 0 3px #fff;
   text-align: left;
   font-weight: 600;

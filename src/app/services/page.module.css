@@ -10,7 +10,7 @@
 
 .card {
   max-width: 500px;
-  margin: 20vh 0 33px;
+  margin: 50px 0;
   padding: 30px 20px;
 }
 
@@ -29,6 +29,48 @@
   box-shadow: inset 2px 4px 10px 1px #fff, inset -2px -4px 10px 1px #000,
     2px 4px 10px 1px #000a;
   background: url(/200.png) 0 0 / 100%;
+}
+
+.row {
+  max-width: 500px;
+  height: fit-content;
+  margin: 33px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.link {
+  width: 55px;
+  height: 55px;
+  margin: 22px;
+  line-height: 0;
+  font-size: 0;
+  color: transparent;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  border-radius: 3px;
+  filter: drop-shadow(0 0 3px #0ff);
+}
+
+.link.github {
+  background-image: url(/icons/github.svg);
+}
+
+.link.codepen {
+  background-image: url(/icons/codepen.svg);
+}
+
+.link.linkedin {
+  background-image: url(/icons/linkedin.svg);
+  background-size: 65%;
+}
+
+.link.email {
+  background-image: url(/icons/envelope.svg);
+  background-size: 60%;
 }
 
 .btnResume {
