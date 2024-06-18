@@ -16,10 +16,11 @@ export default function Projects() {
       li1: "A toggle button to view the site in VR.",
       li2: "Responsive layouts - Everything looks great on any device (i.e. mobile, tablet, laptop, pc, and VR headsets).",
       li3: " Please note: The VR feature is in beta and a couple bugs are still being worked out.",
+      hrefTitle: "VR Punk",
     },
     {
       id: "boisePoolPros",
-      title: "www.boisepoolpros.com",
+      title: "boisepoolpros.com",
       pcImgSrc: "/images/pool-pros.jpg",
       pcImgAlt: "Boise Pool Pros website pc",
       phoneImgSrc: "/images/pool-pros-phone.jpg",
@@ -29,10 +30,11 @@ export default function Projects() {
       li1: "Responsive layouts - Everything looks great on any device.",
       li2: "Animated calls to action. Contact links for phone, email, and text in convenient locations.",
       li3: "Utilizes several optimization libraries from Next.js.",
+      hrefTitle: "boisepoolpros.com",
     },
     {
       id: "webEngines",
-      title: "www.webengines.org",
+      title: "webengines.org",
       pcImgSrc: "/images/webengines.jpg",
       pcImgAlt: "webengines-website-pc",
       phoneImgSrc: "/images/webengines-phone.jpg",
@@ -42,6 +44,7 @@ export default function Projects() {
       li1: "Responsive layouts - Everything looks great on any device.",
       li2: "Use of HTML Canvas element for interactive star fractal image background.",
       li3: "Site logo animation on medium to large screen sizes.",
+      hrefTitle: "webengines.org",
     },
     {
       id: "goGetterz",
@@ -55,6 +58,7 @@ export default function Projects() {
       li1: "Responsive layouts - Everything looks great on any device.",
       li2: "Animated landing page background.",
       li3: "Backend server to communicate with Stripe for payments.",
+      hrefTitle: "GoGetterz Apparel",
     },
     {
       id: "helpCenter",
@@ -68,6 +72,7 @@ export default function Projects() {
       li1: "Responsive layouts - Everything looks great on all devices.",
       li2: "Search menu with links to find specific info on all pages.",
       li3: "Designed with scalability in mind.",
+      hrefTitle: "the Help Center",
     },
   ];
 

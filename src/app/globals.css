@@ -58,12 +58,6 @@ footer p {
   font-size: 15px;
 }
 
-footer.projects p {
-  color: #000;
-  font-weight: 700;
-  text-shadow: 0 0 3px #fff;
-}
-
 button {
   all: unset;
   width: 50px;
@@ -439,6 +433,10 @@ button:focus-visible {
   z-index: -1;
   background: conic-gradient(#000, #0ffa 25% 75%, #000);
   animation: rotate 4s linear infinite;
+}
+
+.link__footer-nav:nth-child(even)::before {
+  animation-delay: 2s;
 }
 
 @keyframes rotate {

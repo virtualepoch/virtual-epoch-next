@@ -26,15 +26,6 @@ export const ProjectCard = ({ styles, ...props }) => {
               height={500}
             />
             <div className={styles.pcButton}></div>
-
-            <a
-              className={styles.linkProject}
-              href={props.info.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VISIT
-            </a>
           </div>
 
           <div className={styles.phone}>
@@ -56,6 +47,15 @@ export const ProjectCard = ({ styles, ...props }) => {
           <li className="text-shadow">{props.info.li2}</li>
           <li className="text-shadow">{props.info.li3}</li>
         </ul>
+
+        <a
+          className={styles.linkProject}
+          href={props.info.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit {props.info.hrefTitle}
+        </a>
       </div>
     </OnIntersectionDisplayWrap>
   );

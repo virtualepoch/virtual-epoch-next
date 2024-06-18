@@ -17,7 +17,7 @@ export default function Services() {
         <div className="text-shadow">
           <h1>Custom Animated Navigation Menus</h1>
           <br />
-          <p>If you need a custom navigation menu that stands out from the rest, then you&apos;ve come to the right place. We will design & develop an animated menu perfectly tailored to your needs and imagination. Below are a few examples. Hover over them to see the animation.</p>
+          <p>If you need a custom navigation menu that stands out from the rest, then you&apos;ve come to the right place. We will design & develop an animated menu perfectly tailored to your needs and imagination.</p>
         </div>
       </div>
     
@@ -25,7 +25,7 @@ export default function Services() {
         <div className="text-shadow">
           <h1>Custom Animated Info Cards</h1>
           <br />
-          <p>We design, develop, and implement numerous types of animated cards. We have a few templates to choose from or we can create a new one based on your ideas. Below are a few examples. Hover over them to see the animation.</p>
+          <p>We design, develop, and implement numerous types of animated cards. We have a few templates to choose from or we can create a new one based on your ideas.</p>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ export default function Services() {
         <div className="text-shadow">
           <h1>
             If you are currently seeking web design or development services,
-            please contact us using the form below. Our rates are very
+            please contact us using the links below. Our rates are very
             competitive.
           </h1>
           <br />
