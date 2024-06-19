@@ -1,3 +1,4 @@
+import { DemoBtn } from "./DemoBtn";
 import styles from "./page.module.css";
 
 export default function Services() {
@@ -15,7 +16,9 @@ export default function Services() {
             Hover over or tap on them to see the animation.
           </p>
 
-          <div className={`${styles.demoBtn} ${styles.aquaFlash}`}>hover or tap</div>
+          <DemoBtn addedClass={styles.aquaFlash} />
+
+          <DemoBtn addedClass={styles.aquaWave} />
         </div>
       </div>
 

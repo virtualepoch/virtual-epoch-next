@@ -25,12 +25,16 @@
   max-width: 240px;
   height: fit-content;
   min-height: 54px;
-  margin: 50px auto;
+  margin: 80px auto;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.demoBtnText {
+  pointer-events: none;
 }
 
 .aquaFlash {
@@ -56,6 +60,24 @@
 
 .aquaFlash:hover {
   background-position: 100% 50%;
+  transition: background-position 700ms ease;
+  box-shadow: none;
+}
+
+.aquaWave {
+  font: 600 20px Blackpast;
+  color: var(--blue-chrome-3);
+  border-radius: 1010px;
+  background-image: linear-gradient(#0cc 45%, #0dd 50%, #7ee 55%, #eee, #7ee);
+  background-size: 100% 200%;
+  background-position: 50% 0;
+  transition: background-position 500ms ease;
+  box-shadow: 1px 2px 10px 1px #0004, inset 1px 1px 2px 1px #0ff7,
+    inset -1px -1px 2px 1px #00a7;
+}
+
+.aquaWave:hover {
+  background-position: 50% 100%;
   transition: background-position 700ms ease;
   box-shadow: none;
 }
