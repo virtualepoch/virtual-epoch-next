@@ -255,21 +255,23 @@
   justify-content: center;
   font: 600 20px Raleway;
   color: var(--blue-chrome-3);
+  /* border: 1px solid #0ff; */
   border-radius: 1010px;
-  background-image: linear-gradient(
-    110deg,
-    #0aa 35%,
-    #0ffa 40%,
-    #7ee 45%,
-    #eee 50%,
-    #7ee 55%,
-    #0ffa 60%,
-    #0aa 65%
-  );
-  background-size: 250% 100%;
-  background-position: 0 50%;
-  transition: background-position 500ms ease;
-  box-shadow: inset 1px 1px 2px 1px #0ff7, inset -1px -1px 2px 1px #00a7;
+ /* filter: drop-shadow(5px 5px 5px #0ff); */
+ /* box-shadow: inset 1px 1px 2px 1px #0ff7, inset -1px -1px 2px 1px #00a7; */
+ animation: filter-anim 4s linear infinite;
+}
+
+@keyframes filter-anim {
+  0%,100% {
+    box-shadow: 0 0 3px 1px #0ffa, inset 1px 1px 2px 1px #0ff;
+    /* filter: drop-shadow(5px 5px 2px #0ff); */
+  }
+  50% {
+    
+    box-shadow: 0 0 8px 2px #0ff, inset 1px 1px 2px 1px #0ff;
+    /* filter: drop-shadow(-5px 5px 2px #0ff); */
+  }
 }
 
 .linkProject:hover {
