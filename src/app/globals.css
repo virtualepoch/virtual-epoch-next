@@ -88,12 +88,7 @@ button:focus-visible {
   justify-content: space-between;
   flex-wrap: wrap;
   box-shadow: 0 4px 8px 2px rgb(0, 0, 0, 0.4);
-  background: linear-gradient(
-    to right,
-    rgb(0, 0, 0, 0),
-    rgb(111, 111, 111),
-    rgb(0, 0, 0, 0)
-  );
+  background: linear-gradient(to right, rgb(0, 0, 0, 0), rgb(111, 111, 111), rgb(0, 0, 0, 0));
   backdrop-filter: blur(3px);
 }
 
@@ -103,8 +98,7 @@ button:focus-visible {
   margin: 5px;
   border: 1px solid black;
   border-radius: 50%;
-  box-shadow: inset 1px 2px 4px 1px #fffc, inset -1px -2px 4px 1px #000c,
-    1px 2px 4px 1px #0008;
+  box-shadow: inset 1px 2px 4px 1px #fffc, inset -1px -2px 4px 1px #000c, 1px 2px 4px 1px #0008;
   background: url(/50.png) center / 100%;
 }
 
@@ -269,47 +263,15 @@ button:focus-visible {
 .bg-nav.left {
   left: 0;
   transform: translateX(-100%);
-  background: linear-gradient(
-      to right,
-      transparent calc(100% - 15px),
-      rgba(55, 55, 55, 0.9)
-    ),
-    linear-gradient(130deg, #aaab, #444b, #999b, #333b, #888b);
-  clip-path: polygon(
-    calc(100% - 20px) 0,
-    calc(100% - 20px) calc(20% - 10px),
-    100% calc(20% + 10px),
-    100% calc(40% - 10px),
-    calc(100% - 20px) calc(40% + 10px),
-    calc(100% - 20px) calc(60% - 10px),
-    100% calc(60% + 10px),
-    100% calc(80% - 10px),
-    calc(100% - 20px) calc(80% + 10px),
-    calc(100% - 20px) 100%,
-    0 100%,
-    0 0
-  );
+  background: linear-gradient(to right, transparent calc(100% - 15px), rgba(55, 55, 55, 0.9)), linear-gradient(130deg, #aaab, #444b, #999b, #333b, #888b);
+  clip-path: polygon(calc(100% - 20px) 0, calc(100% - 20px) calc(20% - 10px), 100% calc(20% + 10px), 100% calc(40% - 10px), calc(100% - 20px) calc(40% + 10px), calc(100% - 20px) calc(60% - 10px), 100% calc(60% + 10px), 100% calc(80% - 10px), calc(100% - 20px) calc(80% + 10px), calc(100% - 20px) 100%, 0 100%, 0 0);
 }
 
 .bg-nav.right {
   right: 0;
   transform: translateX(100%);
-  background: linear-gradient(to right, rgba(55, 55, 55, 0.9), transparent 15px),
-    linear-gradient(130deg, #aaab, #444b, #999b, #333b, #888b);
-  clip-path: polygon(
-    100% 0,
-    100% 100%,
-    0 100%,
-    0 calc(80% + 10px),
-    20px calc(80% - 10px),
-    20px calc(60% + 10px),
-    0 calc(60% - 10px),
-    0 calc(40% + 10px),
-    20px calc(40% - 10px),
-    20px calc(20% + 10px),
-    0 calc(20% - 10px),
-    0 0
-  );
+  background: linear-gradient(to right, rgba(55, 55, 55, 0.9), transparent 15px), linear-gradient(130deg, #aaab, #444b, #999b, #333b, #888b);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(80% + 10px), 20px calc(80% - 10px), 20px calc(60% + 10px), 0 calc(60% - 10px), 0 calc(40% + 10px), 20px calc(40% - 10px), 20px calc(20% + 10px), 0 calc(20% - 10px), 0 0);
 }
 
 .bg-nav.left.open,
@@ -492,12 +454,12 @@ button:focus-visible {
   border: none;
   border-radius: 50%;
   box-shadow: inset 1px 1px 2px #fff, 1px 2px 4px #000c;
-  background: url(/icons/chevron-up-white.svg) center / 50% no-repeat,
-    linear-gradient(135deg, #888, #333, #888);
+  background: url(/icons/chevron-up-white.svg) center / 50% no-repeat, linear-gradient(135deg, #888, #333, #888);
   cursor: pointer;
   position: absolute;
   bottom: 20px;
-  right: 15px;
+  left: 15px;
+  right: auto;
   transform: translateY(100px);
   transition: transform 400ms ease;
 }
@@ -511,7 +473,8 @@ button:focus-visible {
   width: 50px;
   height: 50px;
   position: fixed;
-  left: 5px;
+  left: auto;
+  right: 15px;
   bottom: 20px;
   z-index: 101;
   border: none;
@@ -563,7 +526,7 @@ button:focus-visible {
 
 .contact-modal-content-wrap {
   width: 100%;
-  padding: 60px 20px;
+  padding: 88px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -572,14 +535,15 @@ button:focus-visible {
 
 .header-form-contact {
   height: 50px;
-  width: 100%;
+  width: fit-content;
   max-width: 1000px;
-  /* position: relative; */
+  position: absolute;
+  left: 24px;
+  right: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-shadow: 0 0 1px black, -0.5px -0.5px 1px white,
-    1px 1px 1px rgba(0, 0, 0, 0.9), 2px 2px 2px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 1px black, -0.5px -0.5px 1px white, 1px 1px 1px rgba(0, 0, 0, 0.9), 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
 /* BUTTON= CLOSE CONTACT MODAL */
@@ -588,8 +552,13 @@ button:focus-visible {
   min-width: 50px;
   height: 50px;
   min-height: 50px;
+  position: sticky;
+  top: 50px;
+  left: auto;
+  right: 24px;
+  margin-left: auto;
   border: none;
-  background: url(/icons/xmark-solid.svg) center / 30% no-repeat, transparent;
+  background: url(/icons/xmark-solid.svg) center / 35% no-repeat, transparent;
 }
 
 .btn-close-contact:focus-visible {
@@ -729,27 +698,18 @@ input.btn-submit-form {
   text-align: center;
   border-bottom: 1px solid #fff;
   text-shadow: -1px 0 2px #000, 1px 0 2px #000, 0 1px 2px #000, 0 -2px 3px #000;
-  background: radial-gradient(
-    ellipse at 50% 110%,
-    rgb(255, 255, 255, 0.5),
-    rgb(255, 255, 255, 0.3),
-    rgb(255, 255, 255, 0.1),
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at 50% 110%, rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0.3), rgb(255, 255, 255, 0.1), transparent 70%);
 }
 
 .metal-card {
   border-radius: 10px;
-  box-shadow: 0 2px 10px 1px #000, inset 1px 2px 1px 0.5px #eee,
-    inset -1px -2px 2px 1px #000;
+  box-shadow: 0 2px 10px 1px #000, inset 1px 2px 1px 0.5px #eee, inset -1px -2px 2px 1px #000;
   background: linear-gradient(to bottom right, #888c, #333d, #888d, #333d);
 }
 
 .text-shadow {
   filter: drop-shadow(1px 1px 2px #111);
-  text-shadow: -1px -1px 1px #111, 0 -1px 1px #111, 1px -1px 1px #111,
-    1px 0 1px #111, 1px 1px 1px #111, 0 1px 1px #111, -1px 1px 1px #111,
-    -1px 0 1px #111;
+  text-shadow: -1px -1px 1px #111, 0 -1px 1px #111, 1px -1px 1px #111, 1px 0 1px #111, 1px 1px 1px #111, 0 1px 1px #111, -1px 1px 1px #111, -1px 0 1px #111;
 }
 
 /* CSSTransitions */
