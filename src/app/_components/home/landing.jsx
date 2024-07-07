@@ -23,7 +23,7 @@ export const Landing = ({ styles }) => {
           classNameEnter={styles.landingHeader}
           classNameEnterActive={styles.open}
         >
-          & Animations
+          & Web Animations
         </OnLoadWrap>
       </h1>
 

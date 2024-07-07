@@ -32,6 +32,12 @@
   transition: opacity 1s linear, transform 2s linear;
 }
 
+@media (min-width: 1200px) {
+  .landingHeader {
+    transition: opacity 3s linear, transform 4s linear;
+  }
+}
+
 .landingHeader:nth-child(2) {
   transform: translateY(50px) translateZ(190vh);
 }
@@ -75,6 +81,13 @@
   opacity: 0;
   transition: opacity 1700ms ease 200ms, transform 1000ms ease,
     border-color 200ms linear 1s, background-position-y 500ms linear 1s;
+}
+
+@media (min-width: 1200px) {
+  .subHeading {
+    transition: opacity 1700ms ease 2200ms, transform 1000ms ease 2s,
+      border-color 200ms linear 3s, background-position-y 700ms linear 3s;
+  }
 }
 
 .subHeading:nth-child(odd) {
@@ -216,6 +229,45 @@
   );
 }
 /* END TYPED LIST STYLE ////////////////////////////////////////////////////////// */
+
+/* START WE PROVIDE TRANSITION Y LIST STYLE ////////////////////////////////////////////////////////// */
+.weProvideSection {
+  padding: 96px 24px;
+  background: linear-gradient(
+    transparent,
+    #000e 96px calc(100% - 48px),
+    transparent
+  );
+}
+
+.weProvideHeader {
+  text-align: center;
+  padding: 24px 0;
+  margin: 24px auto;
+}
+
+.weProvideSection ul {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.weProvideSection li {
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+.weProvideLI {
+  opacity: 0;
+  transform: translateY(200%);
+}
+
+.weProvideTransitionY {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1.2s ease 200ms, transform 1s ease;
+}
 
 .pyramidStickyWrap {
   position: sticky;

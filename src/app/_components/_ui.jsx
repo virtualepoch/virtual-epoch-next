@@ -7,6 +7,7 @@ import { RainCanvas } from "./ui/RainCanvas";
 import { BtnToTop } from "./ui/btn-to-top";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
 import { usePathname } from "next/navigation";
+import { ThreeBtnContact } from "./ThreeBtnContact";
 
 export const UI = () => {
   const [nav, setNav] = useState();
@@ -23,6 +24,8 @@ export const UI = () => {
       <BtnAndModalContact />
 
       <BtnToTop />
+
+      {/* <ThreeBtnContact /> */}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { Typewriter } from "../typewriter";
 import { OnIntersectionWrap } from "../on-intersection-wrap";
 
-export const TypedList = ({ styles }) => {
+export const WeProvideTypedList = ({ styles }) => {
   const text1 = "Daily updates",
     text2 = "Pixel perfection",
     text3 = "Responsive layouts",

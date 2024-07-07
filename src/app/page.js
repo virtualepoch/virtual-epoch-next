@@ -1,5 +1,5 @@
 import { Landing } from "./_components/home/landing";
-import { TypedList } from "./_components/home/typed-list";
+import { WeProvideTransitionY } from "./_components/home/we-provide-transition-y";
 import { ThreePyramid } from "./_components/three-pyramid";
 import { ClosingStatements } from "./_components/home/closing-statements";
 import styles from "./page.module.css";
@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Landing styles={styles} />
 
-      <TypedList styles={styles} />
+      <WeProvideTransitionY styles={styles} />
 
       <div className={styles.pyramidStickyWrap}>
         <ThreePyramid styles={styles} />
