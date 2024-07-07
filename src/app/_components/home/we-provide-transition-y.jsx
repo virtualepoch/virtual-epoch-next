@@ -1,7 +1,16 @@
 import { OnIntersectionDisplayWrap } from "../on-intersection-display-wrap";
-import { OnIntersectionWrap } from "../on-intersection-wrap";
 
 export const WeProvideTransitionY = ({ styles }) => {
+  const liText = [
+    { id: "Daily updates" },
+    { id: "Pixel perfection" },
+    { id: "Responsive layouts" },
+    { id: "Single-page web-apps coded with React" },
+    { id: "Use of the latest frameworks and libraries" },
+    { id: "Webpages coded with HTML, CSS, and JavaScript" },
+    { id: "Guaranteed Google performance scores above 95%" },
+  ];
+
   return (
     <section className={styles.weProvideSection}>
       <h2 className={styles.weProvideHeader}>
@@ -9,62 +18,17 @@ export const WeProvideTransitionY = ({ styles }) => {
       </h2>
 
       <ul>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Daily updates
-          </OnIntersectionDisplayWrap>
-        </li>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Pixel perfection
-          </OnIntersectionDisplayWrap>
-        </li>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Responsive layouts
-          </OnIntersectionDisplayWrap>
-        </li>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Single-page web-apps coded with React
-          </OnIntersectionDisplayWrap>
-        </li>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Use of the latest frameworks and libraries
-          </OnIntersectionDisplayWrap>
-        </li>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Webpages coded with HTML, CSS, and JavaScript
-          </OnIntersectionDisplayWrap>
-        </li>
-        <li>
-          <OnIntersectionDisplayWrap
-            classNameEnter={styles.weProvideLI}
-            classNameEnterActive={styles.weProvideTransitionY}
-          >
-            &gt;&nbsp;Guaranteed Google performance scores above 95%
-          </OnIntersectionDisplayWrap>
-        </li>
+        {liText.map((item) => (
+          <li key={item.id} info={item} styles={styles}>
+            <OnIntersectionDisplayWrap
+              threshold={1}
+              classNameEnter={styles.weProvideLI}
+              classNameEnterActive={styles.weProvideTransitionY}
+            >
+              &gt;&nbsp;{item.id}
+            </OnIntersectionDisplayWrap>
+          </li>
+        ))}
       </ul>
     </section>
   );
