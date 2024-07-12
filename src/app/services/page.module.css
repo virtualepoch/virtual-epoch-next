@@ -68,16 +68,26 @@
   font: 600 20px Blackpast;
   color: var(--blue-chrome-3);
   border-radius: 1010px;
-  background-image: linear-gradient(#0cc 45%, #0dd 50%, #7ee 55%, #eee, #7ee);
-  background-size: 100% 200%;
-  background-position: 50% 0;
+  background-image: linear-gradient(
+    130deg,
+    #60f 25%,
+    #7ee,
+    #eee,
+    #7ee,
+    #60f,
+    #7ee,
+    #eee,
+    #7ee
+  );
+  background-size: 400% 100%;
+  background-position: 0 50%;
   transition: background-position 500ms ease;
   box-shadow: 1px 2px 10px 1px #0004, inset 1px 1px 2px 1px #0ff7,
     inset -1px -1px 2px 1px #00a7;
 }
 
 .aquaWave:hover {
-  background-position: 50% 100%;
+  background-position: 100% 50%;
   transition: background-position 700ms ease;
   box-shadow: none;
 }
