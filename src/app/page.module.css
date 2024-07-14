@@ -28,25 +28,27 @@
   text-shadow: 0 0 1px #000, 0 0 2px #000;
   opacity: 0;
   transform-style: preserve-3d;
-  transform: translateY(-50px) translateZ(190vh);
-  transition: opacity 1s linear, transform 2s linear;
+  transform: translateZ(190vh);
+  transition: opacity 1s linear, transform 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 
 @media (min-width: 1200px) {
   .landingHeader {
-    transition: opacity 3s linear, transform 4s linear;
+    transition: opacity 2s linear, transform 3s linear;
   }
 }
 
 .landingHeader:nth-child(2) {
   transform: translateY(50px) translateZ(190vh);
+  transition-delay: 700ms;
 }
 
 .landingHeader:nth-child(3) {
   transform: translateY(100px) translateZ(190vh);
+  transition-delay: 1200ms;
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .landingHeader {
     transform: translateY(-50px) translateZ(200vh);
   }
@@ -54,7 +56,7 @@
   .landingHeader:nth-child(2) {
     transform: translateY(50px) translateZ(200vh);
   }
-}
+} */
 
 .landingHeader.open {
   opacity: 1;
