@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Header } from "./ui/header";
 import { Nav } from "./ui/nav";
 import { RainCanvas } from "./ui/RainCanvas";
-import { BtnToTop } from "./ui/btn-to-top";
+// import { BtnToTop } from "./ui/btn-to-top";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
 import { usePathname } from "next/navigation";
-import { ThreeBtnContact } from "./ThreeBtnContact";
+// import { ThreeBtnContact } from "./ThreeBtnContact";
 
 export const UI = () => {
   const [nav, setNav] = useState();
@@ -23,7 +23,7 @@ export const UI = () => {
 
       <BtnAndModalContact />
 
-      <BtnToTop />
+      {/* <BtnToTop /> */}
 
       {/* <ThreeBtnContact /> */}
     </>

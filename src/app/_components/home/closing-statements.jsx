@@ -13,7 +13,7 @@ export const ClosingStatements = ({ styles }) => {
         <br />
         <p className={styles.statement}>
           If you&apos;d like to inquire into our services please press the
-          &apos;Contact&apos; link at the bottom left corner of the page. Thanks
+          &apos;Contact&apos; link at the bottom right corner of the page. Thanks
           for the visit!
         </p>
       </div>

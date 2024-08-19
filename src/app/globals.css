@@ -518,7 +518,7 @@ button:focus-visible {
   z-index: 101;
   border: none;
   filter: drop-shadow(0 0 3px #0ff);
-  background: url(/icons/message-solid.svg) 50% 70% / 50% no-repeat;
+  background: url(/icons/message-solid.svg) 50% 70% / 60% no-repeat;
 }
 
 .btn-open-contact-modal.projects {
