@@ -1,10 +1,11 @@
-export const BtnNav = ({ nav, setNav }) => {
+export const BtnNav = ({ nav, setNav, setShowHeader }) => {
   return (
     <button
       className="btn-nav-menu"
       aria-label="navigation menu"
       onClick={() => {
         setNav(!nav);
+        setShowHeader(true);
       }}
     >
       <div className={nav ? "bar open scale-x" : "bar open"} />

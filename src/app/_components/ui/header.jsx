@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { BtnNav } from "./btn-nav";
 import { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 export const Header = ({ setNav, nav }) => {
-  const [showHeader, setShowHeader] = useState(true);
   const [previousScrollPos, setPreviousScrollPos] = useState(0);
+  const [showHeader, setShowHeader] = useState(true);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,13 +21,18 @@ export const Header = ({ setNav, nav }) => {
       setPreviousScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [previousScrollPos]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(showHeader);
+    }, 10);
+  }, [showHeader]);
 
   const SiteLogo = () => {
     return (
@@ -56,12 +63,16 @@ export const Header = ({ setNav, nav }) => {
   };
 
   return (
-    <header className="main-site-header" style={{top: showHeader ? 0 : "-100%"}}>
-      <SiteLogo />
+    <>
+      <CSSTransition in={showHeader} timeout={500} unmountOnExit>
+        <header className={show ? "main-site-header show" : "main-site-header"}>
+          <SiteLogo />
 
-      <SiteTitle />
+          <SiteTitle />
+        </header>
+      </CSSTransition>
 
-      <BtnNav nav={nav} setNav={setNav} />
-    </header>
+      <BtnNav nav={nav} setNav={setNav} setShowHeader={setShowHeader}/>
+    </>
   );
 };

@@ -81,11 +81,11 @@ button:focus-visible {
 .main-site-header {
   width: 100%;
   position: fixed;
-  top: 0;
+  top: -100%;
   z-index: 88888;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
   flex-wrap: wrap;
   box-shadow: 0 4px 8px 2px rgb(0, 0, 0, 0.4);
   background: linear-gradient(
@@ -95,7 +95,12 @@ button:focus-visible {
     rgb(0, 0, 0, 0)
   );
   backdrop-filter: blur(3px);
-  transition: top 300ms ease;
+  transition: top 500ms ease;
+}
+
+.main-site-header.show{
+  top: 0;
+  transition: top 500ms ease;
 }
 
 .site-logo {
@@ -114,6 +119,11 @@ button:focus-visible {
 }
 
 .site-title {
+  width: fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   font: clamp(1.4rem, 3.5vw, 2rem) Blackpast;
   filter: drop-shadow(1px 1px 2px #000);
 }
@@ -122,6 +132,10 @@ button:focus-visible {
 .btn-nav-menu {
   width: 50px;
   height: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 88888;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +144,6 @@ button:focus-visible {
   cursor: pointer;
   background-color: transparent;
   background: none;
-  position: relative;
 }
 
 /* OPEN/CLOSE NAVIGATION MENU BARS*/
