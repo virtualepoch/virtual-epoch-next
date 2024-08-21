@@ -95,6 +95,7 @@ button:focus-visible {
     rgb(0, 0, 0, 0)
   );
   backdrop-filter: blur(3px);
+  transition: top 300ms ease;
 }
 
 .site-logo {
