@@ -81,7 +81,7 @@ button:focus-visible {
 .main-site-header {
   width: 100%;
   position: fixed;
-  top: -100%;
+  top: 0;
   z-index: 88888;
   display: flex;
   align-items: center;
@@ -95,12 +95,17 @@ button:focus-visible {
     rgb(0, 0, 0, 0)
   );
   backdrop-filter: blur(3px);
-  transition: top 500ms ease;
+  transition: transform 300ms ease;
 }
 
-.main-site-header.show{
-  top: 0;
-  transition: top 500ms ease;
+@media (max-width: 1000px) {
+  .main-site-header {
+    transform: translateY(-100%);
+  }
+}
+
+.main-site-header.show {
+  transform: none;
 }
 
 .site-logo {

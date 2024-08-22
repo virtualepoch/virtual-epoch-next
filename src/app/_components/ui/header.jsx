@@ -12,7 +12,7 @@ export const Header = ({ setNav, nav }) => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
-      if (currentScrollPos > previousScrollPos) {
+      if (window.innerWidth < 1000 && currentScrollPos > previousScrollPos) {
         setShowHeader(false);
       } else {
         setShowHeader(true);
@@ -31,7 +31,7 @@ export const Header = ({ setNav, nav }) => {
   useEffect(() => {
     setTimeout(() => {
       setShow(showHeader);
-    }, 10);
+    }, 1);
   }, [showHeader]);
 
   const SiteLogo = () => {
@@ -72,7 +72,7 @@ export const Header = ({ setNav, nav }) => {
         </header>
       </CSSTransition>
 
-      <BtnNav nav={nav} setNav={setNav} setShowHeader={setShowHeader}/>
+      <BtnNav nav={nav} setNav={setNav} setShowHeader={setShowHeader} />
     </>
   );
 };
