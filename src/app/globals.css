@@ -196,8 +196,7 @@ button:focus-visible {
 
 /* NAVIGATION MENU */
 .nav {
-  width: calc(100% - 20px);
-  max-width: 800px;
+  width: 100%;
   height: calc(100% - 50px);
   position: fixed;
   top: 50px;
@@ -210,17 +209,20 @@ button:focus-visible {
   align-items: center;
   text-align: center;
   font-size: 25px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .nav ul {
-  height: 100%;
+  width: 100%;
+  min-height: 101%;
   padding: 60px 10px;
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 60px;
-  overflow-y: auto;
 }
 
 .nav li {
