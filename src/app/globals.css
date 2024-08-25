@@ -35,6 +35,7 @@
 body {
   color: var(--text-color-main);
   background: var(--bg-main);
+  padding-bottom: 100px;
 }
 
 main {
@@ -534,17 +535,15 @@ button:focus-visible {
   height: 64px;
   position: fixed;
   left: auto;
-  right: 0;
+  right: 16px;
   bottom: 24px;
   z-index: 101;
   margin: auto;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(calc(-50vw + 50%));
-  transition: all 700ms ease;
-  overflow: visible;
+  transform: translateX(calc(-50vw + 50% + 16px));
+  transition: transform 700ms ease;
 }
 
 .btn-open-contact-modal.small {
@@ -564,34 +563,28 @@ button:focus-visible {
   border-radius: 777px;
   filter: drop-shadow(0 0 3px #0ff);
   background: #dee;
-  color: #333;
-  font: 28px Blackpast;
-  transition: all 700ms ease;
+  overflow: hidden;
+  transition: width 700ms ease, height 700ms ease, border-radius 700ms ease;
 }
 
 .btn-contact-bg.small {
   width: 44px;
-  height: 40px;
-  border-radius: 7px;
+  height: 44px;
+  border-bottom-left-radius: 7px;
+  transition: border-radius 400ms ease-out 500ms;
 }
 
-.quote-arrow {
-  width: 20px;
-  height: 20px;
-  background: #dee;
-  position: absolute;
-  bottom: -5px;
-  right: 7px;
-  clip-path: polygon(100% 0, 0 100%, 0 0);
-  scale: 0;
-  transform: translateY(-100%);
-  transition: scale 0ms linear 0ms, transform 0ms ease 0ms;
+.btn-contact-text {
+  color: #333;
+  font: 28px Blackpast;
+  opacity: 0;
+  transform: translateY(150%);
 }
 
-.quote-arrow.visible {
-  scale: 1;
+.btn-contact-text.visible {
+  opacity: 1;
   transform: none;
-  transition: scale 100ms linear 400ms, transform 200ms ease 400ms;
+  transition: opacity 400ms ease 400ms, transform 400ms ease 400ms;
 }
 
 .btn-open-contact-modal.projects {
@@ -610,20 +603,12 @@ button:focus-visible {
     width: 50px;
     height: 50px;
     bottom: 10px;
+    right: 0;
     transform: none;
   }
   .btn-contact-bg.small {
     width: 36px;
-    height: 30px;
-    border-radius: 5px;
-  }
-  .quote-arrow {
-    width: 16px;
-    height: 16px;
-    background: #dee;
-    position: absolute;
-    bottom: 0;
-    right: 8px;
+    height: 36px;
   }
 }
 /* CONTACT MODAL  */

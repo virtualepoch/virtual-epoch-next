@@ -29,15 +29,19 @@ export const BtnContact = ({ setModal }) => {
       onMouseUp={() => setPressed(false)}
       onTouchStart={() => setPressed(true)}
       onTouchEnd={() => setPressed(false)}
-      style={{
-        border: pressed ? "2px solid #0ff" : "",
-      }}
     >
-      <div className={smallBtn ? "btn-contact-bg small" : "btn-contact-bg"}>
-        {smallBtn ? "" : "contact us"}
+      <div
+        className={smallBtn ? "btn-contact-bg small" : "btn-contact-bg"}
+        style={{
+          filter: pressed ? "none" : "drop-shadow(0 0 3px #0ff)",
+        }}
+      >
+        <div
+          className={smallBtn ? "btn-contact-text" : "btn-contact-text visible"}
+        >
+          {smallBtn ? "" : "contact us"}
+        </div>
       </div>
-
-      <div className={smallBtn ? "quote-arrow visible" : "quote-arrow"} />
     </button>
   );
 };
