@@ -24,12 +24,12 @@ export const ThreePyramid = ({ styles }) => {
     const pyramid = useRef();
 
     useFrame(() => {
-      pyramid.current.rotation.y += anim ? 0.007 : 0;
+      pyramid.current.rotation.y += anim ? 0.01 : 0;
       if (pyramid.current.rotation.x < Math.PI / 4 && anim) {
         pyramid.current.rotation.x += 0.004;
       }
       if (pyramid.current.position.z > 1 && anim) {
-        pyramid.current.position.z -= 0.091;
+        pyramid.current.position.z -= 0.092;
       }
     });
 
@@ -40,14 +40,16 @@ export const ThreePyramid = ({ styles }) => {
         rotation-x={Math.PI / 4 - 0.7}
         position-y={1}
         position-z={20}
-        scale={1.3}
+        scale={0.8}
       >
         <meshStandardMaterial
           transparent
           // side={DoubleSide}
         >
           <GradientTexture
-            stops={[0, 0.2, 0.20001, 0.4, 0.40001, 0.6, 0.60001, 0.8, 0.80001, 1]}
+            stops={[
+              0, 0.2, 0.20001, 0.4, 0.40001, 0.6, 0.60001, 0.8, 0.80001, 1,
+            ]}
             colors={[
               "#fff",
               "#fff",

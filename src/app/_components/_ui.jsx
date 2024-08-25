@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 // COMPONENTS
 import { Header } from "./ui/header";
 import { Nav } from "./ui/nav";
 import { RainCanvas } from "./ui/RainCanvas";
-// import { BtnToTop } from "./ui/btn-to-top";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
-import { usePathname } from "next/navigation";
+// import { BtnToTop } from "./ui/btn-to-top";
 // import { ThreeBtnContact } from "./ThreeBtnContact";
 
 export const UI = () => {

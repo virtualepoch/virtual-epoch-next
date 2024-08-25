@@ -1,47 +1,26 @@
 "use client";
 import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { RoundedBox } from "@react-three/drei";
+import { Center, Float, RoundedBox, Text, Text3D } from "@react-three/drei";
 import { useOnScreen } from "../_functions/use-on-screen";
 // import { DoubleSide } from "three";
 
 export const ThreeBtnContact = ({ styles }) => {
-  const ref = useRef();
-  const [anim, setAnim] = useState(false);
-
-  const callback = () => {
-    setTimeout(() => {
-      setAnim(true);
-    }, 1);
-  };
-
-  useOnScreen(ref, callback, {
-    // rootMargin: "100px 0px 0px 0px",
-    threshold: 0.7,
-  });
+  const [hovered, setHovered] = useState(false);
 
   const BtnContact = () => {
     const btnContact = useRef();
 
-    useFrame(() => {
-      btnContact.current.rotation.y += anim ? 0.007 : 0;
-      if (btnContact.current.rotation.x < Math.PI / 4 && anim) {
-        btnContact.current.rotation.x += 0.004;
-      }
-      if (btnContact.current.position.z > 1 && anim) {
-        btnContact.current.position.z -= 0.091;
-      }
-    });
-
     return (
       <RoundedBox
         ref={btnContact}
-        args={[4, 1.7, 0.4]} // Width, height, depth. Default is [1, 1, 1]
+        args={[4, 1.5, 0.4]} // Width, height, depth. Default is [1, 1, 1]
         radius={0.1} // Radius of the rounded corners. Default is 0.05
         smoothness={4} // The number of curve segments. Default is 4
         bevelSegments={4} // The number of bevel segments. Default is 4, setting it to 0 removes the bevel, as a result the texture is applied to the whole geometry.
         creaseAngle={0.4} // Smooth normals everywhere except faces that meet at an angle greater than the crease angle
         // All THREE.Mesh props are valid
+        scale={0.5}
       >
         <meshPhongMaterial color="#0ff" />
       </RoundedBox>
@@ -50,7 +29,6 @@ export const ThreeBtnContact = ({ styles }) => {
 
   return (
     <Canvas
-      ref={ref}
       className="btnContactCanvas"
       style={{
         position: "fixed",
@@ -61,14 +39,45 @@ export const ThreeBtnContact = ({ styles }) => {
         zIndex: 222,
         width: "250px",
         width: "100%",
-        height: "300px",
+        height: "200px",
         display: "flex",
         border: "5px solid rebeccapurple",
       }}
-      camera={{ fov: 10, position: [0, 0, 10] }}
+      camera={{ fov: 10, position: [0, 0, 5] }}
     >
       <directionalLight position={[1, 0, 2]} intensity={3} />
-      <BtnContact />
+
+      <group
+        position-z={0.5}
+        scale={1}
+        onClick={() => {
+          setHubLinkClicked(true);
+          onClick();
+        }}
+        onPointerMove={() => {
+          setHovered(true);
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={() => {
+          setHovered(false);
+          document.body.style.cursor = "default";
+        }}
+      >
+        <mesh scale={0.3}>
+          <Center center disableY>
+            <Text
+              font="fonts/Arcade.json"
+              size={0.1}
+              position={[0, -0.1, 2.1]}
+              color={hovered ? "cyan" : "red"}
+            >
+              Contact Us
+            </Text>
+          </Center>
+        </mesh>
+
+        <BtnContact />
+      </group>
     </Canvas>
   );
 };
