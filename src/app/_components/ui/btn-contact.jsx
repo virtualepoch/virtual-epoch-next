@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 
 export const BtnContact = ({ setModal }) => {
-  const [smallBtn, setSmallBtn] = useState();
+  const [smallBtn, setSmallBtn] = useState(false);
   const [pressed, setPressed] = useState();
 
   useEffect(() => {
     function handleScroll() {
-      if (window.scrollY >= 20) {
+      // const { scrollTop, scrollHeight, clientHeight } =
+      //   document.documentElement;
+
+      if (
+        // (scrollTop + clientHeight <= scrollHeight - 200) |
+        window.scrollY >= 20
+      ) {
         setSmallBtn(true);
       } else {
         setSmallBtn(false);
@@ -29,18 +35,16 @@ export const BtnContact = ({ setModal }) => {
       onMouseUp={() => setPressed(false)}
       onTouchStart={() => setPressed(true)}
       onTouchEnd={() => setPressed(false)}
+      style={{
+        width: smallBtn ? "50px" : "254px",
+        opacity: smallBtn ? 0.7 : 1,
+        filter: pressed ? "none" : "drop-shadow(0 0 3px #0ff)",
+      }}
     >
       <div
-        className={smallBtn ? "btn-contact-bg small" : "btn-contact-bg"}
-        style={{
-          filter: pressed ? "none" : "drop-shadow(0 0 3px #0ff)",
-        }}
+        className={smallBtn ? "btn-contact-text" : "btn-contact-text visible"}
       >
-        <div
-          className={smallBtn ? "btn-contact-text" : "btn-contact-text visible"}
-        >
-          {smallBtn ? "" : "contact us"}
-        </div>
+        {smallBtn ? "" : "contact us"}
       </div>
     </button>
   );

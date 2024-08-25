@@ -6,6 +6,11 @@ import { BtnContact } from "./btn-contact";
 
 export const BtnAndModalContact = () => {
   const form = useRef();
+
+  const [modal, setModal] = useState(),
+  [pressed, setPressed] = useState(),
+  [anim, setAnim] = useState();
+  
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -28,10 +33,6 @@ export const BtnAndModalContact = () => {
     alert("Message sent. Thanks! We'll get back ASAP.");
     setModal(false);
   };
-
-  const [modal, setModal] = useState(),
-    [pressed, setPressed] = useState(),
-    [anim, setAnim] = useState();
 
   return (
     <>

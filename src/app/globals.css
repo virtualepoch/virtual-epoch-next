@@ -531,8 +531,6 @@ button:focus-visible {
 
 /* BUTTON= OPEN CONTACT MODAL */
 .btn-open-contact-modal {
-  width: 250px;
-  height: 64px;
   position: fixed;
   left: auto;
   right: 16px;
@@ -542,41 +540,25 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 54px;
+  filter: drop-shadow(0 0 3px #0ff);
+  background: #fefefe;
+  overflow: hidden;
   transform: translateX(calc(-50vw + 50% + 16px));
-  transition: transform 700ms ease;
+  transition: width 700ms ease, transform 700ms ease, border-radius 400ms ease,
+    opacity 700ms ease;
 }
 
 .btn-open-contact-modal.small {
-  width: 55px;
-  height: 55px;
+  border-bottom-left-radius: 10px;
   transform: none;
-}
-
-.btn-contact-bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 777;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 777px;
-  filter: drop-shadow(0 0 3px #0ff);
-  background: #dee;
-  overflow: hidden;
-  transition: width 700ms ease, height 700ms ease, border-radius 700ms ease;
-}
-
-.btn-contact-bg.small {
-  width: 44px;
-  height: 44px;
-  border-bottom-left-radius: 7px;
-  transition: border-radius 400ms ease-out 500ms;
+  transition: width 700ms ease, transform 700ms ease,
+    border-radius 400ms ease 500ms, opacity 700ms ease;
 }
 
 .btn-contact-text {
   color: #333;
-  font: 28px Blackpast;
+  font: 24px Blackpast;
   opacity: 0;
   transform: translateY(150%);
 }
@@ -595,20 +577,16 @@ button:focus-visible {
   .btn-to-top {
     bottom: 10px;
   }
+
   .btn-open-contact-modal {
-    bottom: 24px;
-    transition-duration: 400ms;
+    bottom: 16px;
+    transition: width 400ms ease, transform 400ms ease, border-radius 200ms ease,
+      opacity 400ms ease;
   }
   .btn-open-contact-modal.small {
-    width: 50px;
-    height: 50px;
-    bottom: 10px;
-    right: 0;
-    transform: none;
-  }
-  .btn-contact-bg.small {
-    width: 36px;
-    height: 36px;
+    right: 10px;
+    transition: width 400ms ease, transform 400ms ease,
+      border-radius 200ms ease 100ms, opacity 400ms ease;
   }
 }
 /* CONTACT MODAL  */
