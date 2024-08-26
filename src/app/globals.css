@@ -558,13 +558,12 @@ button:focus-visible {
 }
 
 .btn-open-contact-modal.small {
-  border-bottom-left-radius: 10px;
   transform: none;
-  opacity: 0.95;
-  box-shadow: inset 0 0 5px 1px #0ff;
+  box-shadow: inset 1px 1px 5px 1px #0ff;
   transition: width 700ms ease, transform 700ms ease,
     border-radius 400ms ease 500ms, opacity 700ms ease;
   overflow: visible;
+  background: url(/icons/message-solid.svg) 50% 60% / 50% no-repeat;
 }
 
 .btn-contact-text {
