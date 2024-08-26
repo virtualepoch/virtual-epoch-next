@@ -530,13 +530,21 @@ button:focus-visible {
 }
 
 /* BUTTON= OPEN CONTACT MODAL */
-.btn-open-contact-modal {
+.btn-contact-wrap {
+  width: 100%;
+  height: 88px;
   position: fixed;
+  bottom: 0;
+  z-index: 777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-open-contact-modal {
+  position: absolute;
   left: auto;
   right: 16px;
-  bottom: 24px;
-  z-index: 101;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -544,16 +552,38 @@ button:focus-visible {
   filter: drop-shadow(0 0 3px #0ff);
   background: #fefefe;
   overflow: hidden;
-  transform: translateX(calc(-50vw + 50% + 16px));
+  transform: translateX(calc(-50vw + 50%));
   transition: width 700ms ease, transform 700ms ease, border-radius 400ms ease,
     opacity 700ms ease;
+}
+
+.btn-open-contact-modal::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #0ff;
+  border-radius: 888px;
+  background-color: #0ff0;
 }
 
 .btn-open-contact-modal.small {
   border-bottom-left-radius: 10px;
   transform: none;
   transition: width 700ms ease, transform 700ms ease,
-    border-radius 400ms ease 500ms, opacity 700ms ease;
+  border-radius 400ms ease 500ms, opacity 700ms ease;
+  overflow: visible;
+}
+
+.btn-open-contact-modal.small::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 888px;
+  background-color: #0ff4;
+  box-shadow:inset 1px 1px 3px 1px #fff, 0 1px 2px 0.5px #777;
+  transform: translate(2px, -2px);
+  transition: background-color 700ms ease;
 }
 
 .btn-contact-text {
@@ -579,12 +609,11 @@ button:focus-visible {
   }
 
   .btn-open-contact-modal {
-    bottom: 16px;
     transition: width 400ms ease, transform 400ms ease, border-radius 200ms ease,
       opacity 400ms ease;
   }
   .btn-open-contact-modal.small {
-    right: 10px;
+    right: 12px;
     transition: width 400ms ease, transform 400ms ease,
       border-radius 200ms ease 100ms, opacity 400ms ease;
   }
