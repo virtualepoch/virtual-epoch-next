@@ -37,8 +37,8 @@ export const BtnContact = ({ setModal }) => {
         onTouchStart={() => setPressed(true)}
         onTouchEnd={() => setPressed(false)}
         style={{
-          width: smallBtn ? "28px" : "254px",
-          height: smallBtn ? "33px" : "54px",
+          width: smallBtn ? "32px" : "254px",
+          height: smallBtn ? "32px" : "54px",
           filter: pressed ? "none" : "drop-shadow(0 0 3px #0ff)",
         }}
       >
