@@ -548,9 +548,10 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #aff;
+  font: 24px Blackpast;
+  border: 1px solid #0ff;
   border-radius: 54px;
-  filter: drop-shadow(0 0 3px #0ff);
-  background: #fefefe;
   overflow: hidden;
   transform: translateX(calc(-50vw + 50% + 16px));
   transition: width 700ms ease, transform 700ms ease, border-radius 400ms ease,
@@ -567,8 +568,8 @@ button:focus-visible {
 }
 
 .btn-contact-text {
-  color: #333;
-  font: 24px Blackpast;
+  font: inherit;
+  color: inherit;
   opacity: 0;
   transform: translateY(150%);
 }
