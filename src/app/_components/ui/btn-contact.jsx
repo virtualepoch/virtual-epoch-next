@@ -41,7 +41,7 @@ export const BtnContact = ({ setModal }) => {
           height: "54px",
           boxShadow: pressed
             ? "none"
-            : "0 -2px 7px 1px #7ff7, inset 1px 1px 3px 1px #aff5, 0 1px 7px 1px #000",
+            : "0 -1px 15px 1px #7ff7, inset 1px 1px 3px 1px #aff5, 0 1px 7px 1px #000",
             textShadow: pressed ? "none" : "0 1px 3px #000"
         }}
       >

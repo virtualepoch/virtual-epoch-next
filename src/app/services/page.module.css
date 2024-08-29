@@ -14,6 +14,34 @@
   padding: 30px 20px;
 }
 
+.card h1 {
+  font: clamp(1.4rem, 3.5vw, 2rem) Blackpast;
+}
+
+.card p {
+  text-align: left;
+}
+
+.strikeword {
+  color: #0ff;
+  font: 21px Blackpast;
+  animation: strikeword 4s linear infinite;
+}
+
+.strikeword:nth-of-type(2) {
+  animation-delay: 2s;
+}
+
+@keyframes strikeword {
+  0%,
+  100% {
+    color: #f0f;
+  }
+  50% {
+    color: #0ff;
+  }
+}
+
 @media (max-width: 800px) {
   .card {
     margin-top: 33px;

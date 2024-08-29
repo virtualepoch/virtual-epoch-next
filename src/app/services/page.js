@@ -12,13 +12,13 @@ export default function Services() {
           <br />
           <p>
             We design, develop, and implement numerous eye-catching buttons
-            guaranteed to make your webpage stand out. Below are a few examples.
-            Hover over or tap on them to see the animation.
+            guaranteed to make your webpage stand out. Press the contact button
+            below to tell us about your unique ideas.
           </p>
 
-          <DemoBtn addedClass={styles.aquaFlash} />
+          {/* <DemoBtn addedClass={styles.aquaFlash} />
 
-          <DemoBtn addedClass={styles.aquaWave} />
+          <DemoBtn addedClass={styles.aquaWave} /> */}
         </div>
       </div>
 
@@ -49,11 +49,19 @@ export default function Services() {
       <div className={`${styles.card} metal-card`}>
         <div className={styles.logo}></div>
         <div className="text-shadow">
-          <h1>
-            If you are currently seeking web design or development services,
-            please contact us using the links below. Our rates are very
-            competitive.
-          </h1>
+          <h1>Complete Customized Web Sites</h1>
+          <p>
+            Not only do we develop custom web components, we also design and
+            develop entire web sites full of{" "}
+            <span className={styles.strikeword}>animations</span> and{" "}
+            <span className={styles.strikeword}>applications</span>. If you are
+            currently seeking any web design or development services, please
+            contact us using the links below.
+            <br />
+          </p>
+          <br />
+          Our rates are very competitive.
+          <br />
           <br />
           Thanks for visiting!
         </div>
