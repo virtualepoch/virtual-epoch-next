@@ -548,10 +548,12 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aff;
+  color: #fff;
   font: 24px Blackpast;
-  border: 1px solid #0ff;
+  border: 1px solid #fff;
   border-radius: 54px;
+  background: linear-gradient(115deg, #8882, #3332, #8882, #3332);
+  backdrop-filter: blur(1px);
   overflow: hidden;
   transform: translateX(calc(-50vw + 50% + 16px));
   transition: width 700ms ease, transform 700ms ease, border-radius 400ms ease,
@@ -577,7 +579,7 @@ button:focus-visible {
 .btn-contact-text.visible {
   opacity: 1;
   transform: none;
-  transition: opacity 400ms ease 400ms, transform 400ms ease 400ms;
+  transition: opacity 300ms ease 300ms, transform 300ms ease 300ms;
 }
 
 .btn-open-contact-modal.projects {
@@ -594,7 +596,9 @@ button:focus-visible {
       opacity 400ms ease;
   }
   .btn-open-contact-modal.small {
-    right: 12px;
+    right: 2px;
+    border-right: none;
+    border-bottom: none;
     transition: width 400ms ease, transform 400ms ease,
       border-radius 200ms ease 100ms, opacity 400ms ease;
   }
