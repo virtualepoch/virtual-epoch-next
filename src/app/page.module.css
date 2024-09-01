@@ -29,7 +29,8 @@
   opacity: 0;
   transform-style: preserve-3d;
   transform: translateZ(190vh);
-  transition: opacity 1s linear, transform 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  transition: opacity 1s linear,
+    transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 @media (min-width: 1200px) {
@@ -311,13 +312,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    transparent,
-    #000c 20%,
-    #000e 40% 60%,
-    #000c 80%,
-    transparent
-  );
+  background: linear-gradient(#000 25%, transparent);
 }
 
 .statementsWrap {
@@ -326,6 +321,11 @@
   margin: auto;
   padding: 100px 24px;
   text-align: center;
+}
+
+.guaranteeHeader{
+  font: 28px Blackpast;
+  text-shadow: 0 0 5px #0ff;
 }
 
 /* Enable hover only on non-touch devices */

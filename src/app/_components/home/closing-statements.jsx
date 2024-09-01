@@ -2,6 +2,9 @@ export const ClosingStatements = ({ styles }) => {
   return (
     <section className={styles.closingStatements}>
       <div className={styles.statementsWrap}>
+        <p className={styles.guaranteeHeader}>Our Guarantee</p>
+        <br />
+        <br />
         <p className={styles.statementGuarantee}>
           We never conclude any project until all of the requirements of that
           project are fully completed.
@@ -13,8 +16,8 @@ export const ClosingStatements = ({ styles }) => {
         <br />
         <p className={styles.statement}>
           If you&apos;d like to inquire into our services please press the
-          &apos;Contact&apos; link at the bottom right corner of the page. Thanks
-          for the visit!
+          &apos;Contact&apos; link at the bottom right corner of the page.
+          Thanks for the visit!
         </p>
       </div>
     </section>
