@@ -9,21 +9,21 @@ export const Landing = ({ styles }) => {
           classNameEnter={styles.landingHeader}
           classNameEnterActive={styles.open}
         >
-          We Build Custom
+          We Build
         </OnLoadWrap>
 
         <OnLoadWrap
           classNameEnter={styles.landingHeader}
           classNameEnterActive={styles.open}
         >
-          Front-End Web Apps
+          Custom Websites
         </OnLoadWrap>
       
         <OnLoadWrap
           classNameEnter={styles.landingHeader}
           classNameEnterActive={styles.open}
         >
-          & Web Animations
+          AI Web Apps & Animations
         </OnLoadWrap>
       </h1>
 

@@ -558,18 +558,18 @@ button:focus-visible {
   transition: width 700ms ease, transform 700ms ease, border-radius 400ms ease,
     opacity 700ms ease, background-position 100ms ease;
   background-image: linear-gradient(
-    135deg,
+    145deg,
     transparent,
     #ddd1,
-    #ddd2,
-    #ddd1,
-    transparent,
-    #ddd1,
-    #ddd2,
+    #ddd3,
     #ddd1,
     transparent,
     #ddd1,
-    #ddd2,
+    #ddd3,
+    #ddd1,
+    transparent,
+    #ddd1,
+    #ddd3,
     #ddd1,
     transparent
   );
@@ -848,6 +848,51 @@ input.btn-submit-form {
   text-shadow: -1px -1px 1px #111, 0 -1px 1px #111, 1px -1px 1px #111,
     1px 0 1px #111, 1px 1px 1px #111, 0 1px 1px #111, -1px 1px 1px #111,
     -1px 0 1px #111;
+}
+
+/* Featured Projects Section */
+.featured-projects-wrap {
+  width: 100%;
+  padding: 48px 0;
+  position: relative;
+  z-index: 7;
+  box-shadow: 0 0 15px 1px #000a;
+  border: 1px solid #0ff;
+  border-left: none;
+  border-right: none;
+  background-image: linear-gradient(
+    165deg,
+    #077,
+    #303,
+    #5cc,
+    #2aa,
+    #303,
+    #033,
+    #022
+  );
+}
+.featured-projects {
+  width: 100%;
+  overflow-x: auto;
+  /* white-space: nowrap; */
+  display: flex;
+  flex-direction: row;
+  gap: 111px;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+@media (max-width: 1850px) {
+  .featured-projects {
+    justify-content: flex-start;
+  }
+}
+
+.featured-projects-heading {
+  padding: 24px;
+  font: 32px Blackpast;
+  text-align: center;
 }
 
 /* CSSTransitions */

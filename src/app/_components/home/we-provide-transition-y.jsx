@@ -8,13 +8,13 @@ export const WeProvideTransitionY = ({ styles }) => {
     { id: "Single-page web-apps coded with React" },
     { id: "Use of the latest frameworks and libraries" },
     { id: "Webpages coded with HTML, CSS, and JavaScript" },
-    { id: "Guaranteed Google performance scores above 95%" },
+    { id: "Custom designs for transitions and animations" },
   ];
 
   return (
     <section className={styles.weProvideSection}>
       <h2 className={styles.weProvideHeader}>
-        We strive to exceed client expectations and visions by providing:
+        We always exceed client expectations and visions by providing:
       </h2>
 
       <ul>

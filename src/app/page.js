@@ -3,6 +3,7 @@ import { WeProvideTransitionY } from "./_components/home/we-provide-transition-y
 import { ThreePyramid } from "./_components/three-pyramid";
 import { ClosingStatements } from "./_components/home/closing-statements";
 import styles from "./page.module.css";
+import { FeaturedProjects } from "./_components/home/featured-projects";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
         <div>&</div>
         <div>Development</div>
       </h3>
+
+      <FeaturedProjects />
 
       <ClosingStatements styles={styles} />
     </>
