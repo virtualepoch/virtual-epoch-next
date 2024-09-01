@@ -876,7 +876,7 @@ input.btn-submit-form {
   z-index: 7;
   background: linear-gradient(transparent, #000 96px 100%);
   overflow: visible;
-  margin-top: 96px;
+  padding-top: 96px;
 }
 
 .featured-projects {

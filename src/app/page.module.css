@@ -309,10 +309,11 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  margin-bottom: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#000 25%, transparent);
+  background: linear-gradient(#000 calc(100% - 96px), transparent);
 }
 
 .statementsWrap {
@@ -323,7 +324,7 @@
   text-align: center;
 }
 
-.guaranteeHeader{
+.guaranteeHeader {
   font: 28px Blackpast;
   text-shadow: 0 0 5px #0ff;
 }
