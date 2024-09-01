@@ -535,7 +535,7 @@ button:focus-visible {
   height: 88px;
   position: fixed;
   bottom: 0;
-  z-index: 777;
+  z-index: 77777;
   display: flex;
   align-items: center;
   justify-content: center;

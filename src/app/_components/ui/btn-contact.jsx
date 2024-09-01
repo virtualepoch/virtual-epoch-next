@@ -1,23 +1,18 @@
 import { useState, useEffect } from "react";
 
 export const BtnContact = ({ setModal }) => {
-  const [smallBtn, setSmallBtn] = useState(false);
+  const [large, setLarge] = useState(true);
   const [pressed, setPressed] = useState();
 
   useEffect(() => {
-    function handleScroll() {
-      // const { scrollTop, scrollHeight, clientHeight } =
-      //   document.documentElement;
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-      if (
-        // (scrollTop + clientHeight <= scrollHeight - 200) |
-        window.scrollY >= 20
-      ) {
-        setSmallBtn(true);
-      } else {
-        setSmallBtn(false);
-      }
-    }
+      setLarge(scrollTop <= 30 || scrollTop >= scrollHeight - 30);
+    };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -27,7 +22,7 @@ export const BtnContact = ({ setModal }) => {
     <div className="btn-contact-wrap">
       <button
         className={
-          smallBtn ? "btn-open-contact-modal small" : "btn-open-contact-modal"
+          large ? "btn-open-contact-modal" : "btn-open-contact-modal small"
         }
         onClick={() => {
           setModal(true);
@@ -37,18 +32,18 @@ export const BtnContact = ({ setModal }) => {
         onTouchStart={() => setPressed(true)}
         onTouchEnd={() => setPressed(false)}
         style={{
-          width: smallBtn ? "54px" : "254px",
+          width: large ? "254px" : "54px",
           height: "54px",
           boxShadow: pressed
             ? "none"
             : "0 -1px 15px 1px #7ff7, inset 1px 1px 3px 1px #aff5, 0 1px 7px 1px #000",
-            textShadow: pressed ? "none" : "0 1px 3px #000"
+          textShadow: pressed ? "none" : "0 1px 3px #000",
         }}
       >
         <div
-          className={smallBtn ? "btn-contact-text" : "btn-contact-text visible"}
+          className={large ? "btn-contact-text visible" : "btn-contact-text"}
         >
-          {smallBtn ? "" : "contact us"}
+          {large ? "contact us" : ""}
         </div>
       </button>
     </div>
