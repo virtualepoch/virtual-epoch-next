@@ -38,6 +38,8 @@ export const BtnContact = ({ setModal }) => {
             ? "none"
             : "0 -1px 15px 1px #7ff7, inset 1px 1px 3px 1px #aff5, 0 1px 7px 1px #000",
           textShadow: pressed ? "none" : "0 1px 3px #000",
+          backgroundPosition:
+            pressed & large ? "calc(50% - 10px) 50%" : "50% 50%",
         }}
       >
         <div
