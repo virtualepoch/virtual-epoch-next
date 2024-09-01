@@ -561,15 +561,15 @@ button:focus-visible {
     145deg,
     transparent,
     #ddd1,
-    #ddd3,
+    #ddd4,
     #ddd1,
     transparent,
     #ddd1,
-    #ddd3,
+    #ddd4,
     #ddd1,
     transparent,
     #ddd1,
-    #ddd3,
+    #ddd4,
     #ddd1,
     transparent
   );
@@ -870,17 +870,21 @@ input.btn-submit-form {
     #033,
     #022
   );
+  padding: 24px 0;
+  overflow: visible;
 }
+
 .featured-projects {
   width: 100%;
+  padding: 0 24px;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   /* white-space: nowrap; */
   display: flex;
   flex-direction: row;
   gap: 111px;
   justify-content: center;
   text-align: center;
-  padding: 0 24px;
 }
 
 @media (max-width: 1850px) {
@@ -890,9 +894,19 @@ input.btn-submit-form {
 }
 
 .featured-projects-heading {
-  padding: 24px;
-  font: 32px Blackpast;
+  margin: 0 24px;
+  font: 28px Blackpast;
   text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .featured-projects {
+    gap: 24px;
+  }
+
+  .featured-projects-heading {
+    text-align: left;
+  }
 }
 
 /* CSSTransitions */

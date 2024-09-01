@@ -11,7 +11,7 @@ export const BtnContact = ({ setModal }) => {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      setLarge(scrollTop <= 30 || scrollTop >= scrollHeight - 30);
+      setLarge(scrollTop <= 30 || scrollTop >= scrollHeight - 100);
     };
 
     window.addEventListener("scroll", handleScroll);
