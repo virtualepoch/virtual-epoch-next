@@ -5,12 +5,16 @@ export const Landing = ({ styles }) => {
   return (
     <section className={styles.landing}>
       <h1>
+        <hr className={styles.hr_landing}/>
+
         <OnLoadWrap
           classNameEnter={styles.landingHeader}
           classNameEnterActive={styles.open}
         >
-          We Build
+          AI Web Apps
         </OnLoadWrap>
+
+        <hr className={styles.hr_landing}/>
 
         <OnLoadWrap
           classNameEnter={styles.landingHeader}
@@ -18,13 +22,17 @@ export const Landing = ({ styles }) => {
         >
           Custom Websites
         </OnLoadWrap>
+        
+        <hr className={styles.hr_landing}/>
       
         <OnLoadWrap
           classNameEnter={styles.landingHeader}
           classNameEnterActive={styles.open}
         >
-          AI Web Apps & Animations
+          Web Animations
         </OnLoadWrap>
+        
+        <hr className={styles.hr_landing}/>
       </h1>
 
       <h2>
