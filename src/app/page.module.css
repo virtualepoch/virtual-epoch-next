@@ -14,20 +14,12 @@
 }
 
 .hr_landing {
-  width: 100%;
+  width: 50%;
   height: 1px;
   margin: auto;
-  background-color: #fff;
+  background-color: #aff;
   border: none;
-  filter: drop-shadow(0 0 10px #0ff);
-}
-
-.hr_landing:nth-of-type(1) {
-  width: 70%;
-}
-
-.hr_landing:nth-of-type(4) {
-  max-width: 80%;
+  filter: drop-shadow(0 0 7px #0ff);
 }
 
 .landing h1 {
@@ -62,13 +54,13 @@
 .landingHeader:nth-of-type(2) {
   transform: translateY(50px) translateZ(190vh);
   transition-delay: 700ms;
-  animation-delay: 3.5s;
+  animation-delay: 3.2s;
 }
 
 .landingHeader:nth-of-type(3) {
   transform: translateY(100px) translateZ(190vh);
   transition-delay: 1200ms;
-  animation-delay: 4s;
+  animation-delay: 3.4s;
 }
 
 @keyframes bounce {
@@ -76,7 +68,7 @@
     scale: 1;
   }
   60% {
-    scale: 1.5;
+    scale: 1.1;
   }
   70% {
     scale: 1;
