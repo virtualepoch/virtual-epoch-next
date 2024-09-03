@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const Footer = () => {
@@ -51,6 +52,10 @@ export const Footer = () => {
       <p>virtualepoch@gmail.com</p>
 
       <p>&copy; 2024 Virtual Epoch, all rights reserved.</p>
+
+      <Link className="link__footer" href={"/privacy"}>
+        Privacy Policy
+      </Link>
     </footer>
   );
 };

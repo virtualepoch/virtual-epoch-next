@@ -1,0 +1,121 @@
+.section__main {
+  padding: 50px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  overflow: visible;
+}
+
+.card {
+  max-width: 500px;
+  margin: 50px 0;
+  padding: 30px 20px;
+}
+
+.card h1 {
+  font: clamp(1.4rem, 3.5vw, 2rem) Blackpast;
+}
+
+.card p {
+  text-align: left;
+}
+
+.strikeword {
+  color: #0ff;
+  font: 21px Blackpast;
+  animation: strikeword 4s linear infinite;
+}
+
+.strikeword:nth-of-type(2) {
+  animation-delay: 2s;
+}
+
+@keyframes strikeword {
+  0%,
+  100% {
+    color: #f0f;
+  }
+  50% {
+    color: #0ff;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    margin-top: 33px;
+  }
+}
+
+.demoBtn {
+  width: 100%;
+  max-width: 240px;
+  height: fit-content;
+  min-height: 54px;
+  margin: 80px auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.demoBtnText {
+  pointer-events: none;
+}
+
+.aquaFlash {
+  font: 600 20px Raleway;
+  color: var(--blue-chrome-3);
+  border-radius: 1010px;
+  background-image: linear-gradient(
+    110deg,
+    #0aa 35%,
+    #0ffa 40%,
+    #7ee 45%,
+    #eee 50%,
+    #7ee 55%,
+    #0ffa 60%,
+    #0aa 65%
+  );
+  background-size: 250% 100%;
+  background-position: 0 50%;
+  transition: background-position 500ms ease;
+  box-shadow: 1px 2px 10px 1px #0004, inset 1px 1px 2px 1px #0ff7,
+    inset -1px -1px 2px 1px #00a7;
+}
+
+.aquaFlash:hover {
+  background-position: 100% 50%;
+  transition: background-position 700ms ease;
+  box-shadow: none;
+}
+
+.aquaWave {
+  font: 600 20px Blackpast;
+  color: var(--blue-chrome-3);
+  border-radius: 1010px;
+  background-image: linear-gradient(
+    130deg,
+    #60f 25%,
+    #7ee,
+    #eee,
+    #7ee,
+    #60f,
+    #7ee,
+    #eee,
+    #7ee
+  );
+  background-size: 400% 100%;
+  background-position: 0 50%;
+  transition: background-position 500ms ease;
+  box-shadow: 1px 2px 10px 1px #0004, inset 1px 1px 2px 1px #0ff7,
+    inset -1px -1px 2px 1px #00a7;
+}
+
+.aquaWave:hover {
+  background-position: 100% 50%;
+  transition: background-position 700ms ease;
+  box-shadow: none;
+}
