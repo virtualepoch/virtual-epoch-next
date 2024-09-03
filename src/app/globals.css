@@ -653,6 +653,12 @@ button:focus-visible {
   overflow: auto;
   overscroll-behavior: contain;
 }
+@media (max-width: 777px) {
+  .contact-modal {
+    background: #000;
+    backdrop-filter: none;
+  }
+}
 .contact-modal-enter {
   opacity: 0;
 }

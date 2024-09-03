@@ -24,7 +24,6 @@ export default function Privacy() {
             we collect, use, disclose, and safeguard your information when you
             visit our website {siteName} &#40;the &quot;Site&quot;&#41;. By
             using our Site, you agree to the terms of this Privacy Policy.
-            <br />
           </p>
         </div>
       </div>
@@ -39,16 +38,33 @@ export default function Privacy() {
             <br />
             <br />
             When you visit our Site, we may collect personal information that
-            you voluntarily provide to us, such as: - Name - Email address -
-            Phone number - Mailing address
+            you voluntarily provide to us, such as:
+            <br />
+            - Name
+            <br />
+            - Email address
+            <br />
+            - Phone number
+            <br />
+            - Mailing address
             <br />
             <br />
             b. Non-Personal Information
             <br />
             <br />
             We may also collect non-personal information about your visit,
-            including: - IP address - Browser type - Operating system -
-            Referring website - Pages viewed - Date and time of visit
+            including:
+            <br />
+            - IP address
+            <br />
+            - Browser type
+            <br />
+            - Operating system
+            <br />
+            - Referring website
+            <br />
+            - Pages viewed
+            <br />- Date and time of visit
           </p>
         </div>
       </div>
@@ -61,17 +77,23 @@ export default function Privacy() {
             <br />
             We use your information for the following purposes:
             <br />
+            <br />
             - To provide, operate, and maintain our Site
+            <br />
             <br />
             - To improve and personalize your experience on our Site
             <br />
+            <br />
             - To respond to your comments, questions, and requests
+            <br />
             <br />
             - To send you updates, newsletters, and promotional materials
             &#40;if you have opted in&#41;
             <br />
+            <br />
             - To analyze usage patterns and trends to enhance our Site&apos;s
             functionality
+            <br />
             <br />- To comply with legal obligations and protect our legal
             rights
           </p>
@@ -101,7 +123,6 @@ export default function Privacy() {
             -Business Transfers: In the event of a merger, acquisition, or sale
             of all or a portion of our assets, your information may be
             transferred as part of that transaction.
-            <br />
           </p>
         </div>
       </div>
@@ -117,7 +138,6 @@ export default function Privacy() {
             that help us recognize you and remember your preferences. You can
             control cookie settings through your browser, but disabling cookies
             may affect your ability to use certain features of our Site.
-            <br />
           </p>
         </div>
       </div>
@@ -132,7 +152,6 @@ export default function Privacy() {
             responsible for the privacy practices or content of those websites.
             We encourage you to review the privacy policies of any third-party
             sites you visit.
-            <br />
           </p>
         </div>
       </div>
@@ -147,7 +166,6 @@ export default function Privacy() {
             information from unauthorized access, use, or disclosure. However,
             no method of transmission over the internet or electronic storage is
             100% secure, so we cannot guarantee absolute security.
-            <br />
           </p>
         </div>
       </div>
@@ -158,12 +176,17 @@ export default function Privacy() {
             8. Your Choices
             <br />
             <br />
-            You have the right to: - Access, correct, or delete your personal
-            information - Opt-out of receiving promotional communications from
-            us - Object to or restrict the processing of your personal
+            You have the right to:
+            <br />
+            <br />
+            - Access, correct, or delete your personal information
+            <br />
+            <br />
+            - Opt-out of receiving promotional communications from us
+            <br />
+            <br />- Object to or restrict the processing of your personal
             information To exercise these rights, please contact us using the
             information provided below.
-            <br />
           </p>
         </div>
       </div>
@@ -179,7 +202,6 @@ export default function Privacy() {
             under 13. If we become aware that we have collected personal
             information from a child under 13, we will take steps to delete such
             information.
-            <br />
           </p>
         </div>
       </div>
@@ -194,7 +216,6 @@ export default function Privacy() {
             will be posted on this page with an updated effective date. Your
             continued use of our Site after any modifications indicates your
             acceptance of the updated policy.
-            <br />
           </p>
         </div>
       </div>
