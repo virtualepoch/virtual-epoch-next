@@ -51,11 +51,15 @@ export const Footer = () => {
 
       <p>virtualepoch@gmail.com</p>
 
-      <p>&copy; 2024 Virtual Epoch, all rights reserved.</p>
+      <Link className="link__footer" href={"/terms"}>
+        Terms & Conditions
+      </Link>
 
       <Link className="link__footer" href={"/privacy"}>
         Privacy Policy
       </Link>
+
+      <p>&copy; 2024 Virtual Epoch, all rights reserved.</p>
     </footer>
   );
 };

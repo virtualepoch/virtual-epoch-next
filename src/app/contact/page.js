@@ -9,8 +9,7 @@ export default function Contact() {
         <div className="text-shadow">
           <h1>
             If you are currently seeking web design or development services,
-            please contact us by pressing the quote button at the bottom right
-            side of the screen.
+            please contact us by pressing the button below and use the links or fill out the form. We are eager to get started on your next unique project.
             <br />
             <br />
             Our rates are very competitive.
