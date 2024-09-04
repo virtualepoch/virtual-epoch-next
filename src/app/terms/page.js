@@ -12,10 +12,15 @@ export default function Privacy() {
       <div className={`${styles.card} metal-card`}>
         <div className="text-shadow">
           <p>
-            Welcome to {siteName} &#40;“we,” “our,” “us”&#41;. By accessing or
-            using {siteURL} &#40;the “Website”&#41;, you agree to comply with
-            and be bound by the following terms and conditions &#40;the
-            “Terms”&#41;. Please read them carefully.
+            Welcome to {siteName} &#40;“we,” “our,” “us”&#41;.
+            <br />
+            <br />
+            By accessing or using {siteURL} &#40;the “Website”&#41;, you agree
+            to comply with and be bound by the following terms and conditions
+            &#40;the “Terms”&#41;.
+            <br />
+            <br />
+            Please read them carefully.
           </p>
         </div>
       </div>
@@ -99,10 +104,9 @@ export default function Privacy() {
             <br />
             <br />
             All content on the Website, including text, graphics, logos, and
-            images, is the property of {siteName}
-            or its licensors and is protected by intellectual property laws. You
-            may not use any content from the Website without our express written
-            permission.
+            images, is the property of {siteName} or its licensors and is
+            protected by intellectual property laws. You may not use any content
+            from the Website without our express written permission.
           </p>
         </div>
       </div>
@@ -127,10 +131,10 @@ export default function Privacy() {
             8. Limitation of Liability
             <br />
             <br />
-            To the maximum extent permitted by law,
-            {siteName} shall not be liable for any indirect, incidental,
-            special, consequential, or punitive damages arising out of or
-            related to your use of the Website.
+            To the maximum extent permitted by law, {siteName} shall not be
+            liable for any indirect, incidental, special, consequential, or
+            punitive damages arising out of or related to your use of the
+            Website.
           </p>
         </div>
       </div>
@@ -165,13 +169,13 @@ export default function Privacy() {
       <div className={`${styles.card} metal-card`}>
         <div className="text-shadow">
           <p>
-            11. Governing Law 
+            11. Governing Law
             <br />
-            <br />These Terms are governed by and construed in
-            accordance with the laws of Idaho/USA, without regard to
-            its conflict of law principles. Any disputes arising from these
-            Terms shall be subject to the exclusive jurisdiction of the courts
-            located in Idaho/USA.
+            <br />
+            These Terms are governed by and construed in accordance with the
+            laws of Idaho/USA, without regard to its conflict of law principles.
+            Any disputes arising from these Terms shall be subject to the
+            exclusive jurisdiction of the courts located in Idaho/USA.
           </p>
         </div>
       </div>
@@ -181,8 +185,8 @@ export default function Privacy() {
           <p>
             12. Contact Information
             <br />
-            <br /> If you have any questions about these Terms,
-            please contact us at: 
+            <br /> If you have any questions about these Terms, please contact
+            us at:
             <br />
             <br />
             Virtual Epoch LLC
