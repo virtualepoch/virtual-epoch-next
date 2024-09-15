@@ -12,8 +12,8 @@ export const WeProvideTransitionY = ({ styles }) => {
   ];
 
   return (
-    <section className={styles.weProvideSection}>
-      <h2 className={styles.weProvideHeader}>
+    <section className={styles.contentSection}>
+      <h2 className={styles.contentHeader}>
         We always exceed client expectations and visions by providing:
       </h2>
 
@@ -22,8 +22,8 @@ export const WeProvideTransitionY = ({ styles }) => {
           <li key={item.id} info={item} styles={styles}>
             <OnIntersectionDisplayWrap
               threshold={1}
-              classNameEnter={styles.weProvideLI}
-              classNameEnterActive={styles.weProvideTransitionY}
+              classNameEnter={styles.contentLI}
+              classNameEnterActive={styles.contentTransitionY}
             >
               &gt;&nbsp;{item.id}
             </OnIntersectionDisplayWrap>

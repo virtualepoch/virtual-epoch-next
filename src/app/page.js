@@ -1,4 +1,5 @@
 import { Landing } from "./_components/home/landing";
+import { SubLanding } from "./_components/home/sub-landing";
 import { WeProvideTransitionY } from "./_components/home/we-provide-transition-y";
 import { ThreePyramid } from "./_components/three-pyramid";
 import { ClosingStatements } from "./_components/home/closing-statements";
@@ -9,6 +10,8 @@ export default function Home() {
   return (
     <>
       <Landing styles={styles} />
+
+      <SubLanding styles={styles} />
 
       <WeProvideTransitionY styles={styles} />
 

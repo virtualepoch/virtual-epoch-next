@@ -82,8 +82,12 @@ button:focus-visible {
 /* HEADER */
 .main-site-header {
   width: 100%;
+  max-width: 1400px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 888;
   display: flex;
   align-items: center;
@@ -136,13 +140,23 @@ button:focus-visible {
 }
 
 /* BUTTON= OPEN/CLOSE NAVIGATION MENU */
+.btn-nav-wrap {
+  width: 100%;
+  max-width: 1400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 888;
+  margin: auto;
+}
+
 .btn-nav-menu {
   width: 50px;
   height: 50px;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  z-index: 888;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -533,21 +547,20 @@ button:focus-visible {
 /* BUTTON= OPEN CONTACT MODAL */
 .btn-contact-wrap {
   width: 100%;
-  height: 88px;
+  max-width: 1400px;
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 666;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+  margin: auto;
 }
 
 .btn-open-contact-modal {
-  pointer-events: all;
   position: absolute;
   left: auto;
   right: 16px;
+  bottom: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -578,6 +591,13 @@ button:focus-visible {
   );
   background-size: calc(100% + 20px) 100%;
   background-position: 0% 50%;
+}
+
+@media (min-width: 1400px) {
+  .btn-open-contact-modal {
+    bottom: 64px;
+    transform: translateX(calc(-700px + 50% + 16px));
+  }
 }
 
 .btn-open-contact-modal.small {
@@ -720,6 +740,15 @@ button:focus-visible {
 
 .btn-close-contact:focus-visible {
   border: solid cyan;
+}
+
+@media (min-width:1400px){
+  .header-form-contact{
+    left: calc(50vw - 700px + 24px);
+  }
+  .btn-close-contact{
+    right: calc(50vw - 700px);
+  }
 }
 
 .modal-link-wrap {
