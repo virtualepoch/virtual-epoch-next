@@ -20,7 +20,6 @@
   min-width: 100%;
   height: fit-content;
   position: relative;
-  padding: 10px 10px 15px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -53,8 +52,11 @@
   width: fit-content;
   max-width: 100%;
   height: fit-content;
-  position: relative;
-  padding: 10px 10px 25px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0px 10px 25px;
 }
 
 .swiper-thumbnails-slide {
@@ -64,7 +66,6 @@
   height: var(--swiper-thumb-size);
   min-height: var(--swiper-thumb-size);
   max-height: var(--swiper-thumb-size);
-  padding: 0;
   position: relative;
   margin: auto;
   cursor: pointer;
