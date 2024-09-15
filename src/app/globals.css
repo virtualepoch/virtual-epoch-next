@@ -540,9 +540,11 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .btn-open-contact-modal {
+  pointer-events: all;
   position: absolute;
   left: auto;
   right: 16px;
