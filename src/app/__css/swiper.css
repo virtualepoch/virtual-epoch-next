@@ -1,0 +1,91 @@
+:root {
+  --swiper-thumb-size: 40px;
+}
+
+.image-slider {
+  width: 100%;
+  position: relative;
+}
+
+.swiper_container {
+  width: 100%;
+  max-width: 1400px;
+  /* aspect-ratio: 3/2; */
+  min-height: 50vh;
+  max-height: fit-content;
+  position: relative;
+}
+
+.swiper-slide {
+  min-width: 100%;
+  height: fit-content;
+  position: relative;
+  padding: 10px 10px 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  position: absolute;
+  top: calc(50% - 25px);
+  z-index: 101;
+  background: url(/icons/chevron-right-cyan.svg) center / 40% no-repeat;
+  filter: drop-shadow(0 1px 3px #0009);
+  cursor: pointer;
+}
+
+.swiper-btn-prev {
+  left: -5px;
+  transform: rotateY(180deg);
+}
+
+.swiper-btn-next {
+  right: -5px;
+}
+
+/* SWIPER FOR THUMBNAILS */
+.swiper.swiper-thumbnails-wrap {
+  width: fit-content;
+  max-width: 100%;
+  height: fit-content;
+  position: relative;
+  padding: 10px 10px 25px 20px;
+}
+
+.swiper-thumbnails-slide {
+  width: var(--swiper-thumb-size);
+  min-width: var(--swiper-thumb-size);
+  max-width: var(--swiper-thumb-size);
+  height: var(--swiper-thumb-size);
+  min-height: var(--swiper-thumb-size);
+  max-height: var(--swiper-thumb-size);
+  padding: 0;
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+}
+
+.swiper-thumbnails-img:hover,
+.swiper-slide-thumb-active .swiper-thumbnails-img {
+  scale: 1.2;
+  border: 1.5px solid #0ff;
+  transition: scale 200ms ease;
+}
+
+.swiper-thumbnails-img {
+  width: var(--swiper-thumb-size);
+  min-width: var(--swiper-thumb-size);
+  height: var(--swiper-thumb-size);
+  min-height: var(--swiper-thumb-size);
+  border-top: 1px solid #0ff;
+  border-radius: 100%;
+  margin: auto;
+  object-fit: cover;
+  position: relative;
+  box-shadow: 1px 2px 10px 1px #0005;
+}

@@ -13,6 +13,7 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400&display=swap");
+
 @font-face {
   font-family: Blackpast;
   src: url(/fonts/Blackpast.otf);
@@ -887,14 +888,13 @@ input.btn-submit-form {
 
 .featured-projects {
   width: 100%;
-  padding: 0 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  /* overflow-x: auto;
+  scroll-snap-type: x mandatory; */
   /* white-space: nowrap; */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   gap: 111px;
-  justify-content: center;
+  justify-content: center; */
   text-align: center;
 }
 
@@ -914,10 +914,6 @@ input.btn-submit-form {
 }
 
 @media (max-width: 1000px) {
-  .featured-projects {
-    gap: 24px;
-  }
-
   .featured-projects-heading {
     text-align: left;
   }
