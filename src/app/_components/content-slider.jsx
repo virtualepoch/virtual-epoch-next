@@ -43,7 +43,7 @@ export const ContentSlider = ({ content, styles }) => {
         centeredSlides
         watchSlidesProgress
         slidesPerView="auto"
-        initialSlide={1}
+        initialSlide={0}
         effect="cube"
         cubeEffect={{
           shadow: true,
