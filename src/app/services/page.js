@@ -8,6 +8,27 @@ export default function Services() {
 
       <div className={`${styles.card} metal-card`}>
         <div className="text-shadow">
+          <h1>Custom Animated AI ChatBots</h1>
+          <br />
+          <p>
+            The power and popularity of AI is increasing every day. Therefore,
+            it&apos;s very important to take advantage of its many enterprise
+            uses i.e.:
+            <br />
+            <br />- ChatBots trained on your content and designed to amuse and
+            assist.
+            <br />
+            <br />- AI algorithms that will keep you ahead of the competition.
+          </p>
+
+          {/* <DemoBtn addedClass={styles.aquaFlash} />
+
+          <DemoBtn addedClass={styles.aquaWave} /> */}
+        </div>
+      </div>
+
+      <div className={`${styles.card} metal-card`}>
+        <div className="text-shadow">
           <h1>Custom Animated Buttons & Links</h1>
           <br />
           <p>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { OnIntersectionDisplayWrap } from "../on-intersection-display-wrap";
 
 export const SubLanding = ({ styles }) => {
@@ -5,17 +6,22 @@ export const SubLanding = ({ styles }) => {
     {
       id: "AI Web Apps",
       content:
-        "We build Custom AI Chatbots guaranteed to increase business efficiency and dazzle your customers.",
+        "We build Custom AI ChatBots guaranteed to increase business efficiency and dazzle your customers.",
+      content2: "LLMs are trained on your content to ensure absolute accuracy.",
+      href: "/services",
     },
     {
       id: "Custom Websites",
       content:
         "We design and develop custom websites perfectly tailored to your visions.",
+      content2: "Our rates are the most competitive you will find.",
+      href: "/services",
     },
     {
       id: "Web Animations",
       content:
         "Is there a custom animation you'd love to implement but unsure how? —We can surely assist with any custom animation to boost your site's appeal and lower bounce rates.",
+      href: "/services",
     },
   ];
 
@@ -38,6 +44,24 @@ export const SubLanding = ({ styles }) => {
               classNameEnterActive={styles.contentTransitionY}
             >
               <p>- {item.content}</p>
+            </OnIntersectionDisplayWrap>
+
+            <OnIntersectionDisplayWrap
+              threshold={1}
+              classNameEnter={styles.contentLI}
+              classNameEnterActive={styles.contentTransitionY}
+            >
+              <p className={styles.contentTwo}>{item.content2}</p>
+            </OnIntersectionDisplayWrap>
+
+            <OnIntersectionDisplayWrap
+              threshold={1}
+              classNameEnter={styles.contentLI}
+              classNameEnterActive={styles.contentTransitionY}
+            >
+              <Link href={item.href} className={styles.href}>
+                Learn more
+              </Link>
             </OnIntersectionDisplayWrap>
           </li>
         ))}

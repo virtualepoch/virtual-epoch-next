@@ -9,7 +9,7 @@
 
 .swiper_container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 900px;
   /* aspect-ratio: 3/2; */
   min-height: 50vh;
   max-height: fit-content;

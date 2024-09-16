@@ -2,6 +2,22 @@
   --bg-main: #000;
   --text-color-main: #fff;
   --text-color-footer: #aaa;
+  --glassy-bg: linear-gradient(
+    145deg,
+    transparent,
+    #ddd1,
+    #ddd4,
+    #ddd1,
+    transparent,
+    #ddd1,
+    #ddd4,
+    #ddd1,
+    transparent,
+    #ddd1,
+    #ddd4,
+    #ddd1,
+    transparent
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,7 +52,7 @@
 body {
   color: var(--text-color-main);
   background: var(--bg-main);
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 
 main {
@@ -573,22 +589,7 @@ button:focus-visible {
   transform: translateX(calc(-50vw + 50% + 16px));
   transition: width 700ms ease, transform 700ms ease, border-radius 400ms ease,
     opacity 700ms ease, background-position 100ms ease;
-  background-image: linear-gradient(
-    145deg,
-    transparent,
-    #ddd1,
-    #ddd4,
-    #ddd1,
-    transparent,
-    #ddd1,
-    #ddd4,
-    #ddd1,
-    transparent,
-    #ddd1,
-    #ddd4,
-    #ddd1,
-    transparent
-  );
+  background-image: var(--glassy-bg);
   background-size: calc(100% + 20px) 100%;
   background-position: 0% 50%;
 }
@@ -606,23 +607,7 @@ button:focus-visible {
   transition: width 700ms ease, transform 700ms ease,
     border-radius 400ms ease 500ms, opacity 700ms ease;
   overflow: visible;
-  background: url(/icons/message-solid.svg) center / 40%,
-    linear-gradient(
-      145deg,
-      transparent,
-      #ddd1,
-      #ddd4,
-      #ddd1,
-      transparent,
-      #ddd1,
-      #ddd4,
-      #ddd1,
-      transparent,
-      #ddd1,
-      #ddd4,
-      #ddd1,
-      transparent
-    );
+  background: url(/icons/message-solid.svg) center / 40%, var(--glassy-bg);
   /* background-size: 40%; */
   background-repeat: no-repeat;
 }
@@ -742,11 +727,11 @@ button:focus-visible {
   border: solid cyan;
 }
 
-@media (min-width:1400px){
-  .header-form-contact{
+@media (min-width: 1400px) {
+  .header-form-contact {
     left: calc(50vw - 700px + 24px);
   }
-  .btn-close-contact{
+  .btn-close-contact {
     right: calc(50vw - 700px);
   }
 }
@@ -919,13 +904,6 @@ input.btn-submit-form {
 
 .featured-projects {
   width: 100%;
-  /* overflow-x: auto;
-  scroll-snap-type: x mandatory; */
-  /* white-space: nowrap; */
-  /* display: flex;
-  flex-direction: row;
-  gap: 111px;
-  justify-content: center; */
   text-align: center;
 }
 
