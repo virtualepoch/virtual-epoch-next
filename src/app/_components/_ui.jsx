@@ -7,6 +7,7 @@ import { Header } from "./ui/header";
 import { Nav } from "./ui/nav";
 import { RainCanvas } from "./ui/RainCanvas";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
+import { ChatBot } from "./chatbot";
 // import { BtnToTop } from "./ui/btn-to-top";
 // import { ThreeBtnContact } from "./ThreeBtnContact";
 
@@ -24,9 +25,7 @@ export const UI = () => {
 
       <BtnAndModalContact />
 
-      {/* <BtnToTop /> */}
-
-      {/* <ThreeBtnContact /> */}
+      <ChatBot />
     </>
   );
 };

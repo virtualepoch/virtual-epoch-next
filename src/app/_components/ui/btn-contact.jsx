@@ -37,7 +37,7 @@ export const BtnContact = ({ setModal }) => {
           boxShadow: pressed
             ? "none"
             : "0 -1px 10px 1px #7ff5, inset 0 1px 2px 1px #affa, 0 1px 7px 1px #000",
-          textShadow: pressed ? "none" : "0 0 5px #0ff",
+          textShadow: pressed ? "none" : "0 0 5px #affa",
           backgroundPosition:
             pressed & large ? "calc(50% - 10px) 50%" : "50% 50%",
         }}

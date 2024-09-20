@@ -18,6 +18,7 @@
     #ddd1,
     transparent
   );
+  --btn-chat-size: 50px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -929,6 +930,22 @@ input.btn-submit-form {
 }
 
 /* CSSTransitions */
+
+/* Ai ChatBot */
+.chatbot-enter {
+  opacity: 0;
+}
+.chatbot-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+.chatbot-exit {
+  opacity: 1;
+}
+.chatbot-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
 
 /* Resume Card */
 .resume-card-enter {

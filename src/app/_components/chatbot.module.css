@@ -1,0 +1,119 @@
+.chatBotWrap {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 77;
+  margin: auto;
+  pointer-events: none;
+}
+
+.chatBotBtnUnderlay {
+  position: absolute;
+  top: calc(50vh - 32px);
+  right: 2px;
+  z-index: 7776;
+  transition: width 300ms ease, height 300ms ease, top 300ms ease;
+  background-image: var(--glassy-bg);
+  border-radius: 10px;
+}
+
+.btnOpenChat {
+  width: var(--btn-chat-size);
+  height: 64px;
+  position: absolute;
+  top: calc(50vh - 32px);
+  right: 2px;
+  z-index: 77777;
+  text-align: center;
+  color: #0ff;
+  font: 18px Blackpast;
+  text-shadow: 0 0 4px #000;
+  pointer-events: all;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 1px #0003, inset 0 0 4px 1px #fff3;
+}
+
+.chatBot {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 7776;
+  margin: auto;
+  padding: 64px 24px;
+  pointer-events: all;
+}
+
+.headerChatBot {
+  padding: 12px;
+  font: 33px Blackpast;
+  text-align: center;
+}
+
+.searchResult {
+  margin-top: 10px;
+  overflow: scroll;
+}
+
+.btnSurprise,
+.btnInput {
+  width: auto;
+  height: auto;
+  background: var(--glassy-bg);
+  background-size: calc(100% + 20px);
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  margin: 0 0 2px 5px;
+}
+
+.btnSurprise {
+  border: 0.5px solid #044;
+}
+
+.inputWrap {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border: solid 0.5px #cacaca;
+  box-sizing: border-box;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px #0033;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 14px;
+}
+
+.btnInput {
+  width: 111px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.revisionNotice{
+  font: 28px Blackpast;
+  padding: 32px 0;
+  text-align: center;
+}
