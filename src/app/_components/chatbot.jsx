@@ -11,10 +11,54 @@ export const ChatBot = () => {
   const [inputPressed, setInputPressed] = useState();
   const [anim, setAnim] = useState();
   const [openChat, setOpenChat] = useState(false);
+
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
+  const [chatHistory, setChatHistory] = useState([]);
 
-  const surpriseOptions = ["Who"];
+  const surpriseOptions = [
+    "What are the lyrics to the song 'Purple Haze' by Jimi Hendrix?",
+    "Who is the current world record holder for tallest person?",
+    "How hot is the Sun?",
+    "Do aliens exist?",
+  ];
+
+  const surprise = () => {
+    const randomValue =
+      surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)];
+    setValue(randomValue);
+  };
+
+  const getResponse = async () => {
+    if (!value) {
+      setError("Error! Please ask a question!");
+      return;
+    }
+    try {
+      const options = {
+        method: "POST",
+        body: JSON.stringify({
+          history: chatHistory,
+          message: value,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const response = await fetch("http://localhost:8000/gemini", options);
+      const data = await response.text();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+      setError("Something went wrong! Please try again later.");
+    }
+  };
+
+  const clear = () => {
+    setValue("");
+    setError("");
+    setChatHistory([]);
+  };
 
   return (
     <div className={styles.chatBotWrap}>
@@ -44,14 +88,17 @@ export const ChatBot = () => {
             <br />
             It will be back up within 24 hours.
           </p>
+
           <p className={styles}>
             What do you want to know?{" "}
             <button
               className={styles.btnSurprise}
+              disabled={chatHistory}
               onMouseDown={() => setBtnSurprisePressed(true)}
               onMouseUp={() => setBtnSurprisePressed(false)}
               onTouchStart={() => setBtnSurprisePressed(true)}
               onTouchEnd={() => setBtnSurprisePressed(false)}
+              onClick={surprise}
               style={{
                 scale: btnSurprisePressed ? 0.95 : 1,
                 boxShadow: btnSurprisePressed
@@ -65,23 +112,27 @@ export const ChatBot = () => {
               Surprise Me
             </button>
           </p>
+
           <br />
           <div className={styles.inputWrap}>
             <input
-              value={""}
+              value={value}
               placeholder="Ask Gemini a question . . ."
-              onChange={""}
+              onChange={(e) => setValue(e.target.value)}
               className={styles.input}
             />
 
             {!error && (
               <button
+                className={styles.btnInput}
+                onClick={getResponse}
                 onMouseDown={() => setInputPressed(true)}
                 onMouseUp={() => setInputPressed(false)}
                 onTouchStart={() => setInputPressed(true)}
                 onTouchEnd={() => setInputPressed(false)}
                 style={{
                   scale: inputPressed ? 0.95 : 1,
+
                   boxShadow: inputPressed
                     ? "none"
                     : "0 -1px 10px 1px #7ff5, inset 0 1px 2px 1px #affa, 0 1px 7px 1px #000",
@@ -89,20 +140,27 @@ export const ChatBot = () => {
                     ? "calc(50% - 10px) 50%"
                     : "50% 50%",
                 }}
-                className={styles.btnInput}
               >
                 Go
               </button>
             )}
-            {error && <button className={styles.btnInput}>Clear</button>}
+            {error && (
+              <button className={styles.btnInput} onClick={clear}>
+                Clear
+              </button>
+            )}
           </div>
 
           {error && <p>{error}</p>}
 
           <div className={styles.searchResult}>
-            <div key={""}>
-              <p className={styles.answer}></p>
-            </div>
+            {chatHistory.map((chatItem, _index) => (
+              <div key={""}>
+                <p className={styles.answer}>
+                  {chatItem.role} : {chatItem.parts}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </CSSTransition>

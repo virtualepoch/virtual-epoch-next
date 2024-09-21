@@ -10,13 +10,15 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
       <div
         className={styles.chatBotBtnUnderlay}
         style={{
-          width: openChat ? "calc(100% - 4px)" : "50px",
-          height: openChat ? "calc(100% - 4px)" : "64px",
-          top: openChat ? "2px" : "calc(50vh - 32px)",
+          width: openChat ? "100%" : "50px",
+          height: openChat ? "100%" : "64px",
+          top: openChat ? 0 : "calc(50vh - 32px)",
+          right: openChat ? 0 : "2px",
+          borderRadius: openChat ? 0 : "10px",
           backdropFilter: openChat ? "blur(33px)" : "none",
           boxShadow: openChat
-            ? "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7"
-            : "none",
+            ? "none"
+            : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
         }}
       />
 
@@ -30,15 +32,17 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
         onTouchEnd={() => setPressed(false)}
         style={{
           scale: pressed ? 0.95 : 1,
-          boxShadow:
-            pressed | openChat
-              ? "none"
-              : "0 -1px 10px 1px #7ff5, inset 0 1px 2px 1px #affa, 0 1px 7px 1px #000",
+          boxShadow: pressed
+            ? "none"
+            : openChat
+            ? "-1px -1px 8px 1px #eff3, inset 1px 1px 8px 1px #eff3, inset -1px -1px 8px 1px #0118, 1px 1px 8px 1px #0118"
+            : "0 -1px 10px 1px #7ff5, inset 0 1px 2px 1px #affa, 0 1px 7px 1px #000",
           textShadow: pressed ? "none" : "0 0 5px #0ff",
           background: openChat
             ? "url(/icons/xmark-solid.svg) 50% 50% / 50% no-repeat"
             : "none",
           filter: openChat ? "drop-shadow(0 0 10px #0ff)" : "none",
+          top: openChat ? "64px" : "calc(50vh - 32px)",
         }}
         className={styles.btnOpenChat}
       >
