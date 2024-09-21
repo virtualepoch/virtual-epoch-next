@@ -38,6 +38,7 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
           background: openChat
             ? "url(/icons/xmark-solid.svg) 50% 50% / 50% no-repeat"
             : "none",
+          filter: openChat ? "drop-shadow(0 0 10px #0ff)" : "none",
         }}
         className={styles.btnOpenChat}
       >

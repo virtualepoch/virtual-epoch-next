@@ -32,7 +32,7 @@ export const ChatBot = () => {
           <h1 className={styles.headerChatBot}>Ai Chat</h1>
           <br />
           <h2 className={styles.subHeaderChatBot}>
-            Powered by Google&apos;s Gemini
+            Powered by Google&apos;s Gemini AI
           </h2>
           <br />
           <br />
@@ -40,6 +40,7 @@ export const ChatBot = () => {
             Unfortunately,
             <br />
             the ChatBot is currently being updated and has been disabled.
+            <br />
             <br />
             It will be back up within 24 hours.
           </p>
@@ -90,7 +91,7 @@ export const ChatBot = () => {
                 }}
                 className={styles.btnInput}
               >
-                Ask me
+                Go
               </button>
             )}
             {error && <button className={styles.btnInput}>Clear</button>}

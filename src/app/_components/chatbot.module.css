@@ -42,6 +42,8 @@
   width: 100%;
   max-width: 1000px;
   height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   position: absolute;
   left: 0;
   right: 0;
@@ -49,7 +51,7 @@
   bottom: 0;
   z-index: 7776;
   margin: auto;
-  padding: 64px 24px;
+  padding: 64px 50px 64px 16px;
   pointer-events: all;
 }
 
@@ -62,6 +64,7 @@
 .searchResult {
   margin-top: 10px;
   overflow: scroll;
+  height: 800px;
 }
 
 .btnSurprise,
@@ -113,7 +116,6 @@
 }
 
 .revisionNotice{
-  font: 28px Blackpast;
+  font: 28px sans-serif;
   padding: 32px 0;
-  text-align: center;
 }
