@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   top: 0;
-  z-index: 777;
+  z-index: 666;
   margin: auto;
   pointer-events: none;
 }
@@ -15,7 +15,7 @@
   position: absolute;
   top: calc(50vh - 32px);
   right: 2px;
-  z-index: 7776;
+  z-index: 665;
   transition: width 300ms ease, height 300ms ease, top 300ms ease;
   background-image: var(--glassy-bg);
   border-radius: 10px;
@@ -27,7 +27,7 @@
   position: absolute;
   top: calc(50vh - 32px);
   right: 2px;
-  z-index: 77777;
+  z-index: 667;
   text-align: center;
   color: #0ff;
   font: 18px Blackpast;
@@ -49,7 +49,7 @@
   left: 0;
   right: 0;
   top: 64px;
-  z-index: 7776;
+  z-index: 666;
   margin: auto;
   padding: 64px 16px;
   pointer-events: all;
