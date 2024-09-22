@@ -7,9 +7,9 @@ import ChatBotBtn from "./chatbot-btn";
 import styles from "./chatbot.module.css";
 
 export const ChatBot = () => {
+  // const [anim, setAnim] = useState();
   const [btnSurprisePressed, setBtnSurprisePressed] = useState();
   const [inputPressed, setInputPressed] = useState();
-  const [anim, setAnim] = useState();
   const [openChat, setOpenChat] = useState(false);
 
   const [value, setValue] = useState("");
@@ -48,6 +48,20 @@ export const ChatBot = () => {
       const response = await fetch("http://localhost:8000/gemini", options);
       const data = await response.text();
       console.log(data);
+
+      setChatHistory((oldChatHistory) => [
+        ...oldChatHistory,
+        {
+          role: "user",
+          parts: value,
+        },
+        {
+          role: "model",
+          parts: data,
+        },
+      ]);
+
+      setValue("");
     } catch (error) {
       console.error(error);
       setError("Something went wrong! Please try again later.");
@@ -66,8 +80,8 @@ export const ChatBot = () => {
 
       <CSSTransition
         in={openChat}
-        onEnter={() => setAnim(true)}
-        onExit={() => setAnim(false)}
+        // onEnter={() => setAnim(true)}
+        // onExit={() => setAnim(false)}
         timeout={500}
         classNames="chatbot"
         unmountOnExit
@@ -155,7 +169,7 @@ export const ChatBot = () => {
 
           <div className={styles.searchResult}>
             {chatHistory.map((chatItem, _index) => (
-              <div key={""}>
+              <div key={_index}>
                 <p className={styles.answer}>
                   {chatItem.role} : {chatItem.parts}
                 </p>
