@@ -283,13 +283,13 @@
 .contentLI {
   padding: 24px 0;
   opacity: 0;
-  transform: translateY(200%);
+  transform: translateY(50%);
 }
 
 .contentTransitionY {
   opacity: 1;
   transform: none;
-  transition: opacity 1.2s ease 200ms, transform 1s ease;
+  transition: opacity 1.8s ease 200ms, transform 2s ease;
 }
 
 .contentTwo {

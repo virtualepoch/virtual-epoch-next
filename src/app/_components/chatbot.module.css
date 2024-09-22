@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   top: 0;
-  z-index: 77;
+  z-index: 777;
   margin: auto;
   pointer-events: none;
 }
@@ -42,14 +42,13 @@
 .chatBot {
   width: 100%;
   max-width: 1000px;
-  height: 100%;
+  height: calc(100% - 64px);
   overflow-y: auto;
   overscroll-behavior: contain;
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: 64px;
   z-index: 7776;
   margin: auto;
   padding: 64px 16px;
