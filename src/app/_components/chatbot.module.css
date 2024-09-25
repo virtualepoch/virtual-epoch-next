@@ -32,8 +32,8 @@
   background-size: 150% 400%;
   background-repeat: no-repeat;
   /* background-position: 50% center; */
-  transition: width 300ms ease, height 300ms ease, top 300ms ease,
-    border-radius 300ms ease;
+  transition: width 500ms ease, height 500ms ease, top 500ms ease,
+    border-radius 500ms ease;
   /* , background-position 500ms ease */
   /* !!!! OTHER STYLES ARE ANIMATED IN THE COMPONENT */
 }

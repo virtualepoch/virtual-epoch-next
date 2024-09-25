@@ -31,13 +31,13 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
           top: openChat ? 0 : "calc(50vh - 32px)",
           // left: openChat ? "auto" : "2px",
           // right: openChat ? 0 : "2px",
-          borderRadius: openChat ? 0 : "10px",
+          borderRadius: openChat ? 0 : "64px",
           backdropFilter: openChat ? "blur(33px)" : "none",
           boxShadow: openChat
             ? "none"
             : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
           // backgroundSize: "100% 100%",
-          backgroundPosition: `center calc(50% - ${(tiltY + tiltX) * 1.5}px)`,
+          backgroundPosition: `center calc(50% - ${tiltY + tiltX}%)`,
         }}
       />
 
@@ -52,6 +52,10 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
         style={{
           width: openChat ? "50px" : "300px",
           height: openChat ? "50px" : "64px",
+          top: openChat ? "64px" : "calc(50vh - 32px)",
+          left: openChat ? "auto" : 0,
+          right: openChat ? "2px" : 0,
+          borderRadius: openChat ? 0 : "64px",
           scale: pressed ? 0.95 : 1,
           boxShadow: pressed
             ? "none"
@@ -64,9 +68,6 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
             ? "url(/icons/xmark-solid.svg) 50% 50% / 50% no-repeat"
             : "none",
           filter: openChat ? "drop-shadow(0 0 10px #0ff)" : "none",
-          top: openChat ? "64px" : "calc(50vh - 32px)",
-          left: openChat ? "auto" : 0,
-          right: openChat ? "2px" : 0,
         }}
         className={styles.btnOpenChat}
       >
