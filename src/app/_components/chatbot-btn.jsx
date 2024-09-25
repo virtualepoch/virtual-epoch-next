@@ -10,8 +10,8 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
 
   useEffect(() => {
     const handleDeviceOrientation = (e) => {
-      setTiltX(e.beta);
-      setTiltY(e.gamma);
+      setTiltX(Math.round(e.beta));
+      setTiltY(Math.round(e.gamma));
     };
 
     window.addEventListener("deviceorientation", handleDeviceOrientation);
@@ -37,7 +37,7 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
             ? "none"
             : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
           // backgroundSize: "100% 100%",
-          backgroundPosition: `calc(50% - ${(tiltX - 45) * 1.2}px) center`,
+          backgroundPosition: `calc(50% - ${(tiltX - 45) * 1.5}px) center`,
         }}
       />
 
@@ -74,9 +74,9 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
       </button>
 
       <div className={styles.test}>
-        tiltX: {Math.round(tiltX)}
+        tiltX: {tiltX}
         <br />
-        tiltY: {Math.round(tiltY)}
+        tiltY: {tiltY}
       </div>
     </>
   );
