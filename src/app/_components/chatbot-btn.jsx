@@ -37,7 +37,9 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
             ? "none"
             : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
           // backgroundSize: "100% 100%",
-          backgroundPosition: `center ${50 + tiltX}%`,
+          backgroundPosition: `center ${
+            50 + (tiltX > 45 ? tiltX - 45 : -tiltX + 45)
+          }%`,
         }}
       />
 

@@ -20,7 +20,6 @@
   );
   --glassy-bg-lrg: linear-gradient(
     155deg,
-    transparent,
     #ddd1,
     #ddd4,
     #ddd1,
@@ -34,7 +33,7 @@
     #ddd1,
     transparent,
     #ddd1,
-    #ddd4,
+    #0ff4,
     #ddd1,
     transparent,
     #ddd1,
@@ -47,12 +46,7 @@
     transparent,
     #ddd1,
     #ddd4,
-    #ddd1,
-    transparent,
-    #ddd1,
-    #ddd4,
-    #ddd1,
-    transparent
+    #ddd1
   );
   --btn-chat-size: 50px;
 }
