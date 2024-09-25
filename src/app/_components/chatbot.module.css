@@ -29,7 +29,7 @@
   margin: auto;
   z-index: 665;
   background-image: var(--glassy-bg-lrg);
-  background-size: 300% 150%;
+  background-size: 300% 300%;
   background-repeat: no-repeat;
   /* background-position: 50% center; */
   transition: width 300ms ease, height 300ms ease, top 300ms ease,
