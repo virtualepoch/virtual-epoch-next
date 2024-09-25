@@ -1,7 +1,7 @@
 .test {
   width: 80px;
   position: absolute;
-  top: 50%;
+  top: 64px;
   left: 0;
   z-index: 777;
   border: 0.5px solid;

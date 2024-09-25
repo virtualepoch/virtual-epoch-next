@@ -72,9 +72,9 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
       </button>
 
       <div className={styles.test}>
-        tiltX: {tiltX}
+        tiltX: {Math.round(tiltX)}
         <br />
-        tiltY: {tiltY}
+        tiltY: {Math.round(tiltY)}
       </div>
     </>
   );
