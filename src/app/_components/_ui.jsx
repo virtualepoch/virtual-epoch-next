@@ -7,7 +7,8 @@ import { Header } from "./ui/header";
 import { Nav } from "./ui/nav";
 import { RainCanvas } from "./ui/RainCanvas";
 import { BtnAndModalContact } from "./ui/btn-and-modal-contact";
-import { ChatBot } from "./chatbot";
+// import { ChatBot } from "./chatbot";
+// import { ChatBotGemini } from "./chatbot-gemini";
 // import { BtnToTop } from "./ui/btn-to-top";
 // import { ThreeBtnContact } from "./ThreeBtnContact";
 
@@ -17,7 +18,7 @@ export const UI = () => {
 
   return (
     <>
-      {(path === "/") | (path === "/contact") && <RainCanvas />}
+      {(path === "/" || path === "/contact") && <RainCanvas />}
 
       <Header nav={nav} setNav={setNav} />
 
@@ -25,7 +26,7 @@ export const UI = () => {
 
       <BtnAndModalContact />
 
-      <ChatBot />
+      {/* <ChatBotGemini /> */}
     </>
   );
 };

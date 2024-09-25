@@ -11,11 +11,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^0.0.48",
     "@emailjs/browser": "^4.1.0",
     "@google/generative-ai": "^0.19.0",
     "@next/third-parties": "^14.2.4",
     "@react-three/drei": "^9.97.6",
     "@react-three/fiber": "^8.15.16",
+    "ai": "^3.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",

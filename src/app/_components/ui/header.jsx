@@ -72,7 +72,6 @@ export const Header = ({ setNav, nav }) => {
         </header>
       </CSSTransition>
 
-
       <BtnNav nav={nav} setNav={setNav} setShowHeader={setShowHeader} />
     </>
   );

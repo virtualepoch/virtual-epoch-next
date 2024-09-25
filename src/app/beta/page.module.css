@@ -1,0 +1,179 @@
+.contact {
+  padding: 50px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  overflow: visible;
+}
+
+.card {
+  max-width: 500px;
+  margin: 20vh 0 33px;
+  padding: 30px 20px;
+}
+
+@media (max-width: 800px) {
+  .card{
+    margin-top: 33px;
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  border-radius: 50%;
+  box-shadow: inset 2px 4px 10px 1px #fff, inset -2px -4px 10px 1px #000,
+    2px 4px 10px 1px #000a;
+  background: url(/200.png) 0 0 / 100%;
+}
+
+.btnResume {
+  width: 100px;
+  height: 50px;
+  margin: 33px 0 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 3px;
+  filter: drop-shadow(0 0 3px #0ff);
+}
+
+.link:hover,
+.btnResume:hover {
+  border: 1px solid #fffa;
+  transition: 100ms ease;
+}
+
+.resumeCard {
+  max-width: 1200px;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 1111;
+  margin: auto;
+  padding-bottom: 111px;
+  flex-direction: column;
+  background: white;
+  overflow-y: auto;
+}
+
+.btnResumeDownload {
+  min-width: 50px;
+  position: absolute;
+  left: 0;
+  background: url(/icons/chevron-down.svg) center 11px / 40% no-repeat;
+  border: none;
+  filter: drop-shadow(0 0 3px #0008);
+}
+
+.btnResumeDownload:hover {
+  background: url(/icons/chevron-down.svg) center 11px / 40% no-repeat, #5553;
+}
+
+.btnResumeDownload::after {
+  content: "";
+  width: 50%;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  bottom: 17px;
+  transform: translateX(-50%);
+  background: black;
+  border-radius: 100px;
+}
+
+.btnCloseResume {
+  position: absolute;
+  right: 0;
+  border-color: transparent;
+  background: url(/icons/xmark-solid.svg) center/40% no-repeat;
+  filter: drop-shadow(0 0 3px #0008);
+}
+
+.btnCloseResume:hover {
+  background: url(/icons/xmark-solid.svg) center/40% no-repeat, #5553;
+  filter: drop-shadow(0 0 3px #0008);
+}
+
+.downloadPrompt {
+  width: calc(100% - 30px);
+  max-width: 800px;
+  height: 300px;
+  margin: 0 auto;
+  position: fixed;
+  top: 140px;
+  left: 0;
+  right: 0;
+  z-index: 88888888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px 1px black, inset 0 0 4px 1px white;
+  background: linear-gradient(
+    to bottom right,
+    black,
+    rgb(124, 124, 124),
+    black,
+    rgb(158, 158, 158)
+  );
+}
+
+.btnClosePrompt {
+  width: 40px;
+  height: 40px;
+  background: red;
+  box-shadow: inset 1px 1px 2px 1px rgb(255, 255, 255, 0.5),
+    inset -1px -1px 2px 1px rgb(0, 0, 0, 0.5), 1px 2px 5px 1px rgb(0, 0, 0, 0.5);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnClosePrompt::before,
+.btnClosePrompt::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: white;
+  position: absolute;
+}
+
+.btnClosePrompt::before {
+  transform: rotate(45deg);
+}
+
+.btnClosePrompt::after {
+  transform: rotate(-45deg);
+}
+
+.btnDownloadPdf {
+  width: 200px;
+  height: 50px;
+  background: blue;
+  padding: 11px 28px;
+  border-radius: 111px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 1px 1px 3px 1px rgb(255, 255, 255, 0.5),
+    inset -1px -1px 3px 1px rgb(0, 0, 0, 0.5), 1px 2px 5px 1px rgb(0, 0, 0, 0.5);
+}
+
+.resumePng {
+  width: 100%;
+  height: auto;
+}

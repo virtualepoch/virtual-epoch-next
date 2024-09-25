@@ -1,9 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./chatbot.module.css";
 
 export const ChatBotBtn = ({ openChat, setOpenChat }) => {
   const [pressed, setPressed] = useState();
+
+  const [tiltX, setTiltX] = useState(0);
+  const [tiltY, setTiltY] = useState(0);
+
+  useEffect(() => {
+    const handleDeviceOrientation = (e) => {
+      setTiltX(e.beta);
+      setTiltY(e.gamma);
+    };
+
+    window.addEventListener("deviceorientation", handleDeviceOrientation);
+
+    return () => {
+      window.removeEventListener("deviceorientation", handleDeviceOrientation);
+    };
+  }, []);
 
   return (
     <>
@@ -19,6 +35,8 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
           boxShadow: openChat
             ? "none"
             : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
+          backgroundSize: "100% 100%",
+          // backgroundPosition: `${tiltX}`,
         }}
       />
 
@@ -35,8 +53,8 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
           boxShadow: pressed
             ? "none"
             : openChat
-            // ? "-1px -1px 8px 1px #eff3, inset 1px 1px 8px 1px #eff3, inset -1px -1px 8px 1px #0118, 1px 1px 8px 1px #0118"
-            ? "none"
+            ? // ? "-1px -1px 8px 1px #eff3, inset 1px 1px 8px 1px #eff3, inset -1px -1px 8px 1px #0118, 1px 1px 8px 1px #0118"
+              "none"
             : "0 -1px 10px 1px #7ff5, inset 0 1px 2px 1px #affa, 0 1px 7px 1px #000",
           textShadow: pressed ? "none" : "0 0 5px #0ff",
           background: openChat
@@ -49,6 +67,12 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
       >
         {openChat ? "" : "Ai"}
       </button>
+
+      <div className={styles.test}>
+        tiltX: {tiltX}
+        <br />
+        tiltY: {tiltY}
+      </div>
     </>
   );
 };
