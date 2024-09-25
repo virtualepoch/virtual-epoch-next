@@ -10,7 +10,7 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
 
   useEffect(() => {
     const handleDeviceOrientation = (e) => {
-      setTiltX(Math.round(e.beta));
+      setTiltX(-Math.round(e.beta));
       // setTiltY(Math.round(e.gamma));
     };
 
@@ -37,7 +37,7 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
             ? "none"
             : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
           // backgroundSize: "100% 100%",
-          backgroundPosition: `center calc(100 - ${tiltX}%)`,
+          backgroundPosition: `center ${50 + tiltX}%`,
         }}
       />
 
