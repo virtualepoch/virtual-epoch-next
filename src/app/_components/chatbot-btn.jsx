@@ -6,12 +6,12 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
   const [pressed, setPressed] = useState();
 
   const [tiltX, setTiltX] = useState(0);
-  const [tiltY, setTiltY] = useState(0);
+  // const [tiltY, setTiltY] = useState(0);
 
   useEffect(() => {
     const handleDeviceOrientation = (e) => {
       setTiltX(Math.round(e.beta));
-      setTiltY(Math.round(e.gamma));
+      // setTiltY(Math.round(e.gamma));
     };
 
     window.addEventListener("deviceorientation", handleDeviceOrientation);
@@ -37,7 +37,7 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
             ? "none"
             : "0 0 10px 1px #0007, inset 0 0 10px 1px #fff7",
           // backgroundSize: "100% 100%",
-          backgroundPosition: `center calc(100 - ${tiltY + tiltX}%)`,
+          backgroundPosition: `center calc(100 - ${tiltX}%)`,
         }}
       />
 
@@ -74,11 +74,7 @@ export const ChatBotBtn = ({ openChat, setOpenChat }) => {
         {openChat ? "" : "Ai"}
       </button>
 
-      <div className={styles.test}>
-        tiltX: {tiltX}
-        <br />
-        tiltY: {tiltY}
-      </div>
+      <div className={styles.test}>tiltX: {tiltX}</div>
     </>
   );
 };
