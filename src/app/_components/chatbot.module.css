@@ -24,19 +24,30 @@
 
 .chatBotBtnUnderlay {
   position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
   z-index: 665;
-  background-image: var(--glassy-bg);
+  background-image: var(--glassy-bg-lrg);
+  background-size: 300% 150%;
+  background-repeat: no-repeat;
+  /* background-position: 50% center; */
   transition: width 300ms ease, height 300ms ease, top 300ms ease,
     border-radius 300ms ease;
+  /* , background-position 500ms ease */
   /* !!!! OTHER STYLES ARE ANIMATED IN THE COMPONENT */
 }
 
 .btnOpenChat {
   width: var(--btn-chat-size);
+  width: 300px;
   height: 64px;
   position: absolute;
   top: calc(50vh - 32px);
   right: 2px;
+  right: 0;
+  left: 0;
+  margin: auto;
   z-index: 667;
   text-align: center;
   color: #0ff;

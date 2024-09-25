@@ -289,7 +289,7 @@
 .contentTransitionY {
   opacity: 1;
   transform: none;
-  transition: opacity 1.8s ease 200ms, transform 2s ease;
+  transition: opacity 1500ms ease 200ms, transform 1500ms ease;
 }
 
 .contentTwo {
