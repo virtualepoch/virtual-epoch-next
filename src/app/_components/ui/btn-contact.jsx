@@ -4,6 +4,22 @@ export const BtnContact = ({ setModal }) => {
   const [large, setLarge] = useState(true);
   const [pressed, setPressed] = useState();
 
+  const [tiltX, setTiltX] = useState(0);
+  // const [tiltY, setTiltY] = useState(0);
+
+  useEffect(() => {
+    const handleDeviceOrientation = (e) => {
+      setTiltX(Math.round(e.beta));
+      // setTiltY(Math.round(e.gamma));
+    };
+
+    window.addEventListener("deviceorientation", handleDeviceOrientation);
+
+    return () => {
+      window.removeEventListener("deviceorientation", handleDeviceOrientation);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -34,12 +50,15 @@ export const BtnContact = ({ setModal }) => {
         style={{
           width: large ? "254px" : "54px",
           height: "54px",
+          color: pressed ? "#0ff" : "#fff",
+          border: pressed ? "0.5px solid #0ff" : "0.5px solid #fff",
           boxShadow: pressed
             ? "none"
             : "0 -1px 10px 1px #7ff5, inset 0 1px 2px 1px #affa, 0 1px 7px 1px #000",
           textShadow: pressed ? "none" : "0 0 5px #affa",
-          backgroundPosition:
-            pressed & large ? "calc(50% - 10px) 50%" : "50% 50%",
+          backgroundPosition: `center ${tiltX + 5}%`,
+          // backgroundPosition:
+          //   pressed & large ? "calc(50% - 10px) 50%" : "50% 50%",
         }}
       >
         <div
