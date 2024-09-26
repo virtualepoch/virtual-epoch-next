@@ -6,7 +6,7 @@
   z-index: 777;
   border: 0.5px solid #f00;
   color: #fff;
-  background-color: #00f;
+  background-color: #f0f;
 }
 
 .chatBotWrap {
@@ -33,7 +33,7 @@
   background-repeat: no-repeat;
   transition: width 500ms ease, height 500ms ease, top 500ms ease,
     border-radius 500ms ease;
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
   /* !!!! OTHER STYLES ARE ANIMATED IN THE COMPONENT */
 }
 
