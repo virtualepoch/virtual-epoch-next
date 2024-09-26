@@ -31,10 +31,9 @@
   background-image: var(--glassy-bg-lrg);
   background-size: 150% 400%;
   background-repeat: no-repeat;
-  /* background-position: 50% center; */
   transition: width 500ms ease, height 500ms ease, top 500ms ease,
     border-radius 500ms ease;
-  /* , background-position 500ms ease */
+  transform: rotate(180deg);
   /* !!!! OTHER STYLES ARE ANIMATED IN THE COMPONENT */
 }
 
