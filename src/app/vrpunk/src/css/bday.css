@@ -1,0 +1,243 @@
+.bday-title {
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  text-align: center;
+  z-index: 4;
+  padding: 10px;
+  font: 100 35px Everleigh;
+  color: aqua;
+  filter: drop-shadow(0 0 5px crimson);
+  pointer-events: none;
+}
+
+.bday-title.dad {
+  font-family: Ailerons;
+}
+
+.btn-audio {
+  width: 60px;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  left: calc(50% - 25px);
+  z-index: 1111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  filter: drop-shadow(0 0 4px cyan);
+  opacity: 0;
+  transition: background opacity filter 500ms ease-out;
+  margin: 5px 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  .btn-audio {
+    margin: 0;
+  }
+}
+
+.btn-audio.play {
+  opacity: 1;
+  background: url(../../../public/icons/play-solid.svg) center / 35% no-repeat;
+  filter: drop-shadow(0 0 10px cyan);
+}
+
+.btn-audio.pause {
+  opacity: 1;
+  background: url(../../../public/icons/pause-solid.svg) center / 35% no-repeat;
+}
+
+.btn-audio.reload {
+  left: 0;
+  opacity: 1;
+  background: url(../../../public/icons/rotate-right-solid.svg) center / 40%
+    no-repeat;
+}
+
+.btn-audio.play.pressed{
+  background: magenta;
+}
+.btn-audio.pause.pressed{
+  background: magenta;
+}
+
+.bday-section {
+  width: 100%;
+  height: calc(100vh - 140px);
+  margin: 70px auto;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: var(--bday-text-color);
+  font: 500 40px Everleigh;
+  text-align: center;
+}
+
+.bday-section.dad {
+  font-family: Ailerons;
+}
+
+@media (max-width: 700px) {
+  .bday-section {
+    font-size: 35px;
+  }
+}
+
+.bday-text {
+  max-width: 400px;
+  position: absolute;
+  padding: 20px;
+  filter: drop-shadow(-3px 0 1px crimson) drop-shadow(-3px 0 4px aqua);
+  opacity: 0;
+}
+
+.word-pop {
+  color: white;
+  filter: drop-shadow(0 0 5px aqua);
+}
+
+.three-d-text {
+  width: fit-content;
+  display: flex;
+  margin: auto;
+  color: white;
+  filter: drop-shadow(0 0 5px aqua) drop-shadow(-5px -5px 1px aqua);
+  cursor: pointer;
+  border: solid hotpink;
+  border-radius: 100%;
+}
+
+:root {
+  --bday-section-anim-duration: 20s;
+  --bday-text-color: cyan;
+}
+
+.bday-text:nth-child(1) {
+  animation: bday-anim-1 var(--bday-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes bday-anim-1 {
+  5% {
+    opacity: 1;
+  }
+  18% {
+    color: var(--bday-text-color);
+    opacity: 1;
+  }
+  18.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  19% {
+    opacity: 1;
+  }
+  19.5% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+.bday-text:nth-child(2) {
+  animation: bday-anim-2 var(--bday-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes bday-anim-2 {
+  18% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  38% {
+    color: var(--bday-text-color);
+    opacity: 1;
+  }
+  38.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  39% {
+    opacity: 1;
+  }
+  39.5% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+.bday-text:nth-child(3) {
+  animation: bday-anim-3 var(--bday-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes bday-anim-3 {
+  38% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  68% {
+    color: var(--bday-text-color);
+    opacity: 1;
+  }
+  68.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  69% {
+    opacity: 1;
+  }
+  69.5% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+}
+
+.bday-text:nth-child(4) {
+  animation: bday-anim-4 var(--bday-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes bday-anim-4 {
+  68% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  98% {
+    color: var(--bday-text-color);
+    opacity: 1;
+  }
+  98.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  99.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

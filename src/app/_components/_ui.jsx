@@ -24,7 +24,7 @@ export const UI = () => {
 
       <Nav nav={nav} setNav={setNav} />
 
-      <BtnAndModalContact />
+      {path != "/vrpunk" && <BtnAndModalContact />}
 
       {/* <ChatBotGemini /> */}
     </>

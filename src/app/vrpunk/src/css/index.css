@@ -1,0 +1,110 @@
+@font-face {
+  font-family: Ailerons;
+  src: url(/fonts/Ailerons-TrialVersion.otf);
+}
+@font-face {
+  font-family: Arcade;
+  src: url(/fonts/ARCADE.TTF);
+}
+@font-face {
+  font-family: Blox;
+  src: url(/fonts/Blox2.ttf);
+}
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo&display=swap");
+
+:root {
+  --cyan-0: cyan;
+  --cyan-rgb: rgb(0, 255, 255);
+  --cyan-hex: #00ffff;
+  --cyan-1: #83d3ef;
+  --cyan-2: rgb(51, 223, 250);
+  --cyan-3: #44b9bf;
+  --red-1: #f73368;
+  --red-2: #ea0047;
+  --red-3: #e70346;
+  --red-4: #810025;
+  --neon-pink-hsl: hsl(317 100% 54%);
+  --neon-pink: rgb(255, 20, 189);
+  --bg-blur: 0.5;
+  --hero-text-color: white;
+  --hex-color: rgba(0, 255, 255, 0.7);
+  --hex-line: 0.5px;
+  --trans-line: 0.5px;
+  --hex-bg-image: linear-gradient(
+      var(--hex-color) var(--hex-line),
+      transparent var(--trans-line) calc(100% - var(--trans-line)),
+      var(--hex-color) calc(100% - var(--hex-line))
+    ),
+    linear-gradient(
+      to right,
+      var(--hex-color) var(--hex-line),
+      transparent var(--trans-line) calc(100% - var(--trans-line)),
+      var(--hex-color) calc(100% - var(--hex-line))
+    ),
+    linear-gradient(
+      45deg,
+      var(--hex-color) 15%,
+      transparent calc(15% + var(--trans-line)) calc(85% - var(--trans-line)),
+      var(--hex-color) 85%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--hex-color) 15%,
+      transparent calc(15% + var(--trans-line)) calc(85% - var(--trans-line)),
+      var(--hex-color) 85%
+    );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  background: black;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:focus,
+button:focus {
+  outline-color: aqua;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

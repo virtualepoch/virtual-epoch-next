@@ -47,6 +47,14 @@ export const Nav = ({ setNav, nav }) => {
           >
             CONTACT
           </CustomLink>
+    
+          <CustomLink
+            className={open ? "link four open" : "link four"}
+            setNav={setNav}
+            to={"/vrpunk"}
+          >
+            VR PUNK
+          </CustomLink>
         </ul>
       </nav>
     </CSSTransition>

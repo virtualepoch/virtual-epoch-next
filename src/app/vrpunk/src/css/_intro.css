@@ -1,0 +1,174 @@
+.hero-section {
+  width: 100%;
+  height: calc(100% - 100px);
+  padding: 20px;
+  position: fixed;
+  top: 50px;
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: cyan;
+  font: 500 35px Ailerons;
+  letter-spacing: 3px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero-section-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+@media (max-width: 700px) {
+  .hero-section {
+    font-size: 25px;
+  }
+}
+
+.hero-text {
+  max-width: 400px;
+  position: absolute;
+  padding: 20px;
+  text-shadow: -1px 0 2px red, 1px 0 2px red, 0 -1px 2px red, 0 1px 2px red;
+  filter: drop-shadow(0 0 5px black);
+  opacity: 0;
+}
+
+.three-d-text {
+  width: fit-content;
+  display: flex;
+  margin: auto;
+  color: cyan;
+  filter: drop-shadow(0 -3px 1px aqua);
+  cursor: pointer;
+  border: solid red;
+  border-radius: 2px;
+  pointer-events: auto;
+}
+
+:root {
+  --hero-section-anim-duration: 20s;
+}
+
+.hero-text:nth-child(1) {
+  animation: hero-anim-1 var(--hero-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes hero-anim-1 {
+  5% {
+    opacity: 1;
+  }
+  18% {
+    color: var(--hero-text-color);
+    opacity: 1;
+  }
+  18.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  19% {
+    opacity: 1;
+  }
+  19.5% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+.hero-text:nth-child(2) {
+  animation: hero-anim-2 var(--hero-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes hero-anim-2 {
+  18% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  38% {
+    color: var(--hero-text-color);
+    opacity: 1;
+  }
+  38.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  39% {
+    opacity: 1;
+  }
+  39.5% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+.hero-text:nth-child(3) {
+  animation: hero-anim-3 var(--hero-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes hero-anim-3 {
+  38% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  68% {
+    color: var(--hero-text-color);
+    opacity: 1;
+  }
+  68.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  69% {
+    opacity: 1;
+  }
+  69.5% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+}
+
+.hero-text:nth-child(4) {
+  animation: hero-anim-4 var(--hero-section-anim-duration) ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes hero-anim-4 {
+  68% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  98% {
+    color: var(--hero-text-color);
+    opacity: 1;
+  }
+  98.5% {
+    color: aqua;
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  99.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

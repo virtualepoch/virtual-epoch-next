@@ -1,0 +1,102 @@
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+/* FPS METER //////////// */
+.fps {
+  width: 200px;
+  height: 20px;
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 100px);
+  z-index: 1111111;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3px 15px 0 15px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  clip-path: polygon(
+    40px 0,
+    45px 3px,
+    calc(100% - 45px) 3px,
+    calc(100% - 40px) 0,
+    calc(100% - 20px) 0,
+    100% 100%,
+    0 100%,
+    20px 0
+  );
+  color: white;
+  font: 15px Ailerons;
+  letter-spacing: 2px;
+}
+/* CSSTransition */
+.fps-enter {
+  transform: translateY(100%);
+}
+.fps-enter-active {
+  transform: translateY(0%);
+  transition: transform 500ms ease;
+}
+.fps-exit {
+  transform: translateY(0%);
+}
+.fps-exit-active {
+  transform: translateY(100%);
+  transition: transform 500ms ease;
+}
+
+/* Canvas ///////////////////////////////////////////// */
+.canvas {
+  background: linear-gradient(
+      transparent 20%,
+      rgba(255, 255, 255, 0.3),
+      transparent 80%
+    ),
+    linear-gradient(
+      to right,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3),
+      transparent 70%
+    ),
+    linear-gradient(transparent, rgb(0, 155, 155), transparent),
+    linear-gradient(to right, transparent, #a5cc82, transparent);
+}
+
+.canvas.black {
+  background: black;
+}
+
+/* Styling for ScrollControls ////////////////////////////////// */
+.canvas-section {
+  height: 100vh;
+  width: 100vw;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.canvas-section.items-end {
+  justify-content: flex-end;
+}
+
+.canvas-section-div-1 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-section-div-2 {
+  width: 100%;
+}
+
+.canvas-section-div-3 {
+  background-color: white;
+  border: 1px solid skyblue;
+  border-radius: 10px;
+  padding: 12px 8px;
+}
