@@ -13,7 +13,7 @@ export const Ocean = (
   const gl = useThree((state) => state.gl);
   const waterNormals = useLoader(
     THREE.TextureLoader,
-    "/textures/water/og/normal.jpg"
+    "/vrpunk/textures/water/og/normal.jpg"
   );
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
   const geom = useMemo(() => new THREE.PlaneGeometry(10000, 10000), []);

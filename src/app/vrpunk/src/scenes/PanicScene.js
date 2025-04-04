@@ -1,15 +1,18 @@
-import { useRef } from "react";
+"use client";
+
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 // import { DirectionalLightHelper } from "three";
 import {
   GradientTexture,
   OrbitControls,
   PerspectiveCamera,
   Sphere,
-  // useHelper,
+  useHelper,
 } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils";
+import gsap from "gsap";
 
 // COMPONENTS /////////////////////////
 import { PlaneWall } from "../components/three/PlaneWall";

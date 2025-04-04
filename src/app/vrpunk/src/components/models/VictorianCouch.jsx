@@ -7,16 +7,20 @@ Source: https://sketchfab.com/3d-models/victorian-couch-6446946d72e34074bf188c78
 Title: Victorian Couch
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export function VictorianCouch(props) {
-  const { nodes, materials } = useGLTF('/models/victorian_couch.glb')
+  const { nodes, materials } = useGLTF("/vrpunk/models/victorian_couch.glb");
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Object_4.geometry} material={materials.Merged_Cushion} position={[0, 0.729, 0.749]} />
+      <mesh
+        geometry={nodes.Object_4.geometry}
+        material={materials.Merged_Cushion}
+        position={[0, 0.729, 0.749]}
+      />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/victorian_couch.glb')
+useGLTF.preload("/vrpunk/models/victorian_couch.glb");

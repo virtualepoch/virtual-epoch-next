@@ -7,19 +7,25 @@ Source: https://sketchfab.com/3d-models/spider-bc0a750b8363472e80eaa5881655ed23
 Title: Spider
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export function Spider(props) {
-  const { nodes, materials } = useGLTF('/models/spider.glb')
+  const { nodes, materials } = useGLTF("/vrpunk/models/spider.glb");
   return (
     <group {...props} dispose={null}>
       <group position={[0, -19.917, 59.021]} rotation={[-Math.PI, 0, 0]}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.blinn4SG} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.lambert3SG} />
+        <mesh
+          geometry={nodes.Object_2.geometry}
+          material={materials.blinn4SG}
+        />
+        <mesh
+          geometry={nodes.Object_3.geometry}
+          material={materials.lambert3SG}
+        />
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/spider.glb')
+useGLTF.preload("/vrpunk/models/spider.glb");

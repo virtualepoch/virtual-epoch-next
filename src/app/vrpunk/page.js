@@ -3,6 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Loader, PerformanceMonitor } from "@react-three/drei";
 import { XR } from "@react-three/xr";
+import { useRouter } from "next/navigation";
 // COMPONENTS
 import { UI } from "./src/components/UI.js";
 import { MyVRButton } from "./src/components/vr/MyVRButton.js";
@@ -19,10 +20,11 @@ import "./src/css/_intro.css";
 import "./src/css/App.css";
 import "./src/css/buttons.css";
 import "./src/css/index.css";
-import { Hub } from "./src/scenes/_Hub.js";
 // import "./bday.css"
 
 export default function VRPunk() {
+  const router = useRouter();
+
   // useState hooks
   const [start, setStart] = useState(false); // Where:(UI(BtnStart) & IntroScene), For:(to activate the scene animation)
   const [hub, setHub] = useState(false); // (IntroScene) cancels the IntroScene animation / navigates to the Hub
@@ -62,9 +64,9 @@ export default function VRPunk() {
   // Effect to handle scene transition when hub state changes
   useEffect(() => {
     if (hub) {
-      setCurrentScene("hub");
+      router.push("/vrpunk/hub");
     }
-  }, [hub]);
+  }, [hub, router]);
 
   return (
     <div className="App">
@@ -134,7 +136,6 @@ export default function VRPunk() {
               </MyVRButton>
             )} */}
 
-          {/* Replace Routes with conditional rendering based on currentScene */}
           {currentScene === "intro" && (
             <IntroScene
               start={start}
@@ -146,45 +147,7 @@ export default function VRPunk() {
             />
           )}
 
-          {currentScene === "hub" && (
-            <Hub
-              start={start}
-              setStart={setStart}
-              setHub={setHub}
-              hubLink={hubLink}
-              setHubLink={setHubLink}
-              hubBtnClicked={hubBtnClicked}
-              performanceLevel={performanceLevel}
-              setModalInfoOpen={setModalInfoOpen}
-              setCurrentScene={setCurrentScene}
-              currentScene={currentScene}
-            />
-          )}
-
-          {/* {currentScene === "torus" && (
-            <TorusScene
-              performanceLevel={performanceLevel}
-              thirdPerson={thirdPerson}
-              currentScene={currentScene}
-            />
-          )} */}
-
-          {/* {currentScene === "mach" && (
-            <MachScene
-              performanceLevel={performanceLevel}
-              vrSession={vrSession}
-              currentScene={currentScene}
-            />
-          )} */}
-
-          {/* {currentScene === "panic" && (
-            <PanicScene
-              performanceLevel={performanceLevel}
-              vrSession={vrSession}
-              currentScene={currentScene}
-            />
-          )} */}
-          {/* </XR> */}
+          {/* Remove all the other scene render blocks */}
         </Suspense>
       </Canvas>
     </div>

@@ -12,7 +12,9 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function DragonFlying({ props, dragonRef, position }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/dragon_flying.glb");
+  const { nodes, materials, animations } = useGLTF(
+    "/vrpunk/models/dragon_flying.glb"
+  );
   const { actions, mixer } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -63,4 +65,4 @@ export function DragonFlying({ props, dragonRef, position }) {
   );
 }
 
-useGLTF.preload("/models/dragon_flying.glb");
+useGLTF.preload("/vrpunk/models/dragon_flying.glb");

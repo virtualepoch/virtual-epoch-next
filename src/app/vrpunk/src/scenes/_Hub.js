@@ -1,6 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { useRouter } from "next/navigation";
 // COMPONENTS //
 import { HubLink } from "../../src/components/three/HubLink";
 import { HubLinkOrbs } from "../../src/components/three/HubLinkOrbs";
@@ -15,9 +18,8 @@ export const Hub = ({
   hubBtnClicked,
   performanceLevel,
   setModalInfoOpen,
-  setCurrentScene,
-  currentScene,
 }) => {
+  const router = useRouter();
   // Params for responsive sizing
   const viewport = useThree((state) => state.viewport);
   const portrait = viewport.width < viewport.height;
@@ -37,15 +39,13 @@ export const Hub = ({
     setModalInfoOpen(false);
     setStart(false);
     setTimeout(() => {
-      setCurrentScene(
+      const path =
         hubLink === 0
-          ? "intro"
+          ? "/vrpunk/torus"
           : hubLink === 1
-          ? "intro"
-          : hubLink === 2
-          ? "intro"
-          : "intro"
-      );
+          ? "/vrpunk/mach"
+          : "/vrpunk/panic";
+      router.push(path);
     }, 2000);
     setHub(false);
   };
@@ -53,8 +53,8 @@ export const Hub = ({
   return (
     <>
       <OrbitControls
-        minDistance={2}
-        maxDistance={5}
+        minDistance={-4}
+        maxDistance={0}
         minAzimuthAngle={-0.4}
         maxAzimuthAngle={0.4}
         maxPolarAngle={Math.PI / 1.5}
@@ -72,7 +72,7 @@ export const Hub = ({
           <HubLink
             scale={scale}
             linkTitle="Torus"
-            image={"/vrpunk/images/hub/torus-1024.jpg"}
+            image="/vrpunk/images/hub/torus-1024.jpg"
             visible={hubLink === 0}
             onFadeOut={onFadeOut}
             hubBtnClicked={hubBtnClicked}
@@ -86,7 +86,7 @@ export const Hub = ({
           <HubLink
             scale={scale}
             linkTitle="Mach"
-            image={"/vrpunk/images/hub/mach-1024.jpg"}
+            image="/vrpunk/images/hub/mach-1024.jpg"
             visible={hubLink === 1}
             onFadeOut={onFadeOut}
             hubBtnClicked={hubBtnClicked}
@@ -100,7 +100,7 @@ export const Hub = ({
           <HubLink
             scale={scale}
             linkTitle="Panic"
-            image={"/vrpunk/images/hub/panic-1024.jpg"}
+            image="/vrpunk/images/hub/panic-1024.jpg"
             visible={hubLink === 2}
             onFadeOut={onFadeOut}
             hubBtnClicked={hubBtnClicked}
@@ -117,7 +117,6 @@ export const Hub = ({
         rotation={[0, 0, 0]}
         hubBtnClicked={hubBtnClicked}
         hubLinkClicked={hubLinkClicked}
-        currentScene={currentScene}
       />
 
       <Ocean

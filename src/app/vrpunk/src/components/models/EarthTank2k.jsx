@@ -11,7 +11,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function EarthTank2k(props) {
-  const { nodes, materials } = useGLTF("/models/earth_tank_2k.glb");
+  const { nodes, materials } = useGLTF("/vrpunk/models/earth_tank_2k.glb");
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -25,4 +25,4 @@ export function EarthTank2k(props) {
   );
 }
 
-useGLTF.preload("/models/earth_tank_2k.glb");
+useGLTF.preload("/vrpunk/models/earth_tank_2k.glb");

@@ -12,7 +12,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function FearCrawlEdit(props) {
   const group = useRef();
-  const { nodes, animations } = useGLTF("/models/fear_crawl_edit.glb");
+  const { nodes, animations } = useGLTF("/vrpunk/models/fear_crawl_edit.glb");
   const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>
@@ -93,4 +93,4 @@ export function FearCrawlEdit(props) {
   );
 }
 
-useGLTF.preload("/models/fear_crawl_edit.glb");
+useGLTF.preload("/vrpunk/models/fear_crawl_edit.glb");

@@ -17,7 +17,7 @@ export const WaterOne = ({
   const ref = useRef();
   const gl = useThree((state) => state.gl);
 
-  const waterNormals = useTexture("/textures/water/og/normal.jpg");
+  const waterNormals = useTexture("/vrpunk/textures/water/og/normal.jpg");
   // const repeat = 5000;
   // waterNormals.repeat.set(repeat, repeat);
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;

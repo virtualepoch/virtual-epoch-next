@@ -12,7 +12,9 @@ import * as THREE from "three";
 import { useGLTF, useHelper } from "@react-three/drei";
 
 export function MedievalSciFiPillar(props) {
-  const { nodes, materials } = useGLTF("/models/medieval_sci-fi_pillar.glb");
+  const { nodes, materials } = useGLTF(
+    "/vrpunk/models/medieval_sci-fi_pillar.glb"
+  );
 
   const pointLight = useRef();
   // useHelper(pointLight, THREE.PointLightHelper, 1, "red");
@@ -32,4 +34,4 @@ export function MedievalSciFiPillar(props) {
   );
 }
 
-useGLTF.preload("/models/medieval_sci-fi_pillar.glb");
+useGLTF.preload("/vrpunk/models/medieval_sci-fi_pillar.glb");

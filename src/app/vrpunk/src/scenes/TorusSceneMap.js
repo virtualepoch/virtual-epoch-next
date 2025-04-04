@@ -1,3 +1,5 @@
+"use client";
+
 import * as THREE from "three";
 import { Plane, useTexture } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils";
@@ -12,33 +14,33 @@ export const TorusSceneMap = ({ sceneMap, performanceLevel }) => {
   const textures = useTexture({
     map: `${
       performanceLevel < 2
-        ? "/textures/moss-rock/baseColor-1024.jpg"
-        : "/textures/moss-rock/baseColor.jpg"
+        ? "/vrpunk/textures/moss-rock/baseColor-1024.jpg"
+        : "/vrpunk/textures/moss-rock/baseColor.jpg"
     }`,
     displacementMap: `${
       performanceLevel < 2
-        ? "/textures/moss-rock/height-1024.jpg"
-        : "/textures/moss-rock/height.jpg"
+        ? "/vrpunk/textures/moss-rock/height-1024.jpg"
+        : "/vrpunk/textures/moss-rock/height.jpg"
     }`,
     roughnessMap: `${
       performanceLevel < 2
-        ? "/textures/moss-rock/roughness-1024.jpg"
-        : "/textures/moss-rock/roughness.jpg"
+        ? "/vrpunk/textures/moss-rock/roughness-1024.jpg"
+        : "/vrpunk/textures/moss-rock/roughness.jpg"
     }`,
     metalnessMap: `${
       performanceLevel < 2
-        ? "/textures/moss-rock/metallic-16.jpg"
-        : "/textures/moss-rock/metallic.jpg"
+        ? "/vrpunk/textures/moss-rock/metallic-16.jpg"
+        : "/vrpunk/textures/moss-rock/metallic.jpg"
     }`,
     normalMap: `${
       performanceLevel < 2
-        ? "/textures/moss-rock/normal-1024.jpg"
-        : "/textures/moss-rock/normal.jpg"
+        ? "/vrpunk/textures/moss-rock/normal-1024.jpg"
+        : "/vrpunk/textures/moss-rock/normal.jpg"
     }`,
     alphaMap: `${
       performanceLevel < 2
-        ? "/textures/moss-rock/opacity-16.jpg"
-        : "/textures/moss-rock/opacity.jpg"
+        ? "/vrpunk/textures/moss-rock/opacity-16.jpg"
+        : "/vrpunk/textures/moss-rock/opacity.jpg"
     }`,
   });
 

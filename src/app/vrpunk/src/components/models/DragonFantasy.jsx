@@ -13,9 +13,9 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export function DragonFantasy(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/models/dragon_fantasy.glb"
+    "/vrpunk/models/dragon_fantasy.glb"
   );
-  const { actions,mixer } = useAnimations(animations, group);
+  const { actions, mixer } = useAnimations(animations, group);
   // action= JiNengGongJi1,JiNengGongJi2,PuTongGongJi,SiWang,XingZou,ZhanLi
   useEffect(() => {
     actions["JiNengGongJi2"].play();
@@ -25,10 +25,7 @@ export function DragonFantasy(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group
-          name="Sketchfab_model"
-          scale={20.91}
-        >
+        <group name="Sketchfab_model" scale={20.91}>
           <group name="drgonfbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
             <group name="Object_2">
               <group name="RootNode">
@@ -51,4 +48,4 @@ export function DragonFantasy(props) {
   );
 }
 
-useGLTF.preload("/models/dragon_fantasy.glb");
+useGLTF.preload("/vrpunk/models/dragon_fantasy.glb");

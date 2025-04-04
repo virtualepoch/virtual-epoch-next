@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
@@ -13,10 +15,12 @@ import gsap from "gsap";
 import { DragonFlying } from "../components/models/DragonFlying";
 import { TorusSceneMap } from "./TorusSceneMap";
 import { Ocean } from "../components/three/Ocean";
-import texture from "../assets/images/panoramas/cyber-sky.jpg";
 
 export const TorusScene = ({ performanceLevel, thirdPerson }) => {
-  const map = useLoader(THREE.TextureLoader, texture);
+  const map = useLoader(
+    THREE.TextureLoader,
+    "/vrpunk/images/panoramas/cyber-sky.jpg"
+  );
 
   const directionalLight = useRef();
   useHelper(directionalLight, THREE.DirectionalLightHelper, 1, "red");

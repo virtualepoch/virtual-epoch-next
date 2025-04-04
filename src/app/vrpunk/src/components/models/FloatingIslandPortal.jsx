@@ -13,7 +13,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export function FloatingIslandPortal(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/models/floating_portal_island.glb"
+    "/vrpunk/models/floating_portal_island.glb"
   );
   const { actions, mixer } = useAnimations(animations, group);
 
@@ -98,4 +98,4 @@ export function FloatingIslandPortal(props) {
   );
 }
 
-useGLTF.preload("/models/floating_portal_island.glb");
+useGLTF.preload("/vrpunk/models/floating_portal_island.glb");

@@ -1,6 +1,16 @@
-import { useRef } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Stars } from "@react-three/drei";
+"use client";
+
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { useFrame, useLoader, useThree } from "@react-three/fiber";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  Sphere,
+  useHelper,
+  Stars,
+} from "@react-three/drei";
+import gsap from "gsap";
 import { degToRad } from "three/src/math/MathUtils";
 
 // COMPONENTS

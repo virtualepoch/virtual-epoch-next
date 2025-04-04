@@ -12,7 +12,9 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function MegaWyvern(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/mega_wyvern.glb");
+  const { nodes, materials, animations } = useGLTF(
+    "/vrpunk/models/mega_wyvern.glb"
+  );
   const { actions, mixer } = useAnimations(animations, group);
 
   // Actions
@@ -74,4 +76,4 @@ export function MegaWyvern(props) {
   );
 }
 
-useGLTF.preload("/models/mega_wyvern.glb");
+useGLTF.preload("/vrpunk/models/mega_wyvern.glb");

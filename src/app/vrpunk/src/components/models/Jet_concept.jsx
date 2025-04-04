@@ -7,18 +7,31 @@ Source: https://sketchfab.com/3d-models/jet-concept-b94e3042eb334a389135ed8f0d41
 Title: Jet Concept
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export function JetConcept(props) {
-  const { nodes, materials } = useGLTF('/models/jet_concept.glb')
+  const { nodes, materials } = useGLTF("/vrpunk/models/jet_concept.glb");
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Body_Material} />
-      <mesh geometry={nodes.Object_6.geometry} material={materials.Thruster_Emission} position={[1.52, 0, 0]} rotation={[0, -Math.PI / 2, 0]} />
-      <mesh geometry={nodes.Object_8.geometry} material={materials.Thruster} position={[1.52, 0, 0]} rotation={[0, -Math.PI / 2, 0]} />
+      <mesh
+        geometry={nodes.Object_4.geometry}
+        material={materials.Main_Body_Material}
+      />
+      <mesh
+        geometry={nodes.Object_6.geometry}
+        material={materials.Thruster_Emission}
+        position={[1.52, 0, 0]}
+        rotation={[0, -Math.PI / 2, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_8.geometry}
+        material={materials.Thruster}
+        position={[1.52, 0, 0]}
+        rotation={[0, -Math.PI / 2, 0]}
+      />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/jet_concept.glb')
+useGLTF.preload("/vrpunk/models/jet_concept.glb");

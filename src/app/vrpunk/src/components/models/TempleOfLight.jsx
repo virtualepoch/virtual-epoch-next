@@ -11,7 +11,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function TempleOfLight(props) {
-  const { nodes, materials } = useGLTF("/models/temple_of_light.glb");
+  const { nodes, materials } = useGLTF("/vrpunk/models/temple_of_light.glb");
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI, 0, 0]} scale={0.00001}>
@@ -170,4 +170,4 @@ export function TempleOfLight(props) {
   );
 }
 
-useGLTF.preload("/models/temple_of_light.glb");
+useGLTF.preload("/vrpunk/models/temple_of_light.glb");

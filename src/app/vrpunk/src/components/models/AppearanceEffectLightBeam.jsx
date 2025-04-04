@@ -13,7 +13,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export function AppearanceEffectLightBeam({ props, start, hubLinkClicked }) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/models/appearance_effect_light_beam.glb"
+    "/vrpunk/models/appearance_effect_light_beam.glb"
   );
   const { actions, mixer } = useAnimations(animations, group);
 
@@ -1673,4 +1673,4 @@ export function AppearanceEffectLightBeam({ props, start, hubLinkClicked }) {
   );
 }
 
-useGLTF.preload("/models/appearance_effect_light_beam.glb");
+useGLTF.preload("/vrpunk/models/appearance_effect_light_beam.glb");
