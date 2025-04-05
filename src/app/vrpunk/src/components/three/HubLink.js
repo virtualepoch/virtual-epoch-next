@@ -62,7 +62,7 @@ export const HubLink = ({
     >
       <group
         position-z={0.5}
-        scale={2}
+        scale={1}
         onClick={() => {
           setHubLinkClicked(true);
           onClick();

@@ -1,3 +1,5 @@
+"use client";
+
 import { shaderMaterial, useTexture } from "@react-three/drei";
 import { extend, useFrame } from "@react-three/fiber";
 import { easing, geometry } from "maath";
@@ -47,9 +49,9 @@ extend({
 export const FadingImageDisplacement = (props) => {
   const ref = useRef();
   const [texture1, texture2, dispTexture] = useTexture([
-    "/textures/sunset.jpg",
-    "/textures/underwater.jpg",
-    "/textures/displacement/11.jpg",
+    "/vrpunk/textures/sunset.jpg",
+    "/vrpunk/textures/underwater.jpg",
+    "/vrpunk/textures/displacement/11.jpg",
   ]);
   const [hovered, setHover] = useState(false);
   useFrame((_state, delta) => {

@@ -24,8 +24,8 @@ export const Hub = ({
   const viewport = useThree((state) => state.viewport);
   const portrait = viewport.width < viewport.height;
 
-  const scaleFactor = portrait ? viewport.width * 2 : viewport.height * 2;
-  const scale = Math.max(Math.min(scaleFactor, 1.2), 0.75);
+  const scaleFactor = portrait ? viewport.width * 3 : viewport.height * 3;
+  const scale = Math.max(Math.min(scaleFactor, 2.2), 0.75);
 
   // Changes visible hubLink after Dissolve anim
   const [visibleItem, setVisibleItem] = useState(hubLink);
@@ -53,12 +53,12 @@ export const Hub = ({
   return (
     <>
       <OrbitControls
-        minDistance={-4}
-        maxDistance={0}
+        minDistance={1}
+        maxDistance={2}
         minAzimuthAngle={-0.4}
         maxAzimuthAngle={0.4}
-        maxPolarAngle={Math.PI / 1.5}
         minPolarAngle={Math.PI / 4}
+        maxPolarAngle={Math.PI / 1.5}
       />
 
       <mesh position={[0, 0.1, -7]} scale={scale}>

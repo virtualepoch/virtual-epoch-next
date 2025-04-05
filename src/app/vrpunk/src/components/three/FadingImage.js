@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 import { extend, useFrame } from "@react-three/fiber";
 import { shaderMaterial, useTexture } from "@react-three/drei";
@@ -62,8 +64,8 @@ extend({
 export const FadingImage = (props) => {
   const ref = useRef();
   const [texture1, texture2] = useTexture([
-    "/textures/cave.jpg",
-    "/textures/desert.jpg",
+    "/vrpunk/textures/cave.jpg",
+    "/vrpunk/textures/desert.jpg",
   ]);
   const [hovered, setHover] = useState(false);
   useFrame((_state, delta) => {

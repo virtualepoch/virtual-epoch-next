@@ -6,6 +6,7 @@ import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Html } from "@react-three/drei";
 import { useRouter } from "next/navigation";
+import { BtnBack } from "../src/components/ui/buttons/BtnBack";
 
 function ErrorFallback() {
   return (
@@ -45,54 +46,6 @@ function LoadingComponent() {
   );
 }
 
-function BackButton({ onClick }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        bottom: "20px",
-        left: "20px",
-        zIndex: 100,
-      }}
-    >
-      <button
-        onClick={onClick}
-        style={{
-          backgroundColor: "#0f0f0f",
-          color: "cyan",
-          border: "1px solid cyan",
-          padding: "10px 15px",
-          cursor: "pointer",
-          fontFamily: "Arial",
-          fontSize: "16px",
-          borderRadius: "4px",
-          display: "flex",
-          alignItems: "center",
-          gap: "5px",
-        }}
-      >
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ marginRight: "5px" }}
-        >
-          <path
-            d="M15 18L9 12L15 6"
-            stroke="cyan"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        Back
-      </button>
-    </div>
-  );
-}
-
 export default function MachPage() {
   const router = useRouter();
 
@@ -101,8 +54,8 @@ export default function MachPage() {
   };
 
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-      <BackButton onClick={goBackToHub} />
+    <div style={{ width: "100%", height: "100vh", position: "relative" }}>
+      <BtnBack onClick={goBackToHub} />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Canvas>
           <Suspense fallback={<LoadingComponent />}>

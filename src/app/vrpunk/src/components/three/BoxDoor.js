@@ -1,3 +1,5 @@
+"use client";
+
 import * as THREE from "three";
 import { Plane, useTexture } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils";
@@ -6,28 +8,28 @@ export const BoxDoor = ({ position, rotation, performance }) => {
   const textures = useTexture({
     map: `${
       performance < 2
-        ? "/textures/space-cruiser-panels/albedo-512.png"
-        : "/textures/space-cruiser-panels/albedo-1024.png"
+        ? "/vrpunk/textures/space-cruiser-panels/albedo-512.png"
+        : "/vrpunk/textures/space-cruiser-panels/albedo-1024.png"
     }`,
     displacementMap: `${
       performance < 2
-        ? "/textures/space-cruiser-panels/height-512.png"
-        : "/textures/space-cruiser-panels/height-1024.png"
+        ? "/vrpunk/textures/space-cruiser-panels/height-512.png"
+        : "/vrpunk/textures/space-cruiser-panels/height-1024.png"
     }`,
     roughnessMap: `${
       performance < 2
-        ? "/textures/space-cruiser-panels/roughness-512.png"
-        : "/textures/space-cruiser-panels/roughness-1024.png"
+        ? "/vrpunk/textures/space-cruiser-panels/roughness-512.png"
+        : "/vrpunk/textures/space-cruiser-panels/roughness-1024.png"
     }`,
     metalnessMap: `${
       performance < 2
-        ? "/textures/space-cruiser-panels/ao-512.png"
-        : "/textures/space-cruiser-panels/ao-1024.png"
+        ? "/vrpunk/textures/space-cruiser-panels/ao-512.png"
+        : "/vrpunk/textures/space-cruiser-panels/ao-1024.png"
     }`,
     normalMap: `${
       performance < 2
-        ? "/textures/space-cruiser-panels/normal-512.png"
-        : "/textures/space-cruiser-panels/normal-1024.png"
+        ? "/vrpunk/textures/space-cruiser-panels/normal-512.png"
+        : "/vrpunk/textures/space-cruiser-panels/normal-1024.png"
     }`,
   });
 
