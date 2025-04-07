@@ -25,7 +25,7 @@ export const FeaturedProjects = () => {
       phoneImgSrc: "/images/vr-punk-phone.jpg",
       phoneImgAlt: "vr-punk-website-phone",
       thumbImgSrc: "/images/vr-punk-thumb.png",
-      href: "https://vr-punk.vercel.app/",
+      href: "/vrpunk",
       li1: "Fully Immersible VR website",
       li2: "Several 3D/VR Scenes to Explore",
       li3: "Note: Wi-fi access recommended",

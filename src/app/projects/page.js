@@ -11,7 +11,7 @@ export default function Projects() {
       pcImgAlt: "vr-punk-website-pc",
       phoneImgSrc: "/images/vr-punk-phone.jpg",
       phoneImgAlt: "vr-punk-website-phone",
-      href: "https://vr-punk.vercel.app/",
+      href: "/vrpunk",
       desc: "This project is a demonstration of what's possible with 3D web development. It was created using React.js, Three.js, and the react-three/fiber, react-three/drei, and react-three/xr libraries.",
       li1: "A toggle button to view the site in VR.",
       li2: "Responsive layouts - Everything looks great on any device (i.e. mobile, tablet, laptop, pc, and VR headsets).",

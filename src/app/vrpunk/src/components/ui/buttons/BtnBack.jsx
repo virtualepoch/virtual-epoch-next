@@ -2,8 +2,8 @@ export const BtnBack = ({ onClick }) => {
   return (
     <div
       style={{
-        position: "absolute",
-        bottom: "20px",
+        position: "fixed",
+        top: "64px",
         left: "20px",
         zIndex: 100,
       }}
