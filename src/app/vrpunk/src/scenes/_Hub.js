@@ -9,6 +9,7 @@ import { HubLink } from "../../src/components/three/HubLink";
 import { HubLinkOrbs } from "../../src/components/three/HubLinkOrbs";
 import { TorusGroup } from "../../src/components/three/TorusGroup";
 import { Ocean } from "../../src/components/three/Ocean";
+import { BgSphere } from "../components/three/BgSphere";
 
 export const Hub = ({
   setStart,
@@ -125,6 +126,12 @@ export const Hub = ({
         waterColor={0x00ffff}
         sunColor={0xffffff}
       />
+
+      {/* <BgSphere
+        texture="/vrpunk/images/panoramas/cyber-sky.jpg"
+        position={[0, 0, -7]}
+        scale={1}
+      /> */}
     </>
   );
 };

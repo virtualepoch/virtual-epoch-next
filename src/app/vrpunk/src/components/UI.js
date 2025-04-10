@@ -50,7 +50,7 @@ export const UI = ({
       {/* INTRO SCENE STUFF /////////////////////// */}
       {intro && (
         <>
-          <MainOverlay />
+          {/* <MainOverlay /> */}
           <HeroSection start={start} setModalVROpen={setModalVROpen} modalVROpen={modalVROpen}/>
           <BtnStart
             start={start}
