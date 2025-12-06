@@ -14,11 +14,15 @@
   letter-spacing: 3px;
   text-align: center;
   pointer-events: none;
+  transition: opacity 500ms ease;
 }
 
-.hero-section-exit-active {
+.hero-section-enter {
+  opacity: 1;
+}
+
+.hero-section-exit {
   opacity: 0;
-  transition: opacity 500ms ease;
 }
 
 @media (max-width: 700px) {

@@ -12,6 +12,7 @@
   backdrop-filter: blur(20px);
   border-radius: 15px;
   box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.6);
+  overscroll-behavior: contain;
 }
 
 @media (max-width: 700px) {
@@ -19,26 +20,6 @@
     background: rgba(0, 0, 0, 0.99);
     backdrop-filter: none;
   }
-}
-
-/* CSSTransition Styling */
-.modal-info-enter {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-.modal-info-enter-active {
-  transform: translateX(0);
-  opacity: 1;
-  transition: 700ms ease;
-}
-.modal-info-exit {
-  transform: translateX(0);
-  opacity: 1;
-}
-.modal-info-exit-active {
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: 700ms ease;
 }
 
 .info-container {

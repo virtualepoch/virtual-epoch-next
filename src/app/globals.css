@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400&display=swap");
+
+@font-face {
+  font-family: Blackpast;
+  src: url(/fonts/Blackpast.otf);
+}
+
 :root {
   --bg-main: #000;
   --text-color-main: #fff;
@@ -57,13 +64,6 @@
     --text-color-main: #fff;
     --text-color-footer: #aaa;
   }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400&display=swap");
-
-@font-face {
-  font-family: Blackpast;
-  src: url(/fonts/Blackpast.otf);
 }
 
 * {
@@ -148,17 +148,20 @@ button:focus-visible {
     rgb(0, 0, 0, 0)
   );
   backdrop-filter: blur(3px);
-  transition: transform 300ms ease;
+  transition: transform 300ms ease, opacity 500ms ease;
+  opacity: 1;
 }
 
 @media (max-width: 1000px) {
   .main-site-header {
+    opacity: 0;
     transform: translateY(-100%);
   }
-}
 
-.main-site-header.show {
-  transform: none;
+  .main-site-header.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .site-logo {
@@ -274,6 +277,19 @@ button:focus-visible {
   font-size: 25px;
   overflow-y: auto;
   overscroll-behavior: contain;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.nav-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-exit {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .nav ul {
@@ -692,33 +708,20 @@ button:focus-visible {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 778;
+  z-index: 776;
   color: #fff;
   font: 100 20px sans-serif;
   background: #000b;
   backdrop-filter: blur(10px);
   overflow: auto;
   overscroll-behavior: contain;
+  transition: opacity 500ms ease;
 }
 @media (max-width: 777px) {
   .contact-modal {
     background: #000;
     backdrop-filter: none;
   }
-}
-.contact-modal-enter {
-  opacity: 0;
-}
-.contact-modal-enter-active {
-  opacity: 1;
-  transition: opacity 400ms ease;
-}
-.contact-modal-exit {
-  opacity: 1;
-}
-.contact-modal-exit-active {
-  opacity: 0;
-  transition: opacity 200ms ease;
 }
 
 .contact-modal-content-wrap {
@@ -728,6 +731,7 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  transition: transform 500ms ease;
 }
 
 .header-form-contact {

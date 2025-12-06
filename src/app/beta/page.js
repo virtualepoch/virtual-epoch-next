@@ -1,4 +1,3 @@
-import { ChatBotGemini } from "../_components/chatbot-gemini";
 import styles from "./page.module.css";
 
 export default function Beta() {
@@ -12,7 +11,7 @@ export default function Beta() {
         </div>
       </div>
 
-      <ChatBotGemini />
+    
     </main>
   );
 }

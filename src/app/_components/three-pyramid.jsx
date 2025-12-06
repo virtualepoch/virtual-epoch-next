@@ -43,10 +43,13 @@ export const ThreePyramid = ({ styles }) => {
         scale={0.8}
       >
         <meshStandardMaterial
-          transparent
+          transparent={true}
+          depthWrite={false}
+          alphaTest={0.1}
           // side={DoubleSide}
         >
-          <GradientTexture
+          {/* <GradientTexture
+            attach="map"
             stops={[
               0, 0.2, 0.20001, 0.4, 0.40001, 0.6, 0.60001, 0.8, 0.80001, 1,
             ]}
@@ -59,6 +62,25 @@ export const ThreePyramid = ({ styles }) => {
               "#fff",
               "transparent",
               "transparent",
+              "#fff",
+              "#fff",
+            ]}
+            size={100}
+          /> */}
+          <GradientTexture
+            attach="alphaMap"
+            stops={[
+              0, 0.2, 0.20001, 0.4, 0.40001, 0.6, 0.60001, 0.8, 0.80001, 1,
+            ]}
+            colors={[
+              "#fff",
+              "#fff",
+              "#000",
+              "#000",
+              "#fff",
+              "#fff",
+              "#000",
+              "#000",
               "#fff",
               "#fff",
             ]}

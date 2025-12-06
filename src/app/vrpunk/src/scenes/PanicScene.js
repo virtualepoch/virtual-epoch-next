@@ -31,9 +31,39 @@ export const PanicScene = ({ vrSession, performanceLevel }) => {
   // useHelper(pointLight, THREE.PointLightHelper, 1, "red");
 
   const spiderWolf = useRef();
-  useFrame(() => {
-    if (spiderWolf.current.position.z > 10) spiderWolf.current.position.z = -10;
-    spiderWolf.current.position.z += 0.02;
+  const spiderGroup = useRef();
+  const startTime = useRef(null);
+
+  useFrame((state, delta) => {
+    // Initialize start time on first frame
+    if (startTime.current === null) {
+      startTime.current = state.clock.elapsedTime;
+    }
+
+    const elapsed = state.clock.elapsedTime - startTime.current;
+
+    // Spider wolf animation (starts after 0.5 seconds)
+    if (elapsed >= 0.5) {
+      if (spiderWolf.current) {
+        if (spiderWolf.current.position.z > 25) {
+          spiderWolf.current.position.z = -10;
+        }
+        spiderWolf.current.position.z += 0.1;
+      }
+    }
+
+    // Spider group animation (starts after 1 second, decreases y position to 5)
+    if (
+      elapsed >= 2 &&
+      spiderGroup.current &&
+      spiderGroup.current.position.y > 7
+    ) {
+      spiderGroup.current.position.y -= 0.03 * delta * 60; // Decrease y position
+      // Clamp to minimum of 5
+      if (spiderGroup.current.position.y < 7) {
+        spiderGroup.current.position.y = 7;
+      }
+    }
   });
 
   return (
@@ -51,11 +81,19 @@ export const PanicScene = ({ vrSession, performanceLevel }) => {
           intensity={1}
         />
 
-        <FearCrawlEdit
-          scale={2}
-          position={[6, 18, -7]}
-          rotation={[degToRad(55), degToRad(-90), 0]}
-        />
+        <group ref={spiderWolf}>
+          <SpiderWolfAnim
+            scale={30}
+            position={[0, 0.3, -20]}
+            rotation-y={degToRad(180)}
+          />
+        </group>
+
+        {/* <FearCrawlEdit
+          scale={1}
+          position={[0, 3, -7]}
+          rotation={[Math.PI, Math.PI, 0]}
+        /> */}
 
         <VictorianCouch
           scale={1.8}
@@ -66,14 +104,15 @@ export const PanicScene = ({ vrSession, performanceLevel }) => {
         <BoxDoor position={[0, 0, -7.5]} />
 
         <PlaneWall
-          args={[12, 20]}
-          position={[0, 10, -9]}
+          args={[11, 20]}
+          position={[0, 10, 9.5]}
+          rotY={Math.PI}
           performanceLevel={performanceLevel}
         />
 
         <PlaneFloor
-          args={[12, 20]}
-          position={[0, -0.2, 0]}
+          args={[12, 60]}
+          position={[0, -0.2, -20]}
           rotX={-Math.PI / 2}
           performanceLevel={performanceLevel}
         />
@@ -92,24 +131,14 @@ export const PanicScene = ({ vrSession, performanceLevel }) => {
           performanceLevel={performanceLevel}
         />
 
-        <Spider
-          scale={0.04}
-          rotation={[degToRad(110), 0, Math.PI / 2]}
-          position={[5.2, 17, 7]}
-        />
-
-        <group ref={spiderWolf}>
-          <SpiderWolfAnim
-            scale={2}
-            position={[0, 0, -1]}
-            rotation-y={degToRad(180)}
-          />
+        <group ref={spiderGroup} position={[0, 10, -8]}>
+          <Spider scale={0.04} rotation={[1, 0, 0]} />
         </group>
 
-        <MedievalSciFiPillar position={[-5, -0.5, 3]} />
-        <MedievalSciFiPillar position={[5, -0.5, 3]} />
-        <MedievalSciFiPillar position={[-5, -0.5, -7]} />
-        <MedievalSciFiPillar position={[5, -0.5, -7]} />
+        <MedievalSciFiPillar scale-y={3} position={[-4.5, -1.4, -6.5]} />
+        <MedievalSciFiPillar scale-y={3} position={[4.5, -1.4, -6.5]} />
+        <MedievalSciFiPillar scale-y={3} position={[-4.5, -1.4, 8]} />
+        <MedievalSciFiPillar scale-y={3} position={[4.5, -1.4, 8]} />
       </group>
 
       <Sphere args={[100, 8, 8]} rotation={[0, 0, 0]} position={[0, 1, -10]}>

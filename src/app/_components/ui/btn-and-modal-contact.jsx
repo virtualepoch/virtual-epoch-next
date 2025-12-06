@@ -1,6 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { BtnContact } from "./btn-contact";
 
@@ -8,9 +7,21 @@ export const BtnAndModalContact = () => {
   const form = useRef();
 
   const [modal, setModal] = useState(),
-  [pressed, setPressed] = useState(),
-  [anim, setAnim] = useState();
-  
+    [anim, setAnim] = useState(),
+    [pressed, setPressed] = useState();
+
+  useEffect(() => {
+    if (modal) {
+      // Small delay to ensure DOM is ready and trigger CSS transition
+      const timer = setTimeout(() => {
+        setAnim(true);
+      }, 10);
+      return () => clearTimeout(timer);
+    } else {
+      setAnim(false);
+    }
+  }, [modal]);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -38,23 +49,20 @@ export const BtnAndModalContact = () => {
     <>
       <BtnContact setModal={setModal} />
 
-      <CSSTransition
-        in={modal}
-        onEnter={() => setAnim(true)}
-        onExit={() => setAnim(false)}
-        timeout={300}
-        classNames="contact-modal"
-        unmountOnExit
-      >
-        <section className="contact-modal" aria-label="Contact Form">
+      {modal && (
+        <section
+          className={`contact-modal ${
+            modal ? "contact-modal-enter" : "contact-modal-exit"
+          }`}
+          style={{
+            opacity: anim ? 1 : 0,
+          }}
+          aria-label="Contact Form"
+        >
           <div
             className="contact-modal-content-wrap"
             style={{
-              opacity: anim ? 1 : 0,
               transform: anim ? "translateY(0)" : "translateY(50%)",
-              transition: anim
-                ? "opacity 1000ms ease, transform 500ms ease"
-                : "none",
             }}
           >
             <h3 className="header-form-contact">Contact Us</h3>
@@ -143,7 +151,7 @@ export const BtnAndModalContact = () => {
             </form>
           </div>
         </section>
-      </CSSTransition>
+      )}
     </>
   );
 };

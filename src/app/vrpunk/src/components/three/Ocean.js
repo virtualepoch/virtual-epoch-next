@@ -5,10 +5,11 @@ import { Water } from "three-stdlib";
 
 extend({ Water });
 
-export const Ocean = (
-  props,
-  { sunColor = 0xffffff, waterColor = 0x001e0f }
-) => {
+export const Ocean = ({
+  sunColor = 0xffffff,
+  waterColor = 0x001e0f,
+  ...props
+}) => {
   const ref = useRef();
   const gl = useThree((state) => state.gl);
   const waterNormals = useLoader(

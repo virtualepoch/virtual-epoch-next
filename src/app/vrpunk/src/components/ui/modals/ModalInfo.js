@@ -1,4 +1,4 @@
-import { CSSTransition } from "react-transition-group";
+import { useState, useEffect } from "react";
 import { StyledBorder } from "./StyledBorder";
 import "./modal-info.css";
 
@@ -55,6 +55,29 @@ export const ModalInfo = ({
   modalInfoOpen,
   setModalInfoOpen,
 }) => {
+  const [anim, setAnim] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (modalInfoOpen) {
+      // Add to DOM first
+      setIsVisible(true);
+      // Small delay to ensure DOM is ready and trigger CSS transition
+      const timer = setTimeout(() => {
+        setAnim(true);
+      }, 10);
+      return () => clearTimeout(timer);
+    } else {
+      // Start exit animation
+      setAnim(false);
+      // Remove from DOM after animation completes (700ms timeout)
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 700);
+      return () => clearTimeout(timer);
+    }
+  }, [modalInfoOpen]);
+
   const credits = intro
     ? introCredits
     : hub
@@ -69,55 +92,59 @@ export const ModalInfo = ({
     ? punkCredits
     : emptyCredits;
 
+  if (!isVisible) {
+    return null;
+  }
+
   return (
-    <CSSTransition
-      in={modalInfoOpen}
-      unmountOnExit
-      timeout={700}
-      classNames={"modal-info"}
+    <div
+      className="modal-info"
+      style={{
+        transform: anim ? "translateX(0)" : "translateX(-100%)",
+        opacity: anim ? 1 : 0,
+        transition: "transform 700ms ease, opacity 700ms ease",
+      }}
     >
-      <div className="modal-info">
-        <button
-          className="btn-close-modal"
-          onClick={() => {
-            setModalInfoOpen(false);
-          }}
-          // disabled={progress < 100}
-        />
+      <button
+        className="btn-close-modal"
+        onClick={() => {
+          setModalInfoOpen(false);
+        }}
+        // disabled={progress < 100}
+      />
 
-        <div className="info-container flex-col">
-          <h2 className="info-header">Scene Info</h2>
+      <div className="info-container flex-col">
+        <h2 className="info-header">Scene Info</h2>
 
-          <hr className="info-hr" />
+        <hr className="info-hr" />
 
-          <div className="info-wrapper flex-col">
-            <p className="info-text">
-              {intro
-                ? sceneInfo.intro
-                : hub
-                ? sceneInfo.hub
-                : torus
-                ? sceneInfo.torus
-                : mach
-                ? sceneInfo.mach
-                : panic
-                ? sceneInfo.panic
-                : punk
-                ? sceneInfo.punk
-                : sceneInfo.empty}
-            </p>
-          </div>
-
-          <hr className="info-hr" />
-
-          <h2 className="info-header">Scene Asset Credits</h2>
-
-          {credits.map((item, index) => (
-            <Credit key={index} info={item} />
-          ))}
+        <div className="info-wrapper flex-col">
+          <p className="info-text">
+            {intro
+              ? sceneInfo.intro
+              : hub
+              ? sceneInfo.hub
+              : torus
+              ? sceneInfo.torus
+              : mach
+              ? sceneInfo.mach
+              : panic
+              ? sceneInfo.panic
+              : punk
+              ? sceneInfo.punk
+              : sceneInfo.empty}
+          </p>
         </div>
-        <StyledBorder modalInfoOpen={modalInfoOpen} />
+
+        <hr className="info-hr" />
+
+        <h2 className="info-header">Scene Asset Credits</h2>
+
+        {credits.map((item, index) => (
+          <Credit key={index} info={item} />
+        ))}
       </div>
-    </CSSTransition>
+      <StyledBorder anim={anim} />
+    </div>
   );
 };

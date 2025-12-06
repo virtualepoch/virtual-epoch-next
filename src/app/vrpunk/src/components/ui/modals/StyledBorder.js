@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import "./styled-border.css";
 
-export const StyledBorder = ({ modalInfoOpen }) => {
+export const StyledBorder = ({ anim }) => {
   const [borderOpen, setBorderOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      modalInfoOpen ? setBorderOpen(true) : setBorderOpen(false);
+      anim ? setBorderOpen(true) : setBorderOpen(false);
     }, 500);
-  }, [modalInfoOpen]);
+  }, [anim]);
 
   return (
     <div className="styled-border">

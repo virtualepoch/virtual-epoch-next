@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import { useRouter } from "next/navigation";
 // COMPONENTS //
 import { HubLink } from "../../src/components/three/HubLink";
@@ -127,10 +127,23 @@ export const Hub = ({
         sunColor={0xffffff}
       />
 
+      <Stars
+        radius={100}
+        depth={50}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
+
+      <Sky distance={4500} sunPosition={[0, 10, 0]} inclination={0} azimuth={0.15} />
+
       {/* <BgSphere
         texture="/vrpunk/images/panoramas/cyber-sky.jpg"
         position={[0, 0, -7]}
         scale={1}
+        args={[800, 16, 16]}
       /> */}
     </>
   );
