@@ -47,6 +47,7 @@ export default function VRPunk() {
 
   // VR hooks
   const [vrSession, setVrSession] = useState(false);
+  const [vrBtnVisible, setVrBtnVisible] = useState(false);
   const [foveation, setFoveation] = useState(0);
   const [vrFrameRate, setVrFrameRate] = useState(null);
 
@@ -94,6 +95,9 @@ export default function VRPunk() {
         setFoveation={setFoveation}
         setVrFrameRate={setVrFrameRate}
         enterVR={() => xrStore.enterVR()}
+        vrSession={vrSession}
+        setVrSession={setVrSession}
+        setVrBtnVisible={setVrBtnVisible}
         // TorusScene
         thirdPerson={thirdPerson}
         setThirdPerson={setThirdPerson}
@@ -135,11 +139,11 @@ export default function VRPunk() {
           {/* <Controllers /> */}
           {/* <Hands /> */}
 
-          {/* {vrSession && (
-              <MyVRButton start={start} setStart={setStart}>
+          {vrSession && vrBtnVisible && (
+              <MyVRButton start={start} setStart={setStart} setVrBtnVisible={setVrBtnVisible}>
                 Start
               </MyVRButton>
-            )} */}
+            )}
 
           {currentScene === "intro" && (
             <IntroScene

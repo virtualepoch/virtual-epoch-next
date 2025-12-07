@@ -1,3 +1,7 @@
+//!!!!!!!!!!!!!!!!!!ALERT: THIS COMPONENT IS CAUSING ISSUES AND NEEDS TO BE EVALUATED!!!!!!!
+//!!!!!!!!!!!!!!!!!!ALERT: THIS COMPONENT IS CAUSING ISSUES AND NEEDS TO BE EVALUATED!!!!!!!
+//!!!!!!!!!!!!!!!!!!ALERT: THIS COMPONENT IS CAUSING ISSUES AND NEEDS TO BE EVALUATED!!!!!!!
+
 import { createContext, useContext, useRef, useState } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";

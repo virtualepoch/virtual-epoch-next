@@ -38,6 +38,9 @@ export const UI = ({
   setCurrentScene,
   setVrFrameRate,
   enterVR,
+  vrSession,
+  setVrSession,
+  setVrBtnVisible,
 }) => {
   const intro = currentScene === "intro";
   const hub = currentScene === "hub";
@@ -116,6 +119,9 @@ export const UI = ({
         setFoveation={setFoveation}
         setFrameRate={setVrFrameRate}
         enterVR={enterVR}
+        vrSession={vrSession}
+        setVrSession={setVrSession}
+        setVrBtnVisible={setVrBtnVisible}
       />
 
       {torus && (

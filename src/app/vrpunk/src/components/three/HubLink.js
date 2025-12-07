@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { Center, Shape, Text3D, useTexture } from "@react-three/drei";
 import { DissolveMaterial } from "./DissolveMaterial";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Interactive } from "@react-three/xr";
 
@@ -17,7 +17,7 @@ export const HubLink = ({
   setHubLinkClicked,
 }) => {
   const map = useTexture(image);
-  const dissolveMaterial = new THREE.MeshBasicMaterial({ map: map });
+  // const dissolveMaterial = new THREE.MeshBasicMaterial({ map: map });
 
   const text3DMaterial = useRef();
   const text3DMesh = useRef();
@@ -25,6 +25,19 @@ export const HubLink = ({
   const backdropMesh = useRef();
   const backdropMaterial = useRef();
 
+  ///////////////////////////////////////////////////////////////
+  //NEW STUFF, DELETE TO GO BACK TO USING DISSOLVE MATERIAL
+  const dissolveMaterialRef = useRef();
+
+  // Update material map when texture changes
+  useEffect(() => {
+    if (dissolveMaterialRef.current && map) {
+      dissolveMaterialRef.current.map = map;
+      dissolveMaterialRef.current.needsUpdate = true;
+    }
+  }, [map]);
+  // NEW STUFF ENDS HERE
+  /////////////////////////////////////////////////////////////////
   const clock = new THREE.Clock();
   useFrame(() => {
     const a = clock.getElapsedTime();
@@ -94,8 +107,7 @@ export const HubLink = ({
         </mesh>
 
         <Shape ref={dissolveMesh}>
-        <meshBasicMaterial map={map}
-          />
+          <meshBasicMaterial ref={dissolveMaterialRef} map={map} />
         </Shape>
         <Shape
           ref={backdropMesh}
@@ -112,3 +124,13 @@ export const HubLink = ({
     </Interactive>
   );
 };
+
+// DISSOLVE MATERIAL CODE:
+{/* <Shape ref={dissolveMesh}>
+<DissolveMaterial
+  baseMaterial={dissolveMaterial}
+  visible={visible}
+  onFadeOut={onFadeOut}
+  color="#0082b2"
+/>
+</Shape> */}

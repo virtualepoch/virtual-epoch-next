@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Clock } from "three";
 import { useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -10,7 +10,6 @@ import { Ocean } from "../components/three/Ocean";
 
 export const IntroScene = ({
   start,
-  hub,
   setHub,
   performanceLevel,
   currentScene,

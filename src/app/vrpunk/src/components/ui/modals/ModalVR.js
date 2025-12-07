@@ -8,6 +8,9 @@ export const ModalVR = ({
   setFoveation,
   setFrameRate,
   enterVR,
+  vrSession,
+  setVrSession,
+  setVrBtnVisible,
 }) => {
   const [anim, setAnim] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -107,7 +110,15 @@ export const ModalVR = ({
         </section>
       </div>
 
-      <button className="btn-vr" onClick={() => {enterVR(); setModalVROpen(false)}}>
+      <button
+        className="btn-vr"
+        onClick={() => {
+          setModalVROpen(false);
+          setVrSession(true);
+          setVrBtnVisible(true);
+          enterVR();
+        }}
+      >
         Enter VR
       </button>
     </div>

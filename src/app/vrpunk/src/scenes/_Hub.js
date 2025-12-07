@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useThree } from "@react-three/fiber";
-import { OrbitControls, Sky, Stars } from "@react-three/drei";
+import { OrbitControls, Sky } from "@react-three/drei";
 import { useRouter } from "next/navigation";
 // COMPONENTS //
 import { HubLink } from "../../src/components/three/HubLink";
 import { HubLinkOrbs } from "../../src/components/three/HubLinkOrbs";
 import { TorusGroup } from "../../src/components/three/TorusGroup";
 import { Ocean } from "../../src/components/three/Ocean";
-import { BgSphere } from "../components/three/BgSphere";
+// import { BgSphere } from "../components/three/BgSphere";
 
 export const Hub = ({
   setStart,
@@ -24,17 +24,23 @@ export const Hub = ({
   // Params for responsive sizing
   const viewport = useThree((state) => state.viewport);
   const portrait = viewport.width < viewport.height;
-
   const scaleFactor = portrait ? viewport.width * 3 : viewport.height * 3;
   const scale = Math.max(Math.min(scaleFactor, 2.2), 0.75);
 
-  // Changes visible hubLink after Dissolve anim
   const [visibleItem, setVisibleItem] = useState(hubLink);
+  // State to start the transition anim prior to navigate
+  const [hubLinkClicked, setHubLinkClicked] = useState();
+
+  // Changes visible hubLink after Dissolve anim
   const onFadeOut = () =>
     hubLinkClicked ? setVisibleItem() : setVisibleItem(hubLink);
 
-  // State to start the transition anim prior to navigate
-  const [hubLinkClicked, setHubLinkClicked] = useState();
+  // Sync visibleItem with hubLink when hubLink changes
+  useEffect(() => {
+    if (hubLink !== visibleItem && !hubLinkClicked) {
+      setVisibleItem(hubLink);
+    }
+  }, [hubLink, hubLinkClicked, visibleItem]);
 
   const navTimeout = () => {
     setModalInfoOpen(false);
@@ -89,7 +95,7 @@ export const Hub = ({
             linkTitle="Mach"
             image="/vrpunk/images/hub/mach-1024.jpg"
             visible={hubLink === 1}
-            
+            onFadeOut={onFadeOut}
             hubBtnClicked={hubBtnClicked}
             onClick={navTimeout}
             hubLinkClicked={hubLinkClicked}
@@ -127,24 +133,33 @@ export const Hub = ({
         sunColor={0xffffff}
       />
 
-      <Stars
-        radius={100}
-        depth={50}
-        count={5000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
+      <Sky
+        distance={4500}
+        sunPosition={[0, 10, 0]}
+        inclination={0}
+        azimuth={0.15}
       />
-
-      <Sky distance={4500} sunPosition={[0, 10, 0]} inclination={0} azimuth={0.15} />
-
-      {/* <BgSphere
-        texture="/vrpunk/images/panoramas/cyber-sky.jpg"
-        position={[0, 0, -7]}
-        scale={1}
-        args={[800, 16, 16]}
-      /> */}
     </>
   );
 };
+
+{
+  /* <Stars
+    radius={100}
+    depth={50}
+    count={5000}
+    factor={4}
+    saturation={0}
+    fade
+    speed={1}
+  /> */
+}
+
+{
+  /* <BgSphere
+  texture="/vrpunk/images/panoramas/cyber-sky.jpg"
+  position={[0, 0, -7]}
+  scale={1}
+  args={[800, 16, 16]}
+/> */
+}
