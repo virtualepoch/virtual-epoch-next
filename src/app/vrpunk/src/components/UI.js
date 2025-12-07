@@ -36,8 +36,9 @@ export const UI = ({
   setFpsMeter,
   currentScene,
   setCurrentScene,
+  setVrFrameRate,
+  enterVR,
 }) => {
-
   const intro = currentScene === "intro";
   const hub = currentScene === "hub";
   const torus = currentScene === "torus";
@@ -51,7 +52,11 @@ export const UI = ({
       {intro && (
         <>
           {/* <MainOverlay /> */}
-          <HeroSection start={start} setModalVROpen={setModalVROpen} modalVROpen={modalVROpen}/>
+          <HeroSection
+            start={start}
+            setModalVROpen={setModalVROpen}
+            modalVROpen={modalVROpen}
+          />
           <BtnStart
             start={start}
             setStart={setStart}
@@ -109,6 +114,8 @@ export const UI = ({
         setModalVROpen={setModalVROpen}
         foveation={foveation}
         setFoveation={setFoveation}
+        setFrameRate={setVrFrameRate}
+        enterVR={enterVR}
       />
 
       {torus && (

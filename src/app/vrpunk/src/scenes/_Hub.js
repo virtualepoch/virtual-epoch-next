@@ -89,7 +89,7 @@ export const Hub = ({
             linkTitle="Mach"
             image="/vrpunk/images/hub/mach-1024.jpg"
             visible={hubLink === 1}
-            onFadeOut={onFadeOut}
+            
             hubBtnClicked={hubBtnClicked}
             onClick={navTimeout}
             hubLinkClicked={hubLinkClicked}

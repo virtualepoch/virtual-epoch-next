@@ -94,11 +94,7 @@ export const HubLink = ({
         </mesh>
 
         <Shape ref={dissolveMesh}>
-          <DissolveMaterial
-            baseMaterial={dissolveMaterial}
-            visible={visible}
-            onFadeOut={onFadeOut}
-            color="#0082b2"
+        <meshBasicMaterial map={map}
           />
         </Shape>
         <Shape

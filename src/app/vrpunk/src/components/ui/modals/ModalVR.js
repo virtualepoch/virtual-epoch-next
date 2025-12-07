@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { VRButton } from "@react-three/xr";
 import "./modal-vr.css";
 
 export const ModalVR = ({
@@ -8,6 +7,7 @@ export const ModalVR = ({
   foveation,
   setFoveation,
   setFrameRate,
+  enterVR,
 }) => {
   const [anim, setAnim] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -107,7 +107,9 @@ export const ModalVR = ({
         </section>
       </div>
 
-      {/* <VRButton className="btn-vr" style={{}} /> */}
+      <button className="btn-vr" onClick={() => {enterVR(); setModalVROpen(false)}}>
+        Enter VR
+      </button>
     </div>
   );
 };

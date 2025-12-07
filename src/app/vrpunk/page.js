@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Loader, PerformanceMonitor } from "@react-three/drei";
-import { XR } from "@react-three/xr";
+import { XR, createXRStore } from "@react-three/xr";
 import { useRouter } from "next/navigation";
 // COMPONENTS
 import { UI } from "./src/components/UI.js";
@@ -21,6 +21,9 @@ import "./src/css/App.css";
 import "./src/css/buttons.css";
 import "./src/css/index.css";
 // import "./bday.css"
+
+// Create XR store outside component to persist across renders
+const xrStore = createXRStore();
 
 export default function VRPunk() {
   const router = useRouter();
@@ -90,6 +93,7 @@ export default function VRPunk() {
         foveation={foveation}
         setFoveation={setFoveation}
         setVrFrameRate={setVrFrameRate}
+        enterVR={() => xrStore.enterVR()}
         // TorusScene
         thirdPerson={thirdPerson}
         setThirdPerson={setThirdPerson}
@@ -113,7 +117,8 @@ export default function VRPunk() {
         />
 
         <Suspense>
-          {/* <XR
+          <XR
+            store={xrStore}
             foveation={foveation}
             frameRate={
               vrFrameRate === 72
@@ -126,7 +131,7 @@ export default function VRPunk() {
             }
             onSessionStart={() => setVrSession(true)}
             onSessionEnd={() => setVrSession(false)}
-          > */}
+          >
           {/* <Controllers /> */}
           {/* <Hands /> */}
 
@@ -148,6 +153,7 @@ export default function VRPunk() {
           )}
 
           {/* Remove all the other scene render blocks */}
+          </XR>
         </Suspense>
       </Canvas>
     </div>
