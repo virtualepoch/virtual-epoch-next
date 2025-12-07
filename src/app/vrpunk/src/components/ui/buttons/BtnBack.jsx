@@ -5,7 +5,7 @@ export const BtnBack = ({ onClick }) => {
         position: "fixed",
         top: "64px",
         left: "20px",
-        zIndex: 100,
+        zIndex: 1000,
       }}
     >
       <button

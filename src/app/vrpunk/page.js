@@ -1,20 +1,23 @@
 "use client";
+
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Loader, PerformanceMonitor } from "@react-three/drei";
 import { XR, createXRStore } from "@react-three/xr";
-import { useRouter } from "next/navigation";
+
 // COMPONENTS
 import { UI } from "./src/components/UI.js";
 import { MyVRButton } from "./src/components/vr/MyVRButton.js";
+
 // SCENES
 import { IntroScene } from "./src/scenes/__IntroScene.js";
-// import { Hub } from "./scenes/_Hub.js";
-// import { TorusScene } from "./scenes/TorusScene.js";
-// import { MachScene } from "./scenes/MachScene.js";
-// import { PanicScene } from "./scenes/PanicScene.js";
+import { Hub } from "./src/scenes/_Hub.js";
+import { TorusScene } from "./src/scenes/TorusScene.js";
+import { MachScene } from "./src/scenes/MachScene.js";
+import { PanicScene } from "./src/scenes/PanicScene.js";
 // import { PunkScene } from "./scenes/PunkScene.js";
 // import { TestScene } from "./scenes/___TestScene.js";
+
 // CSS
 import "./src/css/_intro.css";
 import "./src/css/App.css";
@@ -26,11 +29,8 @@ import "./src/css/index.css";
 const xrStore = createXRStore();
 
 export default function VRPunk() {
-  const router = useRouter();
-
   // useState hooks
   const [start, setStart] = useState(false); // Where:(UI(BtnStart) & IntroScene), For:(to activate the scene animation)
-  const [hub, setHub] = useState(false); // (IntroScene) cancels the IntroScene animation / navigates to the Hub
   const [linkClicked, setLinkClicked] = useState(false); // (UI(NavMenu) & MyCamControls)
   // resets cam position when a Link is clicked (Scene changes)
   const [performanceLevel, setPerformanceLevel] = useState(1); // ("0-2")
@@ -43,7 +43,7 @@ export default function VRPunk() {
   const [fpsMeter, setFpsMeter] = useState(false);
 
   // Added state for current scene
-  const [currentScene, setCurrentScene] = useState("intro"); // Available scenes: intro, hub, torus, mach, panic
+  const [currentScene, setCurrentScene] = useState(0); // Available scenes: 0=intro, 1=hub, 2=torus, 3=mach, 4=panic
 
   // VR hooks
   const [vrSession, setVrSession] = useState(false);
@@ -54,24 +54,6 @@ export default function VRPunk() {
   // TorusScene hooks
   const [thirdPerson, setThirdPerson] = useState(false);
 
-  // My functions
-  useEffect(() => {
-    setTimeout(() => {
-      if (linkClicked) setLinkClicked(false);
-    }, 1);
-
-    setTimeout(() => {
-      if (hubBtnClicked) setHubBtnClicked(false);
-    }, 1000);
-  }, [linkClicked, hubBtnClicked]);
-
-  // Effect to handle scene transition when hub state changes
-  useEffect(() => {
-    if (hub) {
-      router.push("/vrpunk/hub");
-    }
-  }, [hub, router]);
-
   return (
     <div className="App">
       <Loader />
@@ -79,8 +61,6 @@ export default function VRPunk() {
       <UI
         start={start}
         setStart={setStart}
-        hub={hub}
-        setHub={setHub}
         setLinkClicked={setLinkClicked}
         hubLink={hubLink}
         setHubLink={setHubLink}
@@ -136,27 +116,68 @@ export default function VRPunk() {
             onSessionStart={() => setVrSession(true)}
             onSessionEnd={() => setVrSession(false)}
           >
-          {/* <Controllers /> */}
-          {/* <Hands /> */}
+            {/* <Controllers /> */}
+            {/* <Hands /> */}
 
-          {vrSession && vrBtnVisible && (
-              <MyVRButton start={start} setStart={setStart} setVrBtnVisible={setVrBtnVisible}>
+            {vrSession && vrBtnVisible && (
+              <MyVRButton
+                start={start}
+                setStart={setStart}
+                setVrBtnVisible={setVrBtnVisible}
+              >
                 Start
               </MyVRButton>
             )}
 
-          {currentScene === "intro" && (
-            <IntroScene
-              start={start}
-              setStart={setStart}
-              hub={hub}
-              setHub={setHub}
-              performanceLevel={performanceLevel}
-              currentScene={currentScene}
-            />
-          )}
-
-          {/* Remove all the other scene render blocks */}
+            {(() => {
+              switch (currentScene) {
+                case 0:
+                  return (
+                    <IntroScene
+                      start={start}
+                      setStart={setStart}
+                      performanceLevel={performanceLevel}
+                      currentScene={currentScene}
+                      setCurrentScene={setCurrentScene}
+                    />
+                  );
+                case 1:
+                  return (
+                    <Hub
+                      setStart={setStart}
+                      hubLink={hubLink}
+                      setHubLink={setHubLink}
+                      hubBtnClicked={hubBtnClicked}
+                      performanceLevel={performanceLevel}
+                      setModalInfoOpen={setModalInfoOpen}
+                      setCurrentScene={setCurrentScene}
+                    />
+                  );
+                case 2:
+                  return (
+                    <TorusScene
+                      performanceLevel={performanceLevel}
+                      thirdPerson={thirdPerson}
+                    />
+                  );
+                case 3:
+                  return (
+                    <MachScene
+                      performanceLevel={performanceLevel}
+                      vrSession={vrSession}
+                    />
+                  );
+                case 4:
+                  return (
+                    <PanicScene
+                      vrSession={vrSession}
+                      performanceLevel={performanceLevel}
+                    />
+                  );
+                default:
+                  return null;
+              }
+            })()}
           </XR>
         </Suspense>
       </Canvas>

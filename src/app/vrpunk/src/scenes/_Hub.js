@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
-import { useRouter } from "next/navigation";
+
 // COMPONENTS //
 import { HubLink } from "../../src/components/three/HubLink";
 import { HubLinkOrbs } from "../../src/components/three/HubLinkOrbs";
@@ -13,14 +13,13 @@ import { Ocean } from "../../src/components/three/Ocean";
 
 export const Hub = ({
   setStart,
-  setHub,
   hubLink,
   setHubLink,
   hubBtnClicked,
   performanceLevel,
   setModalInfoOpen,
+  setCurrentScene,
 }) => {
-  const router = useRouter();
   // Params for responsive sizing
   const viewport = useThree((state) => state.viewport);
   const portrait = viewport.width < viewport.height;
@@ -45,16 +44,11 @@ export const Hub = ({
   const navTimeout = () => {
     setModalInfoOpen(false);
     setStart(false);
+    setHubLinkClicked(true);
     setTimeout(() => {
-      const path =
-        hubLink === 0
-          ? "/vrpunk/torus"
-          : hubLink === 1
-          ? "/vrpunk/mach"
-          : "/vrpunk/panic";
-      router.push(path);
+      const targetScene = hubLink === 0 ? 2 : hubLink === 1 ? 3 : 4;
+      setCurrentScene(targetScene);
     }, 2000);
-    setHub(false);
   };
 
   return (
@@ -68,7 +62,7 @@ export const Hub = ({
         maxPolarAngle={Math.PI / 1.5}
       />
 
-      <mesh position={[0, 0.1, -7]} scale={scale}>
+      <mesh position={[0, 0.1, -9]} scale={scale}>
         <HubLinkOrbs
           hubLink={hubLink}
           setHubLink={setHubLink}
@@ -119,7 +113,7 @@ export const Hub = ({
       </mesh>
 
       <TorusGroup
-        position={[0, 0, -7]}
+        position={[0, 0, -9]}
         scale={scale}
         rotation={[0, 0, 0]}
         hubBtnClicked={hubBtnClicked}

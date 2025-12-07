@@ -1,11 +1,10 @@
-export const BtnStart = ({ start, setStart, setModalInfoOpen }) => {
+export const BtnStart = ({ start, setStart }) => {
   return (
     <>
       <button
         className={start ? "btn-start opacity-0" : "btn-start"}
         onClick={() => {
           setStart(true);
-          setModalInfoOpen(false);
         }}
       >
         Start

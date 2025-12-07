@@ -12,6 +12,7 @@ import { ModalVR } from "./ui/modals/ModalVR";
 import { BtnStart } from "./ui/buttons/BtnStart";
 import { HeroSection } from "./ui/HeroSection";
 import { BtnsHub } from "./ui/buttons/BtnsHub";
+import { BtnBack } from "./ui/buttons/BtnBack";
 // import { SceneTitle } from "./ui/SceneTitle";
 
 export const UI = ({
@@ -42,12 +43,12 @@ export const UI = ({
   setVrSession,
   setVrBtnVisible,
 }) => {
-  const intro = currentScene === "intro";
-  const hub = currentScene === "hub";
-  const torus = currentScene === "torus";
-  const mach = currentScene === "mach";
-  const panic = currentScene === "panic";
-  const punk = currentScene === "punk";
+  const intro = currentScene === 0;
+  const hub = currentScene === 1;
+  const torus = currentScene === 2;
+  const mach = currentScene === 3;
+  const panic = currentScene === 4;
+  const punk = currentScene === 5;
 
   return (
     <>
@@ -60,12 +61,12 @@ export const UI = ({
             setModalVROpen={setModalVROpen}
             modalVROpen={modalVROpen}
           />
-          <BtnStart
-            start={start}
-            setStart={setStart}
-            setModalInfoOpen={setModalInfoOpen}
-          />
+          <BtnStart start={start} setStart={setStart} />
         </>
+      )}
+
+      {(torus || mach || panic) && (
+        <BtnBack onClick={() => setCurrentScene(1)} />
       )}
 
       <BtnFullScreen />
@@ -94,12 +95,14 @@ export const UI = ({
         VR
       </button>
 
-      <BtnsHub
-        hubLink={hubLink}
-        setHubLink={setHubLink}
-        setHubBtnClicked={setHubBtnClicked}
-        currentScene={currentScene}
-      />
+      {hub && (
+        <BtnsHub
+          hubLink={hubLink}
+          setHubLink={setHubLink}
+          setHubBtnClicked={setHubBtnClicked}
+          currentScene={currentScene}
+        />
+      )}
 
       <ModalInfo
         intro={intro}
@@ -125,14 +128,12 @@ export const UI = ({
       />
 
       {torus && (
-        <>
-          <button
-            className="btn-torus-scene-third-person"
-            onClick={() => {
-              setThirdPerson(!thirdPerson);
-            }}
-          />
-        </>
+        <button
+          className="btn-torus-scene-third-person"
+          onClick={() => {
+            setThirdPerson(!thirdPerson);
+          }}
+        />
       )}
     </>
   );

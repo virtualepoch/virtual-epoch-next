@@ -10,8 +10,8 @@ import { Ocean } from "../components/three/Ocean";
 
 export const IntroScene = ({
   start,
-  setHub,
   performanceLevel,
+  setCurrentScene,
   currentScene,
 }) => {
   const sceneObjects = useRef();
@@ -22,7 +22,9 @@ export const IntroScene = ({
     var sceneSpeed = start ? 0.004 * (a + 0.5) ** 6 : 0.004;
     if (sceneObjects.current.position.z >= 105) {
       sceneObjects.current.position.z = start ? 105 : 0;
-      setHub(start ? true : false);
+      if (start && sceneObjects.current.position.z >= 105) {
+        setCurrentScene(1);
+      }
     }
     sceneObjects.current.position.z += sceneSpeed;
   });

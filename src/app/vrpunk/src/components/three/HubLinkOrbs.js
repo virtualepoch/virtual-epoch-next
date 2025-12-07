@@ -85,7 +85,7 @@ export const HubLinkOrbs = ({ hubLink, setHubLink, performanceLevel }) => {
             }}
           >
             <Text
-              font="fonts/ARCADE.TTF"
+              font="/vrpunk/fonts/ARCADE.TTF"
               fontSize={1}
               position={[0, 0, 1]}
               anchorY={"center"}

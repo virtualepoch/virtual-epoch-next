@@ -3,7 +3,6 @@ import { Center, Shape, Text3D, useTexture } from "@react-three/drei";
 import { DissolveMaterial } from "./DissolveMaterial";
 import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Interactive } from "@react-three/xr";
 
 export const HubLink = ({
   scale,
@@ -65,13 +64,13 @@ export const HubLink = ({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Interactive
-      onSelect={() => {
+    <mesh
+      onClick={() => {
         setHubLinkClicked(true);
         onClick();
       }}
-      onHover={() => setHovered(true)}
-      onBlur={() => setHovered(false)}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
     >
       <group
         position-z={0.5}
@@ -80,19 +79,16 @@ export const HubLink = ({
           setHubLinkClicked(true);
           onClick();
         }}
-        onPointerMove={() => {
+        onPointerOver={() => {
           setHovered(true);
           document.body.style.cursor = "pointer";
         }}
-        onPointerOut={() => {
-          setHovered(hubLinkClicked ? true : false);
-          document.body.style.cursor = "default";
-        }}
+        onPointerOut={() => setHovered(false)}
       >
         <mesh ref={text3DMesh} scale-z={0.5}>
           <Center center disableY>
             <Text3D
-              font="fonts/Arcade.json"
+              font="/vrpunk/fonts/Arcade.json"
               size={0.1}
               position={[0, scale < 0.76 ? -0.11 : -0.1, 0]}
             >
@@ -121,16 +117,18 @@ export const HubLink = ({
           />
         </Shape>
       </group>
-    </Interactive>
+    </mesh>
   );
 };
 
 // DISSOLVE MATERIAL CODE:
-{/* <Shape ref={dissolveMesh}>
+{
+  /* <Shape ref={dissolveMesh}>
 <DissolveMaterial
   baseMaterial={dissolveMaterial}
   visible={visible}
   onFadeOut={onFadeOut}
   color="#0082b2"
 />
-</Shape> */}
+</Shape> */
+}
