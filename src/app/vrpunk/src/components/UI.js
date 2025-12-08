@@ -18,30 +18,30 @@ import { BtnBack } from "./ui/buttons/BtnBack";
 export const UI = ({
   start,
   setStart,
-  setHub,
-  foveation,
-  setFoveation,
-  setLinkClicked,
   hubLink,
   setHubLink,
-  hubBtnClicked,
   setHubBtnClicked,
-  thirdPerson,
-  setThirdPerson,
-  performanceLevel,
+  // Modal management
   modalInfoOpen,
   setModalInfoOpen,
   modalVROpen,
   setModalVROpen,
-  fpsMeter,
-  setFpsMeter,
+  // VR hooks
+  foveation,
+  setFoveation,
+  setVrFrameRate,
+  setVrSession,
+  setVrStartBtnVisible,
+  xrStore,
+  // Scene navigation
   currentScene,
   setCurrentScene,
-  setVrFrameRate,
-  enterVR,
-  vrSession,
-  setVrSession,
-  setVrBtnVisible,
+  // TorusScene
+  thirdPerson,
+  setThirdPerson,
+  // Performance management
+  textureDetail,
+  setTextureDetail,
 }) => {
   const intro = currentScene === 0;
   const hub = currentScene === 1;
@@ -72,12 +72,6 @@ export const UI = ({
       <BtnFullScreen />
 
       {/* <SceneTitle currentScene={currentScene} /> */}
-
-      {/* <FpsMeter
-        fpsMeter={fpsMeter}
-        setFpsMeter={setFpsMeter}
-        performanceLevel={performanceLevel}
-      /> */}
 
       {/* INFO STUFF /////////////////////// */}
       <button
@@ -113,6 +107,8 @@ export const UI = ({
         punk={punk}
         modalInfoOpen={modalInfoOpen}
         setModalInfoOpen={setModalInfoOpen}
+        textureDetail={textureDetail}
+        setTextureDetail={setTextureDetail}
       />
 
       <ModalVR
@@ -121,10 +117,9 @@ export const UI = ({
         foveation={foveation}
         setFoveation={setFoveation}
         setFrameRate={setVrFrameRate}
-        enterVR={enterVR}
-        vrSession={vrSession}
         setVrSession={setVrSession}
-        setVrBtnVisible={setVrBtnVisible}
+        setVrStartBtnVisible={setVrStartBtnVisible}
+        xrStore={xrStore}
       />
 
       {torus && (

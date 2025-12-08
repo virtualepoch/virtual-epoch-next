@@ -1,7 +1,7 @@
-import gridCitySm from "../../../../../../public/vrpunk/images/credits/grid-city-256.jpg";
-import gridCityLg from "../../../../../../public/vrpunk/images/credits/grid-city-512.jpg";
-import metalGridSm from "../../../../../../public/vrpunk/images/credits/metal-futuristic-grid-256.jpg";
-import metalGridLg from "../../../../../../public/vrpunk/images/credits/metal-futuristic-grid-512.jpg";
+const gridCitySm = "/vrpunk/images/credits/grid-city-256.jpg";
+const gridCityLg = "/vrpunk/images/credits/grid-city-512.jpg";
+const metalGridSm = "/vrpunk/images/credits/metal-futuristic-grid-256.jpg";
+const metalGridLg = "/vrpunk/images/credits/metal-futuristic-grid-512.jpg";
 
 export const punkCredits = [
   {

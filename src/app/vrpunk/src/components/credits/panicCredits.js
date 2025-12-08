@@ -1,19 +1,21 @@
-import greenTileSm from "../../../../../../public/vrpunk/images/credits/green-tile-256.jpg";
-import greenTileLg from "../../../../../../public/vrpunk/images/credits/green-tile-512.jpg";
-import spacePanelsSm from "../../../../../../public/vrpunk/images/credits/panic/space-cruiser-panels-256.jpg";
-import spacePanelsLg from "../../../../../../public/vrpunk/images/credits/panic/space-cruiser-panels-512.jpg";
-import orangeMetalSm from "../../../../../../public/vrpunk/images/credits/orange-metal-256.jpg";
-import orangeMetalLg from "../../../../../../public/vrpunk/images/credits/orange-metal-512.jpg";
-import wolfSpiderSm from "../../../../../../public/vrpunk/images/credits/panic/wolf-spider-256.jpg";
-import wolfSpiderLg from "../../../../../../public/vrpunk/images/credits/panic/wolf-spider-512.jpg";
-import blackSpiderSm from "../../../../../../public/vrpunk/images/credits/panic/black-spider-256.jpg";
-import blackSpiderLg from "../../../../../../public/vrpunk/images/credits/panic/black-spider-512.jpg";
-import lightPillarSm from "../../../../../../public/vrpunk/images/credits/panic/light-pillar-256.jpg";
-import lightPillarLg from "../../../../../../public/vrpunk/images/credits/panic/light-pillar-512.jpg";
-import fearCrawlSm from "../../../../../../public/vrpunk/images/credits/panic/fear-crawl-256.jpg";
-import fearCrawlLg from "../../../../../../public/vrpunk/images/credits/panic/fear-crawl-512.jpg";
-import victorianCouchSm from "../../../../../../public/vrpunk/images/credits/panic/victorian-couch-256.jpg";
-import victorianCouchLg from "../../../../../../public/vrpunk/images/credits/panic/victorian-couch-512.jpg";
+const greenTileSm = "/vrpunk/images/credits/green-tile-256.jpg";
+const greenTileLg = "/vrpunk/images/credits/green-tile-512.jpg";
+const spacePanelsSm =
+  "/vrpunk/images/credits/panic/space-cruiser-panels-256.jpg";
+const spacePanelsLg =
+  "/vrpunk/images/credits/panic/space-cruiser-panels-512.jpg";
+const orangeMetalSm = "/vrpunk/images/credits/orange-metal-256.jpg";
+const orangeMetalLg = "/vrpunk/images/credits/orange-metal-512.jpg";
+const wolfSpiderSm = "/vrpunk/images/credits/panic/wolf-spider-256.jpg";
+const wolfSpiderLg = "/vrpunk/images/credits/panic/wolf-spider-512.jpg";
+const blackSpiderSm = "/vrpunk/images/credits/panic/black-spider-256.jpg";
+const blackSpiderLg = "/vrpunk/images/credits/panic/black-spider-512.jpg";
+const lightPillarSm = "/vrpunk/images/credits/panic/light-pillar-256.jpg";
+const lightPillarLg = "/vrpunk/images/credits/panic/light-pillar-512.jpg";
+const fearCrawlSm = "/vrpunk/images/credits/panic/fear-crawl-256.jpg";
+const fearCrawlLg = "/vrpunk/images/credits/panic/fear-crawl-512.jpg";
+const victorianCouchSm = "/vrpunk/images/credits/panic/victorian-couch-256.jpg";
+const victorianCouchLg = "/vrpunk/images/credits/panic/victorian-couch-512.jpg";
 
 export const panicCredits = [
   {

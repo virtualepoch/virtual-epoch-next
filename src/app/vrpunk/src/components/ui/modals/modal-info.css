@@ -30,22 +30,19 @@
 }
 
 .info-header {
-  color: red;
+  color: #c8ffff;
   font: 30px Ailerons;
-  text-shadow: 1px 0 3px cyan;
+  text-shadow: 0 0 5px cyan;
 }
 
-.info-hr {
-  width: 80%;
-  min-height: 1px;
-  border: none;
-  background: cyan;
+.btn-texture-detail {
+  transition: transform 300ms ease;
 }
 
-.info-hr.red {
-  width: 40%;
-  background: rgb(255, 80, 80);
-  box-shadow: 0 0 5px 1px rgb(255, 80, 80);
+.btn-texture-detail:hover {
+  color: #77ffff;
+  transform: translateY(-5px);
+  transition: transform 300ms ease;
 }
 
 /* CONTENT & LINKS */
@@ -56,7 +53,7 @@
 }
 
 .info-text {
-  color: rgb(150, 255, 255);
+  color: #c8ffff;
   font-size: 20px;
 }
 

@@ -12,37 +12,37 @@ export const TorusGroup = ({
   scale,
   start,
   hubLinkClicked,
-  performanceLevel,
+  textureDetail,
   currentScene,
 }) => {
   const textures = useTexture({
     map: `${
-      performanceLevel < 2
+      textureDetail < 2
         ? "/vrpunk/textures/red-scifi-metal/albedo-512.png"
         : "/vrpunk/textures/red-scifi-metal/albedo.png"
     }`,
     displacementMap: `${
-      performanceLevel < 2
+      textureDetail < 2
         ? "/vrpunk/textures/red-scifi-metal/height-512.png"
         : "/vrpunk/textures/red-scifi-metal/height.png"
     }`,
     roughnessMap: `${
-      performanceLevel < 2
+      textureDetail < 2
         ? "/vrpunk/textures/red-scifi-metal/roughness-512.png"
         : "/vrpunk/textures/red-scifi-metal/roughness.png"
     }`,
     metalnessMap: `${
-      performanceLevel < 2
+      textureDetail < 2
         ? "/vrpunk/textures/red-scifi-metal/metallic-512.png"
         : "/vrpunk/textures/red-scifi-metal/metallic.png"
     }`,
     normalMap: `${
-      performanceLevel < 2
+      textureDetail < 2
         ? "/vrpunk/textures/red-scifi-metal/normal-512.png"
         : "/vrpunk/textures/red-scifi-metal/normal.png"
     }`,
     aoMap: `${
-      performanceLevel < 2
+      textureDetail < 2
         ? "/vrpunk/textures/red-scifi-metal/ao-512.png"
         : "/vrpunk/textures/red-scifi-metal/ao.png"
     }`,

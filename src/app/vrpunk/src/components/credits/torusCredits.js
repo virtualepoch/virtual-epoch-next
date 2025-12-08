@@ -1,15 +1,15 @@
-import mossRockSm from "../../../../../../public/vrpunk/images/credits/torus/moss-rock-256.jpg";
-import mossRockLg from "../../../../../../public/vrpunk/images/credits/torus/moss-rock-512.jpg";
-import flyingDragonSm from "../../../../../../public/vrpunk/images/credits/torus/flying-dragon-256.jpg";
-import flyingDragonLg from "../../../../../../public/vrpunk/images/credits/torus/flying-dragon-512.jpg";
-import dragonFantasySm from "../../../../../../public/vrpunk/images/credits/torus/dragon-fantasy-256.jpg";
-import dragonFantasyLg from "../../../../../../public/vrpunk/images/credits/torus/dragon-fantasy-512.jpg";
-import megaWyvernSm from "../../../../../../public/vrpunk/images/credits/torus/mega-wyvern-256.jpg";
-import megaWyvernLg from "../../../../../../public/vrpunk/images/credits/torus/mega-wyvern-512.jpg";
-import templeLightSm from "../../../../../../public/vrpunk/images/credits/torus/temple-of-light-256.jpg";
-import templeLightLg from "../../../../../../public/vrpunk/images/credits/torus/temple-of-light-512.jpg";
-import floatingPortalSm from "../../../../../../public/vrpunk/images/credits/torus/floating-portal-256.jpg";
-import floatingPortalLg from "../../../../../../public/vrpunk/images/credits/torus/floating-portal-512.jpg";
+const mossRockSm = "/vrpunk/images/credits/torus/moss-rock-256.jpg";
+const mossRockLg = "/vrpunk/images/credits/torus/moss-rock-512.jpg";
+const flyingDragonSm = "/vrpunk/images/credits/torus/flying-dragon-256.jpg";
+const flyingDragonLg = "/vrpunk/images/credits/torus/flying-dragon-512.jpg";
+const dragonFantasySm = "/vrpunk/images/credits/torus/dragon-fantasy-256.jpg";
+const dragonFantasyLg = "/vrpunk/images/credits/torus/dragon-fantasy-512.jpg";
+const megaWyvernSm = "/vrpunk/images/credits/torus/mega-wyvern-256.jpg";
+const megaWyvernLg = "/vrpunk/images/credits/torus/mega-wyvern-512.jpg";
+const templeLightSm = "/vrpunk/images/credits/torus/temple-of-light-256.jpg";
+const templeLightLg = "/vrpunk/images/credits/torus/temple-of-light-512.jpg";
+const floatingPortalSm = "/vrpunk/images/credits/torus/floating-portal-256.jpg";
+const floatingPortalLg = "/vrpunk/images/credits/torus/floating-portal-512.jpg";
 
 export const torusCredits = [
   {

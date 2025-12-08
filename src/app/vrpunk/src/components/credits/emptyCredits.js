@@ -1,10 +1,10 @@
-import vpLogo from "../../../../../../public/vrpunk/images/vp-logo.png";
+const vpLogo = "/vrpunk/images/vp-logo.png";
 
 export const emptyCredits = [
   {
     asset: "",
     title: "",
-    link: "https://vr-punk.vercel.app/",
+    link: "https://www.virtualepoch.com/vrpunk/",
     imgSm: vpLogo,
     imgLg: vpLogo,
     alt: "Virtual Punk logo",

@@ -2,12 +2,12 @@ import * as THREE from "three";
 import { useTexture } from "@react-three/drei";
 import { Cylinder } from "@react-three/drei";
 
-export const RabbitHole = ({ position, performanceLevel }) => {
+export const RabbitHole = ({ position, textureDetail }) => {
   // Use paths that point to the public folder
   const texturePath =
-    performanceLevel === 0
+    textureDetail === 0
       ? "/vrpunk/images/rabbit-hole/future-machine-512.jpg"
-      : performanceLevel === 2
+      : textureDetail === 2
       ? "/vrpunk/images/rabbit-hole/future-machine-2048.jpg"
       : "/vrpunk/images/rabbit-hole/future-machine-1024.jpg";
 

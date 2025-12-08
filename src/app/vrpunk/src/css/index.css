@@ -4,11 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Chivo&display=swap");
 @font-face {
   font-family: Ailerons;
-  src: url(/vrpunk/fonts/Ailerons-TrialVersion.otf);
+  src: url(/fonts/Ailerons-TrialVersion.otf);
 }
 @font-face {
   font-family: Arcade;
-  src: url(/vrpunk/fonts/ARCADE.TTF);
+  src: url(/fonts/ARCADE.TTF);
 }
 @font-face {
   font-family: Blox;

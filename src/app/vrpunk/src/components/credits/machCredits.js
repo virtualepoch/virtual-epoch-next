@@ -1,7 +1,7 @@
-import jetConceptSm from "../../../../../../public/vrpunk/images/credits/jet-concept-256.jpg";
-import jetConceptLg from "../../../../../../public/vrpunk/images/credits/jet-concept-512.jpg";
-import earthSm from "../../../../../../public/vrpunk/images/credits/earth-256.jpg";
-import earthLg from "../../../../../../public/vrpunk/images/credits/earth-512.jpg";
+const jetConceptSm = "/vrpunk/images/credits/jet-concept-256.jpg";
+const jetConceptLg = "/vrpunk/images/credits/jet-concept-512.jpg";
+const earthSm = "/vrpunk/images/credits/earth-256.jpg";
+const earthLg = "/vrpunk/images/credits/earth-512.jpg";
 
 export const machCredits = [
   {

@@ -10,9 +10,9 @@ import { Ocean } from "../components/three/Ocean";
 
 export const IntroScene = ({
   start,
-  performanceLevel,
   setCurrentScene,
   currentScene,
+  textureDetail,
 }) => {
   const sceneObjects = useRef();
   const clock = new Clock();
@@ -40,7 +40,7 @@ export const IntroScene = ({
         maxPolarAngle={Math.PI / 1.5}
       />
 
-      <RabbitHole position={[0, 0, -38]} performanceLevel={performanceLevel} />
+      <RabbitHole position={[0, 0, -38]} textureDetail={textureDetail} />
 
       <SpinningPanels
         panelsPosition={[0, 0, -95]}
@@ -53,7 +53,7 @@ export const IntroScene = ({
         position={[0, 0, -98]}
         rotation={[0, 0, 0]}
         start={start}
-        performanceLevel={performanceLevel}
+        textureDetail={textureDetail}
         currentScene={currentScene}
       />
 

@@ -15,9 +15,6 @@ import { emptyCredits } from "../../credits/emptyCredits";
 const Credit = ({ ...props }) => {
   return (
     <div className="info-wrapper flex-col">
-      <hr className="info-hr" />
-      <hr className="info-hr red" />
-      <hr className="info-hr" />
       <p className="info-text">Asset: {props.info.asset}</p>
       <p className="info-text">Title: {props.info.title}</p>
       <a
@@ -41,6 +38,15 @@ const Credit = ({ ...props }) => {
         Author: <span className="info-text author">{props.info.author}</span>
       </a>
       <p className="info-text">Changes: {props.info.changes}</p>
+
+      <div
+        className="w-4/5 h-px rounded-[10px] mx-5"
+        style={{
+          filter: "drop-shadow(0 0 3px #0ff)",
+          background:
+            "linear-gradient(to right, transparent, #c8ffff, transparent)",
+        }}
+      ></div>
     </div>
   );
 };
@@ -54,6 +60,8 @@ export const ModalInfo = ({
   punk,
   modalInfoOpen,
   setModalInfoOpen,
+  textureDetail,
+  setTextureDetail,
 }) => {
   const [anim, setAnim] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -110,13 +118,79 @@ export const ModalInfo = ({
         onClick={() => {
           setModalInfoOpen(false);
         }}
-        // disabled={progress < 100}
       />
 
       <div className="info-container flex-col">
-        <h2 className="info-header">Scene Info</h2>
-
-        <hr className="info-hr" />
+        {/* TEXTURE DETAIL SECTION ////////////////////////// */}
+        <div className="text-nowrap w-full flex flex-row items-center justify-center">
+          <div
+            className="w-4/5 h-px rounded-[10px] ml-5"
+            style={{
+              filter: "drop-shadow(0 0 3px #0ff)",
+              background: "linear-gradient(to right, transparent 20%, #c8ffff)",
+            }}
+          ></div>
+          <h2 className="info-header text-cyan-500 text-2xl font-bold text-center mt-2.5 [text-shadow:0_0_5px_#c8ffff] font-['Ailerons']">
+            Texture Detail
+          </h2>
+          <div
+            className="w-4/5 h-px rounded-[10px] mr-5"
+            style={{
+              filter: "drop-shadow(0 0 3px #0ff)",
+              background: "linear-gradient(to left, transparent 20%, #c8ffff)",
+            }}
+          ></div>
+        </div>
+        {/* TEXTURE DETAIL BUTTONS ////////////////////////// */}
+        <div className="w-full px-2 pb-2 mx-2.5 mb-4flex flex-row items-center justify-around">
+          <button
+            style={{
+              color: textureDetail === 0 ? "cyan" : "white",
+            }}
+            className="btn-texture-detail"
+            onClick={() => setTextureDetail(0)}
+          >
+            LOW
+          </button>
+          <button
+            style={{
+              color: textureDetail === 1 ? "cyan" : "white",
+            }}
+            className="btn-texture-detail"
+            onClick={() => setTextureDetail(1)}
+          >
+            MEDIUM
+          </button>
+          <button
+            style={{
+              color: textureDetail === 2 ? "cyan" : "white",
+            }}
+            className="btn-texture-detail"
+            onClick={() => setTextureDetail(2)}
+          >
+            HIGH
+          </button>
+        </div>
+        {/* SCENE INFO SECTION ////////////////////////// */}
+        <div className="wrapper-texture-detail w-full flex flex-row items-center justify-center">
+          <div
+            className="w-4/5 h-px rounded-[10px] ml-5"
+            style={{
+              filter: "drop-shadow(0 0 3px #0ff)",
+              background: "linear-gradient(to right, transparent 20%, #c8ffff)",
+            }}
+          ></div>
+          <h2 className="info-header text-nowrap text-cyan-500 text-2xl font-bold text-center my-2.5 [text-shadow:0_0_5px_cyan] font-['Ailerons']">
+            Scene Info
+          </h2>
+          <div
+            className="w-4/5 h-px rounded-[10px] mr-5"
+            style={{
+              filter: "drop-shadow(0 0 3px #0ff)",
+              background: "linear-gradient(to left, transparent 20%, #c8ffff)",
+            }}
+          ></div>
+        </div>
 
         <div className="info-wrapper flex-col">
           <p className="info-text">
@@ -136,9 +210,26 @@ export const ModalInfo = ({
           </p>
         </div>
 
-        <hr className="info-hr" />
-
-        <h2 className="info-header">Scene Asset Credits</h2>
+        {/* CREDITS SECTION ////////////////////////// */}
+        <div className="wrapper-texture-detail w-full flex flex-row items-center justify-center">
+          <div
+            className="w-4/5 h-px rounded-[10px] ml-5"
+            style={{
+              filter: "drop-shadow(0 0 3px #0ff)",
+              background: "linear-gradient(to right, transparent 20%, #c8ffff)",
+            }}
+          ></div>
+          <h2 className="info-header text-nowrap text-cyan-500 text-2xl font-bold text-center my-2.5 [text-shadow:0_0_5px_cyan] font-['Ailerons']">
+            Scene Asset Credits
+          </h2>
+          <div
+            className="w-4/5 h-px rounded-[10px] mr-5"
+            style={{
+              filter: "drop-shadow(0 0 3px #0ff)",
+              background: "linear-gradient(to left, transparent 20%, #c8ffff)",
+            }}
+          ></div>
+        </div>
 
         {credits.map((item, index) => (
           <Credit key={index} info={item} />

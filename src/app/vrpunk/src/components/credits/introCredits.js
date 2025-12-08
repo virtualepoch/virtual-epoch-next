@@ -1,9 +1,9 @@
-import futureMachine256 from "../../../../../../public/vrpunk/images/credits/fm-preview-256.jpg";
-import futureMachine512 from "../../../../../../public/vrpunk/images/credits/fm-preview-512.jpg";
-import redScifiMetal256 from "../../../../../../public/vrpunk/images/credits/red-scifi-metal-256.jpg";
-import redScifiMetal512 from "../../../../../../public/vrpunk/images/credits/red-scifi-metal-512.jpg";
-import appearanceEffect256 from "../../../../../../public/vrpunk/images/credits/appearance-effect-256.jpg";
-import appearanceEffect512 from "../../../../../../public/vrpunk/images/credits/appearance-effect-512.jpg";
+const futureMachine256 = "/vrpunk/images/credits/fm-preview-256.jpg";
+const futureMachine512 = "/vrpunk/images/credits/fm-preview-512.jpg";
+const redScifiMetal256 = "/vrpunk/images/credits/red-scifi-metal-256.jpg";
+const redScifiMetal512 = "/vrpunk/images/credits/red-scifi-metal-512.jpg";
+const appearanceEffect256 = "/vrpunk/images/credits/appearance-effect-256.jpg";
+const appearanceEffect512 = "/vrpunk/images/credits/appearance-effect-512.jpg";
 
 export const introCredits = [
   {
