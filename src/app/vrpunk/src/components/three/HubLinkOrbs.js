@@ -27,14 +27,14 @@ export const linkOrbInfo = [
   },
 ];
 
-export const HubLinkOrbs = ({ hubLink, setHubLink, performanceLevel }) => {
+export const HubLinkOrbs = ({ hubLink, setHubLink, textureDetail }) => {
   const [hovered, setHovered] = useState();
   document.body.style.cursor = hovered ? "pointer" : "default";
 
   const texturePath =
-    performanceLevel === 0
+    textureDetail === 0
       ? "/vrpunk/basic-textures/hex-128.jpg"
-      : performanceLevel === 2
+      : textureDetail === 2
       ? "/vrpunk/basic-textures/hex-256.jpg"
       : "/vrpunk/basic-textures/hex-512.jpg";
 
@@ -64,14 +64,14 @@ export const HubLinkOrbs = ({ hubLink, setHubLink, performanceLevel }) => {
         atomRef={atomRef}
         scale={1.5}
         orbitScale={0.07}
-        performanceLevel={performanceLevel}
+        textureDetail={textureDetail}
       />
       {linkOrbInfo.map((item, index) => (
-        <Interactive
+        <mesh
           key={`interactive-${item.number}`}
-          onSelect={() => setHubLink(item.number)}
-          onHover={() => setHovered(true)}
-          onBlur={() => setHovered(false)}
+          onClick={() => setHubLink(item.number)}
+          onPointerOver={(e) => setHovered(true)}
+          onPointerOut={(e) => setHovered(false)}
         >
           <group
             key={index}
@@ -98,7 +98,7 @@ export const HubLinkOrbs = ({ hubLink, setHubLink, performanceLevel }) => {
               <meshStandardMaterial map={texture} receiveShadow />
             </Sphere>
           </group>
-        </Interactive>
+        </mesh>
       ))}
     </group>
   );

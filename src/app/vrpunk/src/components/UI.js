@@ -65,6 +65,10 @@ export const UI = ({
       {(torus || mach || panic) && (
         <BtnBack onClick={() => setCurrentScene(1)} />
       )}
+    
+      {hub && (
+        <BtnBack onClick={() => {setCurrentScene(0); setStart(false);}} />
+      )}
 
       <BtnFullScreen />
 

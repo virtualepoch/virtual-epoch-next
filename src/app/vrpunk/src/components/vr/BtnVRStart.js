@@ -1,8 +1,14 @@
 import { Box, Text } from "@react-three/drei";
+import { useState } from "react";
 
 export const BtnVRStart = ({ setStart }) => {
+  const [hovered, setHovered] = useState(false);
+  document.body.style.cursor = hovered ? "pointer" : "default";
+  
   return (
     <mesh
+      onPointerOver={(e) => setHovered(true)}
+      onPointerOut={(e) => setHovered(false)}
       onClick={() => {
         setStart(true);
       }}

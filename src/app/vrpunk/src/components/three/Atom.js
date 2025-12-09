@@ -10,10 +10,10 @@ export const Atom = ({
   orbitScale = 0.1,
   position,
   rotSpeed = 0.04,
-  performanceLevel,
-  lightIntensity = performanceLevel === 0
+  textureDetail,
+  lightIntensity = textureDetail === 0
     ? 0.03
-    : performanceLevel === 2
+    : textureDetail === 2
     ? 0.07
     : 0.05,
 }) => {

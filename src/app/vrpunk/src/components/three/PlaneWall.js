@@ -3,35 +3,35 @@
 import * as THREE from "three";
 import { Plane, useTexture } from "@react-three/drei";
 
-export const PlaneWall = ({ args, position, rotY, performance }) => {
+export const PlaneWall = ({ args, position, rotY, textureDetail }) => {
   const textures = useTexture({
     map: `${
-      performance < 2
+      textureDetail < 2
         ? "/vrpunk/textures/metal-screen-orange/baseColor-1024.png"
         : "/vrpunk/textures/metal-screen-orange/baseColor.png"
     }`,
     displacementMap: `${
-      performance < 2
+      textureDetail < 2
         ? "/vrpunk/textures/metal-screen-orange/height-1024.png"
         : "/vrpunk/textures/metal-screen-orange/height.png"
     }`,
     roughnessMap: `${
-      performance < 2
+      textureDetail < 2
         ? "/vrpunk/textures/metal-screen-orange/roughness-1024.png"
         : "/vrpunk/textures/metal-screen-orange/roughness.png"
     }`,
     metalnessMap: `${
-      performance < 2
+      textureDetail < 2
         ? "/vrpunk/textures/metal-screen-orange/metallic-1024.png"
         : "/vrpunk/textures/metal-screen-orange/metallic.png"
     }`,
     normalMap: `${
-      performance < 2
+      textureDetail < 2
         ? "/vrpunk/textures/metal-screen-orange/normal-1024.png"
         : "/vrpunk/textures/metal-screen-orange/normal.png"
     }`,
     alphaMap: `${
-      performance < 2
+      textureDetail < 2
         ? "/vrpunk/textures/metal-screen-orange/opacity-1024.png"
         : "/vrpunk/textures/metal-screen-orange/opacity.png"
     }`,

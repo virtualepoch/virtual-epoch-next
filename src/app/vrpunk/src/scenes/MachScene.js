@@ -16,8 +16,9 @@ import { degToRad } from "three/src/math/MathUtils";
 // COMPONENTS
 import { JetConcept } from "../components/models/Jet_concept";
 import { EarthTank2k } from "../components/models/EarthTank2k";
+import { BtnVRBack } from "../components/vr/BtnVRBack";
 
-export const MachScene = ({ textureDetail }) => {
+export const MachScene = ({ textureDetail, setCurrentScene }) => {
   const directionalLight = useRef();
   // useHelper(directionalLight, THREE.DirectionalLightHelper, 1, "red");
   const viewport = useThree((state) => state.viewport); // used to scale scene
@@ -29,10 +30,8 @@ export const MachScene = ({ textureDetail }) => {
 
   return (
     <group scale={viewport.aspect}>
-      {/* <PerspectiveCamera
-        makeDefault={vrSession ? false : true}
-        position={[0, 0, 5]}
-      /> */}
+
+      <BtnVRBack onClick={() => setCurrentScene(1)} position={[1.3, 1, -1.1]} rotationY={-0.4} />
 
       <OrbitControls
         minDistance={2}

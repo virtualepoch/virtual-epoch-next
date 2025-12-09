@@ -53,9 +53,9 @@ export const CanvasVRPunk = ({
         >
           {/* <Controllers /> */}
           {/* <Hands /> */}
-          {/* {vrSession && currentScene === 0 && !start && (
+          {currentScene === 0 && !start && (
             <BtnVRStart setStart={setStart} />
-          )} */}
+          )}
 
           {/* {vrSession &&
             (currentScene === 2 ||
@@ -93,12 +93,13 @@ export const CanvasVRPunk = ({
                   <TorusScene
                     textureDetail={textureDetail}
                     thirdPerson={thirdPerson}
+                    setCurrentScene={setCurrentScene}
                   />
                 );
               case 3:
-                return <MachScene textureDetail={textureDetail} />;
+                return <MachScene textureDetail={textureDetail} setCurrentScene={setCurrentScene} />;
               case 4:
-                return <PanicScene textureDetail={textureDetail} />;
+                return <PanicScene textureDetail={textureDetail} setCurrentScene={setCurrentScene} />;
               default:
                 return null;
             }

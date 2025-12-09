@@ -7,7 +7,7 @@ import { useFrame } from "@react-three/fiber";
 export const HubLink = ({
   scale,
   image,
-  visible = false,
+  visible = true,
   onFadeOut,
   linkTitle = "hello",
   hubBtnClicked,
@@ -45,16 +45,14 @@ export const HubLink = ({
     const timeFactor3 = 2;
 
     if (hubBtnClicked) {
-      text3DMaterial.current.opacity = a < timeFactor ? 1 - a / timeFactor : 0;
-    } else if (visible) {
-      text3DMaterial.current.opacity = a < timeFactor2 ? a / timeFactor2 : 1;
+      text3DMaterial.current.opacity = a < timeFactor ? 1 - a / timeFactor : 1;
     }
 
     if (hubLinkClicked && a < timeFactor3) {
       // Need to refactor the following with some type of constant
-      text3DMesh.current.position.z = a * 2;
-      if (scale < 1) text3DMesh.current.position.z = a * 3;
-      if (scale < 0.76) text3DMesh.current.position.z = a * 4;
+      text3DMesh.current.position.z = a * 4;
+      if (scale < 1) text3DMesh.current.position.z = a * 6;
+      if (scale < 0.76) text3DMesh.current.position.z = a * 8;
       ///////////////////////////////////////////////////////////
       dissolveMesh.current.position.z = -a;
       backdropMaterial.current.opacity = 1 - a;
@@ -90,7 +88,7 @@ export const HubLink = ({
             <Text3D
               font="/vrpunk/fonts/Arcade.json"
               size={0.1}
-              position={[0, scale < 0.76 ? -0.11 : -0.1, 0]}
+              position={[0, scale < 0.76 ? -0.11 : -0.1, 0.02]}
             >
               <meshBasicMaterial
                 ref={text3DMaterial}

@@ -23,8 +23,9 @@ import { VictorianCouch } from "../components/models/VictorianCouch";
 import { PlaneFloor } from "../components/three/PlaneFloor";
 import { SpiderWolfAnim } from "../components/models/SpiderWolfAnim";
 import { FearCrawlEdit } from "../components/models/FearCrawlEdit";
+import { BtnVRBack } from "../components/vr/BtnVRBack";
 
-export const PanicScene = ({ textureDetail }) => {
+export const PanicScene = ({ textureDetail, setCurrentScene }) => {
   const directionalLight = useRef();
   // useHelper(directionalLight, DirectionalLightHelper, 1, "red");
   // const pointLight = useRef();
@@ -68,13 +69,10 @@ export const PanicScene = ({ textureDetail }) => {
 
   return (
     <>
-      {/* <PerspectiveCamera
-        makeDefault={vrSession ? false : true}
-        position={[0, 0, 0.5]}
-      /> */}
+      <BtnVRBack onClick={() => setCurrentScene(1)} position={[1.3, 1, -1.1]} rotationY={-0.4} />
       <OrbitControls />
 
-      <group position-y={vrSession ? 0 : -3}>
+      <group position-y={-3}>
         <directionalLight
           ref={directionalLight}
           position={[-1, 4, 2]}
@@ -107,28 +105,28 @@ export const PanicScene = ({ textureDetail }) => {
           args={[11, 20]}
           position={[0, 10, 9.5]}
           rotY={Math.PI}
-          performanceLevel={performanceLevel}
+          textureDetail={textureDetail}
         />
 
         <PlaneFloor
           args={[12, 60]}
           position={[0, -0.2, -20]}
           rotX={-Math.PI / 2}
-          performanceLevel={performanceLevel}
+          textureDetail={textureDetail}
         />
 
         <PlaneWall
           args={[20, 20]}
           position={[-6, 10, -1]}
           rotY={Math.PI / 2}
-          performanceLevel={performanceLevel}
+          textureDetail={textureDetail}
         />
 
         <PlaneWall
           args={[20, 20]}
           position={[6, 10, -1]}
           rotY={-Math.PI / 2}
-          performanceLevel={performanceLevel}
+          textureDetail={textureDetail}
         />
 
         <group ref={spiderGroup} position={[0, 10, -8]}>

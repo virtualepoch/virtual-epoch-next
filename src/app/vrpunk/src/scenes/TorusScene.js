@@ -15,8 +15,9 @@ import gsap from "gsap";
 import { DragonFlying } from "../components/models/DragonFlying";
 import { TorusSceneMap } from "./TorusSceneMap";
 import { Ocean } from "../components/three/Ocean";
+import { BtnVRBack } from "../components/vr/BtnVRBack";
 
-export const TorusScene = ({ textureDetail, thirdPerson }) => {
+export const TorusScene = ({ textureDetail, thirdPerson, setCurrentScene }) => {
   const map = useLoader(
     THREE.TextureLoader,
     "/vrpunk/images/panoramas/cyber-sky.jpg"
@@ -46,6 +47,7 @@ export const TorusScene = ({ textureDetail, thirdPerson }) => {
   const camPos = 1;
   return (
     <group>
+      <BtnVRBack onClick={() => setCurrentScene(1)} />
       <PerspectiveCamera ref={cam} makeDefault position={[0, 0, camPos]} />
 
       <OrbitControls
@@ -72,7 +74,7 @@ export const TorusScene = ({ textureDetail, thirdPerson }) => {
 
       <DragonFlying dragonRef={dragonTorus} />
 
-      <TorusSceneMap sceneMap={sceneMap} performanceLevel={performanceLevel} />
+      <TorusSceneMap sceneMap={sceneMap} textureDetail={textureDetail} />
     </group>
   );
 };

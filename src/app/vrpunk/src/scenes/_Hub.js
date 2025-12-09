@@ -9,6 +9,7 @@ import { HubLink } from "../../src/components/three/HubLink";
 import { HubLinkOrbs } from "../../src/components/three/HubLinkOrbs";
 import { TorusGroup } from "../../src/components/three/TorusGroup";
 import { Ocean } from "../../src/components/three/Ocean";
+import { BtnVRBack } from "../components/vr/BtnVRBack";
 // import { BgSphere } from "../components/three/BgSphere";
 
 export const Hub = ({
@@ -61,6 +62,8 @@ export const Hub = ({
         minPolarAngle={Math.PI / 4}
         maxPolarAngle={Math.PI / 1.5}
       />
+
+      <BtnVRBack onClick={() => {setCurrentScene(0); setStart(false);}} position={[1.3, 0, -3.1]} rotationY={-0.4} />
 
       <mesh position={[0, 0.1, -9]} scale={scale}>
         <HubLinkOrbs
