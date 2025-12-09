@@ -88,6 +88,7 @@
   border: 1px solid cyan;
   border-radius: 200px;
   color: white;
+  font: 100 25px Ailerons;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 10px 1px black;
   text-shadow: 0 1px 1px red, 0 1px 2px cyan;

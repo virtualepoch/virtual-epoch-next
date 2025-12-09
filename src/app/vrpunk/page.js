@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader } from "@react-three/drei";
 import { createXRStore } from "@react-three/xr";
 
@@ -25,23 +25,20 @@ export default function VRPunk() {
   // Modal management
   const [modalInfoOpen, setModalInfoOpen] = useState(false);
   const [modalVROpen, setModalVROpen] = useState(false);
-  
+
   // VR hooks
   const [foveation, setFoveation] = useState(0);
   const [vrFrameRate, setVrFrameRate] = useState(null);
-  const [vrSession, setVrSession] = useState(false);
-  const [vrStartBtnVisible, setVrStartBtnVisible] = useState(false);
-  
-    // Added state for current scene
-    const [currentScene, setCurrentScene] = useState(0); // Available scenes: 0=intro, 1=hub, 2=torus, 3=mach, 4=panic
+
+  // Added state for current scene
+  const [currentScene, setCurrentScene] = useState(0); // Available scenes: 0=intro, 1=hub, 2=torus, 3=mach, 4=panic
 
   // TorusScene hooks
   const [thirdPerson, setThirdPerson] = useState(false);
 
   // Performance management (For image/texture quality)
-  const [textureDetail, setTextureDetail] = useState(2); // ("0-2")
+  const [textureDetail, setTextureDetail] = useState(1); // ("0-2")
   // (App(PerformanceMonitor) & all scenes) the lower the number the lower the devices performance
-
   return (
     <div className="App">
       <Loader />
@@ -61,9 +58,6 @@ export default function VRPunk() {
         foveation={foveation}
         setFoveation={setFoveation}
         setVrFrameRate={setVrFrameRate}
-        vrSession={vrSession}
-        setVrSession={setVrSession}
-        setVrStartBtnVisible={setVrStartBtnVisible}
         xrStore={xrStore}
         // Scene navigation
         currentScene={currentScene}
@@ -74,7 +68,7 @@ export default function VRPunk() {
         // Performance management
         textureDetail={textureDetail}
         setTextureDetail={setTextureDetail}
-        />
+      />
 
       <CanvasVRPunk
         start={start}
@@ -82,15 +76,11 @@ export default function VRPunk() {
         hubLink={hubLink}
         setHubLink={setHubLink}
         hubBtnClicked={hubBtnClicked}
-        // Modal management     
+        // Modal management
         setModalInfoOpen={setModalInfoOpen}
         // VR hooks
         foveation={foveation}
         vrFrameRate={vrFrameRate}
-        vrSession={vrSession}
-        setVrSession={setVrSession}
-        vrStartBtnVisible={vrStartBtnVisible}
-        setVrStartBtnVisible={setVrStartBtnVisible}
         xrStore={xrStore}
         // Scene navigation
         currentScene={currentScene}

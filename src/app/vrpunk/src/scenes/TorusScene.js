@@ -16,7 +16,7 @@ import { DragonFlying } from "../components/models/DragonFlying";
 import { TorusSceneMap } from "./TorusSceneMap";
 import { Ocean } from "../components/three/Ocean";
 
-export const TorusScene = ({ performanceLevel, thirdPerson }) => {
+export const TorusScene = ({ textureDetail, thirdPerson }) => {
   const map = useLoader(
     THREE.TextureLoader,
     "/vrpunk/images/panoramas/cyber-sky.jpg"

@@ -1,11 +1,10 @@
 import { Box, Text } from "@react-three/drei";
 
-export const BtnVRStart = ({ setStart, setVrStartBtnVisible }) => {
+export const BtnVRStart = ({ setStart }) => {
   return (
     <mesh
       onClick={() => {
         setStart(true);
-        setVrStartBtnVisible(false);
       }}
       position={[1.7, 0.5, -4]}
       rotation-y={-0.5}

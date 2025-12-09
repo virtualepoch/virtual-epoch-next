@@ -7,8 +7,6 @@ export const ModalVR = ({
   foveation,
   setFoveation,
   setFrameRate,
-  setVrSession,
-  setVrStartBtnVisible,
   xrStore,
 }) => {
   const [anim, setAnim] = useState(false);
@@ -111,11 +109,49 @@ export const ModalVR = ({
 
       <button
         className="btn-vr"
-        onClick={() => {
+        onClick={async () => {
           setModalVROpen(false);
-          setVrSession(true);
-          setVrStartBtnVisible(true);
-          xrStore.enterAR();
+          try {
+            // Ensure XR store and renderer are ready before entering VR
+            const state = xrStore?.getState ? xrStore.getState() : null;
+            const gl = state?.gl;
+            if (!gl || !gl.xr) {
+              // give the canvas a moment to mount and attach XR manager
+              await new Promise((resolve) => setTimeout(resolve, 150));
+            }
+
+            // Check WebXR availability
+            if (navigator.xr) {
+              const supported = await navigator.xr.isSessionSupported(
+                "immersive-vr"
+              );
+              if (!supported) {
+                alert(
+                  "WebXR immersive-vr is not supported in this browser/device."
+                );
+                return;
+              }
+            } else {
+              alert(
+                "WebXR is not available. Please use a compatible browser/device."
+              );
+              return;
+            }
+
+            await xrStore.enterVR({
+              sessionInit: {
+                optionalFeatures: [
+                  "local-floor",
+                  "bounded-floor",
+                  "hand-tracking",
+                  "layers",
+                ],
+              },
+            });
+          } catch (error) {
+            console.error("Error entering VR:", error);
+            alert(`Failed to enter VR: ${error?.message || error}`);
+          }
         }}
       >
         Enter VR

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 // UI COMPONENTS //
-import { MainOverlay } from "./ui/MainOverlay";
 import { BtnFullScreen } from "./ui/buttons/BtnFullScreen";
 // import { Header } from "./ui/Header";
 // import { NavMenu } from "./ui/NavMenu";
@@ -31,7 +30,6 @@ export const UI = ({
   setFoveation,
   setVrFrameRate,
   setVrSession,
-  setVrStartBtnVisible,
   xrStore,
   // Scene navigation
   currentScene,
@@ -55,7 +53,6 @@ export const UI = ({
       {/* INTRO SCENE STUFF /////////////////////// */}
       {intro && (
         <>
-          {/* <MainOverlay /> */}
           <HeroSection
             start={start}
             setModalVROpen={setModalVROpen}
@@ -117,8 +114,6 @@ export const UI = ({
         foveation={foveation}
         setFoveation={setFoveation}
         setFrameRate={setVrFrameRate}
-        setVrSession={setVrSession}
-        setVrStartBtnVisible={setVrStartBtnVisible}
         xrStore={xrStore}
       />
 

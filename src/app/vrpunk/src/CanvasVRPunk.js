@@ -1,6 +1,6 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { XR } from "@react-three/xr";
+import { useXR, XR } from "@react-three/xr";
 
 // COMPONENTS
 import { BtnVRStart } from "./components/vr/BtnVRStart.js";
@@ -24,10 +24,6 @@ export const CanvasVRPunk = ({
   // VR hooks
   foveation,
   vrFrameRate,
-  vrSession,
-  setVrSession,
-  vrStartBtnVisible,
-  setVrStartBtnVisible,
   xrStore,
   // Scene navigation
   currentScene,
@@ -37,7 +33,6 @@ export const CanvasVRPunk = ({
   // Performance management
   textureDetail,
 }) => {
-
   return (
     <Canvas className="canvas" camera={{ fov: 30, position: [0, 0, 1] }}>
       <Suspense>
@@ -53,21 +48,21 @@ export const CanvasVRPunk = ({
               ? 120
               : null
           }
-          onSessionStart={() => setVrSession(true)}
-          onSessionEnd={() => setVrSession(false)}
+          // onSessionStart={() => setVrSession(true)}
+          // onSessionEnd={() => setVrSession(false)}
         >
           {/* <Controllers /> */}
           {/* <Hands /> */}
+          {/* {vrSession && currentScene === 0 && !start && (
+            <BtnVRStart setStart={setStart} />
+          )} */}
 
-          {vrSession && vrStartBtnVisible && (
-            <BtnVRStart setStart={setStart} setVrStartBtnVisible={setVrStartBtnVisible} />
-          )}
-
-          {(currentScene === 2 && vrSession) ||
-            (currentScene === 3 && vrSession) ||
-            (currentScene === 4 && vrSession && (
+          {/* {vrSession &&
+            (currentScene === 2 ||
+              currentScene === 3 ||
+              currentScene === 4) && (
               <BtnVRBack setCurrentScene={setCurrentScene} />
-            ))}
+            )} */}
 
           {(() => {
             switch (currentScene) {
@@ -101,19 +96,9 @@ export const CanvasVRPunk = ({
                   />
                 );
               case 3:
-                return (
-                  <MachScene
-                    textureDetail={textureDetail}
-                    vrSession={vrSession}
-                  />
-                );
+                return <MachScene textureDetail={textureDetail} />;
               case 4:
-                return (
-                  <PanicScene
-                    vrSession={vrSession}
-                    textureDetail={textureDetail}
-                  />
-                );
+                return <PanicScene textureDetail={textureDetail} />;
               default:
                 return null;
             }

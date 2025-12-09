@@ -24,7 +24,7 @@ import { PlaneFloor } from "../components/three/PlaneFloor";
 import { SpiderWolfAnim } from "../components/models/SpiderWolfAnim";
 import { FearCrawlEdit } from "../components/models/FearCrawlEdit";
 
-export const PanicScene = ({ vrSession, performanceLevel }) => {
+export const PanicScene = ({ textureDetail }) => {
   const directionalLight = useRef();
   // useHelper(directionalLight, DirectionalLightHelper, 1, "red");
   // const pointLight = useRef();
@@ -68,10 +68,10 @@ export const PanicScene = ({ vrSession, performanceLevel }) => {
 
   return (
     <>
-      <PerspectiveCamera
+      {/* <PerspectiveCamera
         makeDefault={vrSession ? false : true}
         position={[0, 0, 0.5]}
-      />
+      /> */}
       <OrbitControls />
 
       <group position-y={vrSession ? 0 : -3}>

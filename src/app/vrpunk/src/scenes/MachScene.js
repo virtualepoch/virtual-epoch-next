@@ -17,7 +17,7 @@ import { degToRad } from "three/src/math/MathUtils";
 import { JetConcept } from "../components/models/Jet_concept";
 import { EarthTank2k } from "../components/models/EarthTank2k";
 
-export const MachScene = ({ performanceLevel, vrSession }) => {
+export const MachScene = ({ textureDetail }) => {
   const directionalLight = useRef();
   // useHelper(directionalLight, THREE.DirectionalLightHelper, 1, "red");
   const viewport = useThree((state) => state.viewport); // used to scale scene
@@ -29,10 +29,10 @@ export const MachScene = ({ performanceLevel, vrSession }) => {
 
   return (
     <group scale={viewport.aspect}>
-      <PerspectiveCamera
+      {/* <PerspectiveCamera
         makeDefault={vrSession ? false : true}
         position={[0, 0, 5]}
-      />
+      /> */}
 
       <OrbitControls
         minDistance={2}
